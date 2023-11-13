@@ -1,15 +1,32 @@
-# vCard - Personal portfolio
+# Personal Portfolio Template by Kvnbbg
 
-## Run this website
+Welcome to the Personal Portfolio Template by Kvnbbg – a sleek and dynamic showcase designed to elevate your online presence with style and professionalism.
 
-Hit **Run** up there, or just hit `Cmd + ENTER`!
+## Key Features:
 
-You can customize it. Start from `index.html`.
+- **Modern and Responsive Design:** Adapts seamlessly to various screen sizes for a flawless user experience.
+- **Portfolio Showcase:** Display your projects in a visually appealing grid layout with high-quality images and brief descriptions.
+- **Interactive Elements:** Engage visitors with smooth scrolling, hover effects, and animated transitions.
+- **About Me Section:** Introduce yourself and share your story, skills, and passion.
+- **Resume/CV Integration:** Showcase your professional journey in a structured and visually appealing format.
+- **Contact Form:** Facilitate easy communication with a built-in contact form.
+- **Social Media Integration:** Connect your social media profiles seamlessly.
+- **Customization Options:** Tailor the template to reflect your unique style with easy-to-use customization options.
+- **Tech Stack:** Developed using the latest web technologies for optimal performance, security, and compatibility.
 
-## Author & License
+## Getting Started:
 
-This template has been developed by [@codewithsadee](https://www.twitter.com/codewithsadee). If you want to contact the author, you can reach out on [Twitter](https://www.twitter.com/codewithsadee). 
+1. Clone the repository.
+2. Customize the content in the HTML and CSS files.
+3. Personalize the portfolio by adding your projects, skills, and experiences.
+4. Adjust colors and fonts to suit your personal brand.
 
-Donations: [Patreon](https://patreon.com/codewithsadee).
+## License:
 
-License: MIT (see LICENSE file).
+This template is released under the [MIT License](LICENSE).
+
+---
+
+Feel free to explore, customize, and use this template to showcase your talents and accomplishments. If you have any questions or feedback, don't hesitate to reach out.
+
+Happy coding!
