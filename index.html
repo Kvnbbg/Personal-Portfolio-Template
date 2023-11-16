@@ -13,6 +13,7 @@ Feel free to edit the HTML and CSS to make it your own. You can also check the R
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>vCard - Personal Portfolio</title>
 
@@ -51,13 +52,13 @@ Feel free to edit the HTML and CSS to make it your own. You can also check the R
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Kvnbbg thanks to Richard hanrick" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Kevin Marville</h1>
+          <h1 class="name" title="Kevin Marville">Kevin Marville</h1>
 
-          <p class="title">Web developer</p>
+          <p class="title">Front-end developer</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -179,23 +180,27 @@ Feel free to edit the HTML and CSS to make it your own. You can also check the R
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link="about">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link="resume">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link="blog">Blog</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link="contact">Contact</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="sandbox">Sandbox</button>
           </li>
 
         </ul>
@@ -1184,16 +1189,54 @@ Feel free to edit the HTML and CSS to make it your own. You can also check the R
         </section>
 
       </article>
+      <!-- 
+      
+      # SANBOX
+      
+      -->
+    
+      <article class="sandbox" data-page="sandbox">
+        
+        <header>
+          <h2 class="h2 article-title">Javascript Sandbox</h2>
+        </header>
+        <section id="sandbox" class="sandbox-content">
+          <h3 class="h3 sandbox-title">Sandbox</h3>
+          <p class="sandbox-text">
+            Welcome to the JavaScript Sandbox! This tool allows you to test your JavaScript skills right here on the web page.
+            <strong>How to Use:</strong>
+            <ol>
+              <li>Type your JavaScript code in the text area below.</li>
+              <li>Click the "Run" button to execute the code.</li>
+              <li>Your code will run in the sandbox, and any output or errors will display below.</li>
+            </ol>
+            <strong>Example:</strong>
+            <p>Try typing some basic JavaScript code:</p>
+            <code>
+              <pre>
+      const greeting = 'Hello, ';
+      const name = 'User';
+      const message = greeting + name;
+      console.log(message);
+              </pre>
+            </code>
+            <p>This code will concatenate the strings 'Hello, ' and 'User', then log the result to the console.</p>
+          </p>
+          <label for="codeInput">Type JavaScript Code:</label><br>
+          <textarea id="codeInput" rows="5" cols="50"></textarea><br>
+          <button onclick="runCode()">Run</button>
+          <div>
+            <h3>Console Output:</h3>
+            <div id="consoleOutput"></div>
+          </div>
+        </section>
+        
+      </article>
 
     </div>
 
   </main>
-
-
-
-
-
-
+  
   <!--
     - custom js link
   -->

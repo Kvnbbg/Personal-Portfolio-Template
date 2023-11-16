@@ -1,5 +1,27 @@
 'use strict';
 
+// Navbar
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const contentSections = document.querySelectorAll('#content > section');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      const targetSectionId = event.target.dataset.navLink;
+
+      // Hide all sections
+      contentSections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // Show the selected section if it exists
+      const selectedSection = document.getElementById(targetSectionId);
+      if (selectedSection) {
+        selectedSection.style.display = 'block';
+      }
+    });
+  });
+});
 
 
 // element toggle function
@@ -157,3 +179,36 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+function runCode() {
+  const code = document.getElementById('codeInput').value;
+  const consoleOutput = document.getElementById('consoleOutput');
+
+  try {
+    const sandbox = {};
+    const userFunction = new Function('sandbox', code);
+    const result = userFunction(sandbox);
+
+    // Clear console output before displaying new results
+    consoleOutput.innerHTML = '';
+
+    // Display the result in the console output
+    consoleOutput.innerText = String(result);
+  } catch (error) {
+    // Clear console output before displaying error
+    consoleOutput.innerHTML = '';
+
+    let errorMessage = 'Error: ';
+    if (error instanceof SyntaxError) {
+      errorMessage += 'Syntax Error - Please check your code.';
+    } else if (error instanceof ReferenceError) {
+      errorMessage += 'Reference Error - Likely a variable or function is not defined.';
+    } else if (error instanceof TypeError) {
+      errorMessage += 'Type Error - There might be a type mismatch or undefined method.';
+    } else {
+      errorMessage += error.message || 'An unknown error occurred.';
+    }
+    consoleOutput.innerText = errorMessage;
+  }
+}
+
