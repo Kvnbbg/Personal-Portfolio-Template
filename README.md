@@ -2,7 +2,7 @@
 
 Welcome to the Personal Portfolio Template by Kvnbbg – a sleek and dynamic showcase designed to elevate your online presence with style and professionalism.
 
-Leave me a lik also replit.com/@kvnbbg/Personal-Portfolio-Template also lookable here https://kvnbbg.github.io/Personal-Portfolio-Template/
+Leave me a lik also https://replit.com/@kvnbbg/Personal-Portfolio-Template also lookable here https://kvnbbg.github.io/Personal-Portfolio-Template/
 
 ## Key Features:
 
