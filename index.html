@@ -1,13 +1,4 @@
-  <!--
-
-
-  Hit RUN to see this project in action!
-
-  Feel free to edit the HTML and CSS to make it your own. You can also check the README.md file to know more.
-
-
-  -->
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
 
     <head>
@@ -41,6 +32,18 @@
         <meta name="twitter:title" content="vCard - Personal Portfolio">
         <meta name="twitter:description" content="Kevin portfolio: A fusion of creative web design, programming expertise, and captivating projects. ">
         <meta name="twitter:image" content="./website-demo-image/mobile.png">
+
+       <!-- Google Analytics -->
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z2B7B25VV"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6Z2B7B25VV');
+      </script>
+      
     </head>
 
 
@@ -652,9 +655,9 @@
                     <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
                   </figure>
 
-                  <h3 class="project-title">Brawlhalla</h3>
+                  <h3 class="project-title">Bookish</h3>
 
-                  <p class="project-category">Applications</p>
+                  <p class="project-category">Web App</p>
 
                 </a>
               </li>
@@ -764,71 +767,66 @@
         -->
 
         <article class="blog" data-page="blog">
-
           <header>
-            <h2 class="h2 article-title">Blog</h2>
+            <h2 class="h2 article-title">Blog Log</h2>
           </header>
-
           <section class="blog-posts">
-
             <ul class="blog-posts-list">
 
               <li class="blog-post-item">
-                <a href="./assets/html/faq-infiniverse.html">
+                <a href="./journaling.html">
 
                   <figure class="blog-banner-box">
-                    <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                    <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer. Also our new romance!" loading="lazy">
                   </figure>
 
                   <div class="blog-content">
 
                     <div class="blog-meta">
-                      <p class="blog-category">Dart</p>
+                      <p class="blog-category">Journaling</p>
 
                       <span class="dot"></span>
 
-                      <time datetime="2022-02-23">Dec 4, 2023</time>
+                      <time datetime="2022-02-23">Thu 7, 2023</time>
                     </div>
 
-                    <h3 class="h3 blog-item-title">Dart Programs: Unraveling FAQs for Developers</h3>
+                    <h3 class="h3 blog-item-title">Best fonts every designer. Also our new romance!</h3>
 
                     <p class="blog-text">
-                      Dart, a powerful programming language, often raises questions among developers. Dive into our FAQ guide, inspired by the enigmatic world of Dart programs. From syntax dilemmas to optimization strategies, explore concise answers and insights to common queries. Let's demystify Dart's intricacies together!
+                      If you're a designer, you're probably familiar with the concept of fonts. Fonts are the foundation of typology. They're the symbols that make up the text, and they're the essence of a design's identity. But what do yo do with a journal...
                     </p>
 
                   </div>
 
                 </a>
               </li>
-
               <li class="blog-post-item">
-                <a href="#">
+              <a href="./assets/html/faq-infiniverse.html">
 
-                  <figure class="blog-banner-box">
-                    <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                  </figure>
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
 
-                  <div class="blog-content">
+                <div class="blog-content">
 
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
+                  <div class="blog-meta">
+                    <p class="blog-category">Dart</p>
 
-                      <span class="dot"></span>
+                    <span class="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                    <p class="blog-text">
-                      Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                    </p>
-
+                    <time datetime="2022-02-23">Dec 4, 2023</time>
                   </div>
 
-                </a>
-              </li>
+                  <h3 class="h3 blog-item-title">Dart programming FAQs for Developers</h3>
 
+                  <p class="blog-text">
+                    Dart, a powerful programming language, often raises questions among developers. Dive into our FAQ guide, inspired by the enigmatic world of Dart programs. From syntax dilemmas to optimization strategies, explore concise answers and insights to common queries. Let's demystify Dart's intricacies together!
+                  </p>
+
+                </div>
+
+              </a>
+              </li>
               <li class="blog-post-item">
                 <a href="#">
 
@@ -1051,6 +1049,10 @@
     -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+<footer>
+  <p>&copy; 2023 Portfolio of Kvnbbg - Kevin Marville</p>
+</footer>
 
   </body>
 
