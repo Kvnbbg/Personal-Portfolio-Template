@@ -1,5 +1,24 @@
 'use strict';
 
+(function() {
+  var warningMessage = "This is the flat version of the website. For more features and an updated version, please visit <a href='https://kvnbbg.github.io/Personal-Portfolio-Template/' target='_blank'>here</a>.";
+
+  var warningDiv = document.createElement('div');
+  warningDiv.innerHTML = warningMessage;
+  warningDiv.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; background: #f44336; color: #fff; padding: 10px; text-align: center; z-index: 9999;';
+
+  var closeButton = document.createElement('span');
+  closeButton.innerHTML = 'X';
+  closeButton.style.cssText = 'position: absolute; top: 5px; right: 10px; cursor: pointer;';
+  closeButton.onclick = function() {
+    warningDiv.style.display = 'none';
+  };
+  warningDiv.appendChild(closeButton);
+
+  document.body.appendChild(warningDiv);
+})();
+
+
 // Navbar
 document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('[data-nav-link]');
