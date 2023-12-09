@@ -18,6 +18,18 @@
   document.body.appendChild(warningDiv);
 })();
 
+// JavaScript code to handle like button functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const likeButton = document.querySelector('.btn-primary');
+    const likeCount = document.querySelector('.like-count');
+
+    let count = parseInt(likeCount.textContent);
+
+    likeButton.addEventListener('click', function () {
+        count++;
+        likeCount.textContent = count;
+    });
+});
 
 // Navbar
 document.addEventListener('DOMContentLoaded', () => {

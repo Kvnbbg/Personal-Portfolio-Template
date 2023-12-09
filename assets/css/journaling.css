@@ -12,3 +12,18 @@
     .blog-post p {
       color: #555;
     } */
+/* Custom CSS for image resizing and styling */
+.blog-posts-list img {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    border-radius: 50%; /* Creates a rounded shape */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+/* Adjustments for the carousel images */
+.carousel-inner img {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    border-radius: 50%; /* Creates a rounded shape */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
