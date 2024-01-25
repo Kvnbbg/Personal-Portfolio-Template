@@ -120,6 +120,13 @@ body {
   transition: background-color var(--animation-transition-background-color);
 }
 
+main {
+  margin: 15px 12px;
+  margin-bottom: 75px;
+  min-width: 259px;
+}
+
+
 header {
   text-align: center;
   padding: 40px;
@@ -310,6 +317,11 @@ footer {
   position: sticky;
   bottom: 0;
   width: 100%;
+}
+
+.avatar-box {
+  background: var(--bg-gradient-onyx);
+  border-radius: 20px;
 }
 
 /* Responsive Design */
