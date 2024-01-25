@@ -171,22 +171,22 @@ header {
   0%, 100% {
     opacity: 1;
     z-index: 2;
-    background-image: url("./images/bg_default/bg1.jpg");
+    background-image: url("/assets/images/bg/bg1.png");
   }
   25% {
     opacity: 0;
     z-index: 1;
-    background-image: url("./images/bg_default/bg2.jpg");
+    background-image: url("/assets/images/bg/bg2.png");
   }
   50% {
     opacity: 1;
     z-index: 0;
-    background-image: url("./images/bg_default/bg3.jpg");
+    background-image: url("/assets/images/bg/bg3.png");
   }
   75% {
     opacity: 0;
     z-index: -1;
-    background-image: url("./images/bg_default/bg4.jpg");
+    background-image: url("/assets/images/bg/bg4.png");
   }
 }
 
