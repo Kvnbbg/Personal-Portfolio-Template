@@ -145,6 +145,12 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
+img {
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
+
 @keyframes backgroundSpace {
   0%, 100% {
     opacity: 1;
@@ -290,6 +296,18 @@ a:visited {
   transform: scale(5);
   animation: shake 0.5s ease-in-out;
   margin: 0 10px;
+}
+
+.language-button.active {
+  background-color: #007BFF; /* Blue color for active state, you can customize this */
+}
+
+.language-button.active:hover {
+  background-color: #0056b3; /* Darker blue on hover in active state, you can customize this */
+}
+
+.language-button.active .language-text {
+  display: inline;
 }
 
 @keyframes shake {

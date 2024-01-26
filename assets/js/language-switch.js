@@ -36,7 +36,6 @@ let currentLanguage = 'en';
 function toggleLanguage() {
   // Toggle between English and French
   currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-  updateContent();
 
   // Get the button element
   var button = document.getElementById("language-switch");
@@ -60,6 +59,7 @@ function toggleLanguage() {
       textElement.textContent = "Switch to English";
       console.log("Switched to English");
   }
+  updateContent();
 }
 
 function updateContent() {
