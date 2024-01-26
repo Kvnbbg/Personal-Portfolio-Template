@@ -1,8 +1,8 @@
 # Personal Portfolio
 
-Welcome to the refined and enhanced version of the Personal Portfolio Template by Kvnbbg – a sophisticated and dynamic showcase crafted to elevate your online presence with style and professionalism.
+Welcome to the refined and enhanced version of my Personal Portfolio Template!
 
-Remember to leave a like and explore my full portfolio at [kvnbbg-creations.io](https://kvnbbg-creations.io). You can also preview the template live [here](https://kvnbbg.github.io/Personal-Portfolio-Template/).
+Remember to leave a star ⭐️ and explore my full portfolio at [kvnbbg-creations.io](https://kvnbbg-creations.io). You can also preview the template live [here](https://kvnbbg.github.io/Personal-Portfolio-Template/).
 
 ## Key Features:
 
@@ -10,7 +10,7 @@ Remember to leave a like and explore my full portfolio at [kvnbbg-creations.io](
 - **Portfolio Showcase:** Display your projects in a visually stunning grid layout, featuring high-quality images and concise descriptions.
 - **Interactive Elements:** Captivate visitors with smooth scrolling, engaging hover effects, and seamless animated transitions.
 - **About Me Section:** Introduce yourself, sharing your unique narrative, skills, and passions.
-- **Resume/CV Integration:** Present your professional journey in a structured and visually appealing format.
+- **Resume Integration:** Present your professional journey in a structured and visually appealing format.
 - **Contact Form:** Simplify communication with a user-friendly built-in contact form.
 - **Social Media Integration:** Seamlessly connect your social media profiles for a comprehensive online presence.
 - **Customization Options:** Tailor the template effortlessly to reflect your individual style with intuitive customization options.
