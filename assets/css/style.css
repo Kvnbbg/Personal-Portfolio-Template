@@ -116,7 +116,6 @@ main {
   min-width: 259px;
 }
 
-
 header {
   text-align: center;
   padding: 40px;
@@ -357,9 +356,29 @@ footer {
     font-size: 1em;
   }
 
-  #about,
-  #biography {
+  main {
+    margin: 10px;
+  }
+
+  header {
     padding: 20px;
+  }
+
+  #about,
+  #biography,
+  #currently,
+  #github,
+  #connect {
+    padding: 20px;
+  }
+
+  .certifications-container {
+    flex-direction: column;
+  }
+
+  .certification-item {
+    transform: none;
+    margin: 0;
   }
 }
 

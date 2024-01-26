@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vCard - Personal Portfolio</title>
-    <meta name="description" content="Kevin Marville's portfolio: A showcase of creative web design, programming skills, and innovative projects. Explore the intersection of art and technology.">
+    <meta name="description" content="Kevin Marville portfolio: A showcase of creative web design, programming skills, and innovative projects. Explore the intersection of art and technology.">
     <meta name="keywords" content="portfolio, web design, programming, Kevin Marville">
 
     <!-- Favicon -->
@@ -76,42 +76,46 @@
 
 <body>
         <header class="heading">
-          <h1 class="heading-letter">W</h1>
-          <h1 class="heading-letter">e</h1>
-          <h1 class="heading-letter">l</h1>
-          <h1 class="heading-letter">c</h1>
-          <h1 class="heading-letter">o</h1>
-          <h1 class="heading-letter">m</h1>
-          <h1 class="heading-letter">e</h1>
+          <h1 class="heading-letter" data-lang="welcome">W</h1>
+          <h1 class="heading-letter" data-lang="welcome">e</h1>
+          <h1 class="heading-letter" data-lang="welcome">l</h1>
+          <h1 class="heading-letter" data-lang="welcome">c</h1>
+          <h1 class="heading-letter" data-lang="welcome">o</h1>
+          <h1 class="heading-letter" data-lang="welcome">m</h1>
+          <h1 class="heading-letter" data-lang="welcome">e</h1>
           <h1 class="heading-letter"> </h1>
-          <h1 class="heading-letter">t</h1>
-          <h1 class="heading-letter">o</h1>
+          <h1 class="heading-letter" data-lang="welcome">O</h1>
+          <h1 class="heading-letter" data-lang="welcome">n</h1>
           <h1 class="heading-letter"> </h1>
-          <h1 class="heading-letter">m</h1>
-          <h1 class="heading-letter">y</h1>
+          <h1 class="heading-letter" data-lang="welcome">M</h1>
+          <h1 class="heading-letter" data-lang="welcome">y</h1>
           <h1 class="heading-letter"> </h1>
-          <h1 class="heading-letter">p</h1>
-          <h1 class="heading-letter">o</h1>
-          <h1 class="heading-letter">r</h1>
-          <h1 class="heading-letter">t</h1>
-          <h1 class="heading-letter">f</h1>
-          <h1 class="heading-letter">o</h1>
-          <h1 class="heading-letter">l</h1>
-          <h1 class="heading-letter">i</h1>
-          <h1 class="heading-letter">o</h1>
+          <h1 class="heading-letter" data-lang="welcome">p</h1>
+          <h1 class="heading-letter" data-lang="welcome">o</h1>
+          <h1 class="heading-letter" data-lang="welcome">r</h1>
+          <h1 class="heading-letter" data-lang="welcome">t</h1>
+          <h1 class="heading-letter" data-lang="welcome">f</h1>
+          <h1 class="heading-letter" data-lang="welcome">o</h1>
+          <h1 class="heading-letter" data-lang="welcome">l</h1>
+          <h1 class="heading-letter" data-lang="welcome">i</h1>
+          <h1 class="heading-letter" data-lang="welcome">o</h1>
           <br> 
       </header>
       <br>
       <main>
       <section id="about">
-          <h2>About Me</h2>
-          <p>I'm focusing on expanding my knowledge, avidly looking to fuel my passion.</p>
-          <p><strong>Location:</strong> France</p>
-          <p><strong>Languages:</strong> Fluent in French 🇫🇷 and English 🇬🇧</p>
-          <p><strong>Portfolio:</strong> <a href="https://kvnbbg-creations.io" target="_blank">Check out my Portfolio</a></p>
+          <h2  data-lang="aboutMe">About Me</h2>
+          <p data-lang="activities">I'm focusing on expanding my knowledge, avidly looking to fuel my passion.</p>
+          <p  data-lang="location"><strong >Location:</strong> France</p>
+          <p data-lang="languages"<strong>Languages:</strong> Good in conversational  in
+            <button id="language-switch" onclick="toggleLanguage()"> French 🇫🇷</button>
+           and
+            <button id="language-switch" onclick="toggleLanguage()">English 🇬🇧</button>
+            </p>
+          <p data-lang="portfolio"><strong>Portfolio:</strong> <a href="https://kvnbbg-creations.io" target="_blank">Check out my Portfolio</a></p>
           <br> 
           <section id="certifications">
-            <h3>Certifications</h3>
+            <h3 data-lang="certifications">Certifications</h3>
             <a href="https://www.linkedin.com/in/kvnbbg"
             target="_blank">
             <div class="certifications-container">
@@ -158,20 +162,19 @@
             <img src="/assets/images/certif/my_picture.png" alt="My picture of me" width="80">
         </figure>
         <div class="biography-text">
-            <p>Hello, I'm Kevin Marville, a passionate developer.</p>
-            <p>My journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP. Since then, my fascination with the intersection of art and technology has only grown.</p>
-            <p>With a strong dedication to coding and creativity days of programming focus in Python, computer science, mathematics, and continuous learning.</p>
+            <p data-lang="biography">
+            My journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP. Since then, my fascination with the intersection of art and technology has only grown.<br>
+            I am a self-taught programmer and I want programming for over 10 years. I am a passionate and I am always looking for new challenges and opportunities to learn new things.</p>
         </div>
     </section>
     <br> 
 
       <section id="currently">
-        <h2>Currently On 💡</h2>
+        <h2 data-lang="currentlyOn">Currently On 💡</h2>
         <div class="current-activities">
-            <p>
+            <p data-lang="activities">
                 Currently, I am working on enhancing my skills and exploring various programming languages.
-            </p>
-            <p>
+            <br>
                 Additionally, I am actively contributing to the development of 
                 <a href="https://github.com/kvnbbg/bookish-octo-invention" target="_blank">bookish-octo-invention</a>,
                 and seeking collaboration opportunities for 
@@ -182,15 +185,15 @@
     <br> 
 
 <section id="github">
-  <h2>My GitHub Insights 📊</h2>
+  <h2 data-lang="githubInsights">My GitHub Insights 📊</h2>
   <div class="github-stats">
       <div class="github-stat">
-          <h3>Top Languages</h3>
+          <h3 data-lang="topLanguages">Top Languages</h3>
           <a href="https://github.com/kvnbbg" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact" alt="Top Languages"></a>
       </div>
       <div class="github-stat">
-          <h3>GitHub Stats</h3>
+          <h3 data-lang="githubStats">GitHub Stats</h3>
           <a href="https://github.com/kvnbbg" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical" alt="GitHub Stats"></a>
       </div>
@@ -199,35 +202,35 @@
 <br> 
 
 <section id="connect">
-  <h2>Connect 💻</h2>
-  <p>
+  <h2 data-lang="connect">Connect 💻</h2>
+  <p data-lang="reachOut">
       Feel free to reach out to me via email or social media. I'm always open to new opportunities and collaborations.
   </p>
   <ul>
-      <li>
+      <li data-lang="email">
           <strong>Email:</strong>
           <a href="mailto:kevinmarville@gmail.com" target="_blank">kevinmarville@gmail.com</a>
       </li>
-        <li>
+        <li data-lang="linkedin">
             <strong>linkedin:</strong>
             <a href="https://www.linkedin.com/in/kvnbbg" target="_blank">Follow me on Linkedin</a>
-      <li>
+      <li data-lang="koFi">
           <strong>Ko-fi:</strong>
           <a href="https://ko-fi.com/kvnbbg" target="_blank">Support me on Ko-fi</a>
       </li>
-      <li>
+      <li data-lang="soundCloud">
           <strong>SoundCloud:</strong>
           <a href="https://soundcloud.com/kvnbbg" target="_blank">Kvnbbg on SoundCloud</a>
       </li>
-      <li>
+      <li data-lang="twitch">
           <strong>Twitch:</strong>
           <a href="https://www.twitch.tv/kvnbbg" target="_blank">Follow me on Twitch</a>
       </li>
-      <li>
+      <li data-lang="youtube">
           <strong>YouTube:</strong>
           <a href="https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw" target="_blank">My YouTube Channel</a>
       </li>
-      <li>
+      <li data-lang="twitter">
           <strong>Twitter:</strong>
           <a href="https://twitter.com/techadnstream" target="_blank">Follow me on Twitter</a>
       </li>
@@ -236,9 +239,10 @@
 
 </main>
   <footer>
-    <p>&copy; 2024 Portfolio of /Kvnbbg - Kevin Marville</p>
+    <p data-lang="year">&copy; 2024 Portfolio of /Kvnbbg - Kevin Marville</p>
 </footer>
-  <script src="./assets/js/script.js"></script>
+  <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/language-switch.js"></script>
   <script type="module" src="https:/unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
