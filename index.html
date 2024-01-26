@@ -76,20 +76,6 @@
 
 <body>
         <header class="heading">
-          <h1 class="heading-letter" data-lang="welcome">W</h1>
-          <h1 class="heading-letter" data-lang="welcome">e</h1>
-          <h1 class="heading-letter" data-lang="welcome">l</h1>
-          <h1 class="heading-letter" data-lang="welcome">c</h1>
-          <h1 class="heading-letter" data-lang="welcome">o</h1>
-          <h1 class="heading-letter" data-lang="welcome">m</h1>
-          <h1 class="heading-letter" data-lang="welcome">e</h1>
-          <h1 class="heading-letter"> </h1>
-          <h1 class="heading-letter" data-lang="welcome">O</h1>
-          <h1 class="heading-letter" data-lang="welcome">n</h1>
-          <h1 class="heading-letter"> </h1>
-          <h1 class="heading-letter" data-lang="welcome">M</h1>
-          <h1 class="heading-letter" data-lang="welcome">y</h1>
-          <h1 class="heading-letter"> </h1>
           <h1 class="heading-letter" data-lang="welcome">p</h1>
           <h1 class="heading-letter" data-lang="welcome">o</h1>
           <h1 class="heading-letter" data-lang="welcome">r</h1>
@@ -107,11 +93,12 @@
           <h2  data-lang="aboutMe">About Me</h2>
           <p data-lang="activities">I'm focusing on expanding my knowledge, avidly looking to fuel my passion.</p>
           <p  data-lang="location"><strong >Location:</strong> France</p>
-          <p data-lang="languages"<strong>Languages:</strong> Good in conversational  in
-            <button id="language-switch" onclick="toggleLanguage()"> French 🇫🇷</button>
-           and
-            <button id="language-switch" onclick="toggleLanguage()">English 🇬🇧</button>
-            </p>
+          <p data-lang="languages"<strong>Languages:</strong> Good in conversational  <strong>French</strong> and <strong>English</strong></p>
+          <button id="language-switch" onclick="toggleLanguage()" class="language-button">
+            <span class="language-icon">🇫🇷</span>
+            <span class="language-text">Switch to French</span>
+        </button>
+        
           <p data-lang="portfolio"><strong>Portfolio:</strong> <a href="https://kvnbbg-creations.io" target="_blank">Check out my Portfolio</a></p>
           <br> 
           <section id="certifications">
@@ -239,7 +226,7 @@
 
 </main>
   <footer>
-    <p data-lang="year">&copy; 2024 Portfolio of /Kvnbbg - Kevin Marville</p>
+    <p data-lang="year">© 2024 Portfolio of /Kvnbbg - Kevin Marville</p>
 </footer>
   <script src="/assets/js/script.js"></script>
     <script src="/assets/js/language-switch.js"></script>
