@@ -108,11 +108,6 @@ body {
   line-height: 1.6;
   background: var(--smoky-black);
   font-family: var(--ff-poppins);
-  background-image: url("./images/bg_default/bg5.jpg");
-  background-size: cover; /* Adjust based on image size */
-  background-repeat: no-repeat;
-  animation: backgroundSpace var(--animation-slide-duration) infinite alternate ease-in-out var(--animation-delay);
-  transition: background-color var(--animation-transition-background-color);
 }
 
 main {
@@ -234,7 +229,33 @@ p {
 }
 
 section {
-  margin: 40px 0;
+  margin: 28px 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: var(--orange-yellow-crayola);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--vegas-gold);
+}
+
+a:active {
+  color: var(--light-gray);
+}
+
+a:visited {
+  color: var(--orange-yellow-crayola);
 }
 
 #certifications {
@@ -282,7 +303,7 @@ section {
 
 .certification-item:hover,
 .certification-item.touch-hold {
-  transform: scale(1.1);
+  transform: scale(3.5);
   animation: shake 0.5s ease-in-out;
 }
 
@@ -312,6 +333,12 @@ section {
 #github,
 #connect {
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: var(--eerie-black-2);
+  border-radius: 20px;
+  box-shadow: var(--shadow-2);
 }
 
 footer {
@@ -326,6 +353,11 @@ footer {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  background-image: url("assets/images/bg/bg1.jpg");
+  background-size: cover; /* Adjust based on image size */
+  background-repeat: no-repeat;
+  animation: backgroundSpace var(--animation-slide-duration) infinite alternate ease-in-out var(--animation-delay);
+  transition: background-color var(--animation-transition-background-color);
 }
 
 /* Responsive Design */
