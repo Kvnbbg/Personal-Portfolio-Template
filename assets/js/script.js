@@ -1,16 +1,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Like button functionality
-    const likeButton = document.querySelector('.btn-primary');
-    const likeCount = document.querySelector('.like-count');
-    let likeCounter = parseInt(likeCount.textContent);
-
-    likeButton.addEventListener('click', () => {
-        likeCounter++;
-        likeCount.textContent = likeCounter;
-    });
-
     // Certification items functionality
     const certificationItemsContainer = document.querySelector('.certification-items-container');
 
@@ -42,12 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         handleCertificationItemHover(e, 'remove');
     });
 
-    // Visitor count initialization
-    const visitorCount = document.querySelector('.visitor-count');
-    let visitorCounter = parseInt(visitorCount.textContent);
-
-    updateVisitorCount(); // Initialize visitor count
-
     // Create and style the warning message
     const warningDiv = createWarningDiv();
     document.body.appendChild(warningDiv);
@@ -66,11 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         warningDiv.appendChild(closeButton);
         return warningDiv;
-    }
-
-    // Function to update the visitor count
-    function updateVisitorCount() {
-        visitorCounter++;
-        visitorCount.textContent = visitorCounter;
     }
 });

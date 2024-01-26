@@ -146,22 +146,6 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
-.heading-animation {
-  width: auto;
-  height: auto;
-  margin: 5% auto;
-  position: relative;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-}
-
-.heading-animation:hover {
-  border: 3% solid;
-  border-radius: 28%;
-}
-
 @keyframes backgroundSpace {
   0%, 100% {
     opacity: 1;
@@ -248,6 +232,7 @@ a {
 
 a:hover {
   color: var(--vegas-gold);
+  scale: 1.2;
 }
 
 a:active {
@@ -303,8 +288,9 @@ a:visited {
 
 .certification-item:hover,
 .certification-item.touch-hold {
-  transform: scale(3.5);
+  transform: scale(5);
   animation: shake 0.5s ease-in-out;
+  margin: 0 10px;
 }
 
 @keyframes shake {
