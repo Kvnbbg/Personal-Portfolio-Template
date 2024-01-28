@@ -104,10 +104,40 @@
 
 }
 
+/* Global Styles */
+html {
+  font-size: 16px;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
   background: var(--smoky-black);
-  font-family: var(--ff-poppins);
+  font-family: var(--ff-poppins), sans-serif;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 40px;
+    background: var(--bg-gradient-onyx);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--orange-yellow-crayola);
+}
+
+h2, h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--orange-yellow-crayola);
+}
+
+h3 {
+  font-size: 1.2rem;
 }
 
 main {
@@ -116,11 +146,7 @@ main {
   min-width: 259px;
 }
 
-header {
-  text-align: center;
-  padding: 40px;
-  background: var(--bg-gradient-onyx);
-}
+
 
 .heading {
   margin: 0;
@@ -143,12 +169,6 @@ header {
   box-shadow: var(--box-shadow);
   width: var(--box-width-height);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-}
-
-img {
-  width: 100%;
-  height: auto;
-  margin: 10px auto;
 }
 
 @keyframes backgroundSpace {
@@ -197,30 +217,20 @@ img {
   }
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: var(--orange-yellow-crayola);
-}
 
-h2 {
-  color: var(--orange-yellow-crayola);
-  margin-bottom: 20px;
-}
 
-h3 {
-  color: var(--orange-yellow-crayola);
-}
-
+/* Paragraph Styles */
 p {
-  font-size: 1.2em;
+  font-size: 1rem;
   color: var(--white-2);
 }
 
+/* Section Styles */
 section {
   margin: 28px 10px;
 }
 
+/* List Styles */
 ul {
   list-style: none;
   padding: 0;
@@ -230,6 +240,7 @@ li {
   margin-bottom: 10px;
 }
 
+/* Link Styles */
 a {
   color: var(--orange-yellow-crayola);
   text-decoration: none;
@@ -237,7 +248,6 @@ a {
 
 a:hover {
   color: var(--vegas-gold);
-  scale: 1.2;
 }
 
 a:active {
@@ -248,12 +258,21 @@ a:visited {
   color: var(--orange-yellow-crayola);
 }
 
+/* Image Styles */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
+
+/* Certifications Styles */
 #certifications {
   text-align: center;
 }
 
 .certifications-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin-top: 20px;
@@ -294,48 +313,40 @@ a:visited {
 .certification-item:hover,
 .certification-item.touch-hold {
   transform: scale(5);
-  animation: shake 0.5s ease-in-out;
-  margin: 0 10px;
 }
 
+/* Language Button Styles */
 .language-button.active {
-  background-color: #007BFF; /* Blue color for active state, you can customize this */
+  background-color: #007BFF;
 }
 
 .language-button.active:hover {
-  background-color: #0056b3; /* Darker blue on hover in active state, you can customize this */
+  background-color: #0056b3;
 }
 
 .language-button.active .language-text {
   display: inline;
 }
 
+/* Shake Animation */
 @keyframes shake {
   0%, 100% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
   10%, 30%, 50%, 70%, 90% {
-      transform: translateX(-5px);
+    transform: translateX(-5px);
   }
   20%, 40%, 60%, 80% {
-      transform: translateX(5px);
+    transform: translateX(5px);
   }
 }
 
+/* Section Styles */
 #about,
-#biography {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background: var(--eerie-black-2);
-  border-radius: 20px;
-  box-shadow: var(--shadow-2);
-}
-
+#biography,
 #currently,
 #github,
 #connect {
-  text-align: center;
   max-width: 800px;
   margin: 0 auto;
   padding: 40px;
@@ -344,6 +355,7 @@ a:visited {
   box-shadow: var(--shadow-2);
 }
 
+/* Footer Styles */
 footer {
   background-color: var(--jet);
   color: var(--white-1);
@@ -353,18 +365,18 @@ footer {
   width: 100%;
 }
 
+/* Avatar Box Styles */
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
   background-image: url("assets/images/bg/bg1.jpg");
-  background-size: cover; /* Adjust based on image size */
+  background-size: cover;
   background-repeat: no-repeat;
   animation: backgroundSpace var(--animation-slide-duration) infinite alternate ease-in-out var(--animation-delay);
   transition: background-color var(--animation-transition-background-color);
 }
 
 /* Responsive Design */
-
 @media (max-width: 768px) {
   h1 {
     font-size: 1.5em;
@@ -379,7 +391,7 @@ footer {
   }
 
   header {
-    padding: 20px;
+    padding: 10px;
   }
 
   #about,
@@ -388,6 +400,7 @@ footer {
   #github,
   #connect {
     padding: 20px;
+    margin: 10px;
   }
 
   .certifications-container {
@@ -398,6 +411,13 @@ footer {
     transform: none;
     margin: 0;
   }
+
+  footer {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .avatar-box {
+    animation: none;
+  }
 }
-
-
