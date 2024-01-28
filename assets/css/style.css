@@ -226,6 +226,11 @@ p {
 /* Section Styles */
 section {
   margin: 28px 10px;
+  padding: 20px;
+  background: var(--eerie-black-2);
+  border-radius: 20px;
+  box-shadow: var(--vegas-gold);
+  width: auto;
 }
 
 /* List Styles */
@@ -262,6 +267,7 @@ img {
   max-width: 70%;
   height: auto;
   margin: 10px auto;
+  width: 100%;
 }
 
 /* Certifications Styles */
@@ -311,7 +317,7 @@ img {
 
 .certification-item:hover,
 .certification-item.touch-hold {
-  transform: scale(5);
+  transform: scale(1.5);
 }
 
 /* Language Button Styles */
@@ -341,11 +347,12 @@ img {
 }
 
 /* Section Styles */
+#about, 
 #biography,
 #currently,
 #github,
 #connect {
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 40px;
   background: var(--eerie-black-2);
