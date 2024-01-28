@@ -4,7 +4,7 @@ const languageContent = {
     aboutMe: 'About Me',
     location: 'Location: France',
     languages: 'Languages: Good in French 🇫🇷 and English 🇬🇧',
-    biography: 'As a passionate, m journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.',
+    biography: 'Passionate, my journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.',
     currentlyOn: 'Currently On 💡',
     activities: 'Additionally, I am actively contributing to the development of bookish-octo-invention, and seeking collaboration opportunities.',
     githubInsights: 'My GitHub Insights 📊',

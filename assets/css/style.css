@@ -227,12 +227,14 @@ p {
 
 /* Section Styles */
 section {
-  margin: 28px 10px;
+  margin: 0 10;
   padding: 20px;
   background: var(--eerie-black-2);
   border-radius: 20px;
   box-shadow: var(--vegas-gold);
   width: auto;
+  height: auto;
+   text-align: center;
 }
 
 /* List Styles */
@@ -267,8 +269,8 @@ a:visited {
 /* Image Styles */
 img {
   max-width: 70%;
-  height: auto;
-  margin: 10px auto;
+  height: 20 auto;
+  margin: 20 auto;
   width: 100%;
 }
 
@@ -451,11 +453,4 @@ footer {
   .avatar-box {
     animation: none;
   }
-}
-
-/* Responsive Design */
-main {
-  margin: 15px 12px;
-  margin-bottom: 75px;
-  min-width: 259px;
 }
