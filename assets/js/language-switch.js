@@ -73,9 +73,6 @@ function updateContent() {
       element.textContent = languageContent[currentLanguage][key];
     }
   });
-
-  
 }
-
 // Initial content update on page load
 updateContent();
