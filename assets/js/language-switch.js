@@ -20,7 +20,7 @@ const languageContent = {
     languages: 'Langues : Bon en Français 🇫🇷 et en Anglais 🇬🇧',
     biography: 'Passioné, mon parcours a commencé dans l\'enfance lorsque j\'ai commencé à programmer avec des amis, créant notre premier programme en Visual Basic pour fichier batch sur Windows XP.',
     currentlyOn: 'Actuellement en 💡',
-    activities: 'De plus, je contribue activement au développement de bookish-octo-invention, et je cherche des opportunités de collaboration.',
+    activities: 'De plus, je contribue activement au développement de bookish-octo-invention, et je cherche des opportunités de collaboration',
     githubInsights: 'Mes statistiques GitHub 📊',
     topLanguages: 'Langages les plus utilisés',
     githubStats: 'Statistiques GitHub',
@@ -33,9 +33,10 @@ const languageContent = {
 // Set the default language to English
 let currentLanguage = 'en';
 
-function toggleLanguage() {
-  // Toggle between English and French
-  currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+const button = document.getElementById('button');
+// Update button text
+button.innerText = currentLanguage === 'en' ? 'Switch to French' : 'Switch to English';
 
   // Get the button element
   var button = document.getElementById("language-switch");
@@ -59,23 +60,19 @@ function toggleLanguage() {
       textElement.textContent = "Switch to English";
       console.log("Switched to English");
   }
-  updateContent();
-}
+  function updateContent() {
+    // Get all elements with a data-lang attribute
+    const elementsToUpdate = document.querySelectorAll('[data-lang]');
 
-function updateContent() {
-  // Get all elements with a data-lang attribute
-  const elementsToUpdate = document.querySelectorAll('[data-lang]');
+    // Update the content based on the current language
+    elementsToUpdate.forEach(element => {
+      const key = element.dataset.lang;
+      if (languageContent[currentLanguage][key]) {
+        element.textContent = languageContent[currentLanguage][key];
+      }
+    });
+  }
 
-  // Update the content based on the current language
-  elementsToUpdate.forEach(element => {
-    const key = element.dataset.lang;
-    if (languageContent[currentLanguage][key]) {
-      element.textContent = languageContent[currentLanguage][key];
-    }
-  });
-
-  
-}
 
 // Initial content update on page load
 updateContent();
