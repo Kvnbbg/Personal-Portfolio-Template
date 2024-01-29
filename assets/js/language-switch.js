@@ -4,9 +4,10 @@ const languageContent = {
     aboutMe: 'About Me',
     location: 'Location: France',
     languages: 'Languages: Good in French 🇫🇷 and English 🇬🇧',
+    switchTo: 'Traduction en Français disponible!',
     biography: 'Passionate, my journey began in childhood when I started programming with friends, creating our first script in Visual Basic .batch file on Windows XP.',
     currentlyOn: 'Currently On 💡',
-    activities: 'Always open to new opportunities and collaborations. I am contributing the progress of diverse softwares.',
+    activities: 'Attentive to new opportunities and collaborations, I am contributing.',
     githubInsights: 'My GitHub Insights 📊',
     topLanguages: 'Top Languages',
     githubStats: 'GitHub Stats',
@@ -18,9 +19,10 @@ const languageContent = {
     aboutMe: 'À propos de moi',
     location: 'Localisation : France',
     languages: 'Langues : Bon en Français 🇫🇷 et en Anglais 🇬🇧',
-    biography: 'Passioné, mon parcours à commencé dans l\'enfance avec des amis, créant notre premier script Visual Basic en .batch sur Windows XP.',
+    switchTo: 'Switch to English available!',
+    biography: 'Passionné, mon parcours commence dans l\'enfance, avec des amis, créant notre premier script Visual Basic en .batch sur Windows XP.',
     currentlyOn: 'En ce moment 💡',
-    activities: 'Toujours ouvert à de nouvelles opportunités et collaborations. Je contribue au développement de divers logiciels.',
+    activities: 'Attentif à de nouvelles opportunités et collaborations, je contribue.',
     githubInsights: 'Mes statistiques GitHub 📊',
     topLanguages: 'Les langages que j\'utilise le plus sont:',
     githubStats: 'Statistiques GitHub',
@@ -29,14 +31,6 @@ const languageContent = {
     year: `© ${new Date().getFullYear()} Portfolio de /Kvnbbg - Kevin Marville`
   }
 };
-
-// ! OBFUSCATION NEEDEED BECAUSE SECURITY RISK  AT $MESSAGE !
-// Function to display a message on the page
-function showMessage(message, containerId) {
-  const container = document.getElementById(containerId);
-  container.innerHTML = `<h3>${message}</h3>`;
-}
-
 // Set the default language to English
 let currentLanguage = 'en';
 
@@ -58,15 +52,14 @@ function toggleLanguage() {
   if (button.classList.contains("active")) {
       // Set language to French
       iconElement.textContent = "🇫🇷";
-      textElement.textContent = "Switch to English available!";
+      textElement.textContent = 
+      "Switch to English";
       console.log("Switched to French!");
-      showMessage('Traduit en Français!', 'messageContainer');
   } else {
       // Set language to English
       iconElement.textContent = "🇬🇧";
-      textElement.textContent = "Traduction française disponible!";
+      textElement.textContent = "Passer en Français";
       console.log("Switched to English!");
-      showMessage('Switched to English!', 'messageContainer');
   }
   updateContent();
 }

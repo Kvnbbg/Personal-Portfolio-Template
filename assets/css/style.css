@@ -325,7 +325,47 @@ img {
   transform: scale(1.5);
 }
 
+/* Language Div Container Styles */
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  min-height: 100vh;
+}
+
+.bubble {
+  background-color: var(--eerie-black-2);
+  color: var(--white-2);
+  border-radius: 50%;
+  padding: 20px;
+  width: 80vw;
+  max-width: 400px;
+  box-shadow:0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.bubble:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.bubble p {
+  color: #333;
+}
+
 /* Language Button Styles */
+.language-button {
+  background-color: var(--jet);
+  color: var(--white-1);
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1em;
+  outline: none;
+}
+
 .language-button.active {
   background-color: #007bff;
 }
@@ -408,6 +448,19 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .bubble {
+    width: 90vw;
+    padding: 15px;
+  }
+
+  .round-button {
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 1.5em;
+  }
+
   h1 {
     font-size: 1.5em;
   }

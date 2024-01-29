@@ -9,7 +9,6 @@ Remember to leave a star ⭐️ and preview my full portfolio on the github page
 - **Interactive Elements:** Captivate visitors with smooth scrolling, engaging hover effects, and animated transitions.
 - **About Me Section:** Introduce yourself, sharing with your unique narrative skill, your passions.
 - **Resume Integration:** Present your professional journey in a structured and visually appealing format.
-- **Contact Form:** Simplify communication with a user-friendly built-in contact form.
 - **Social Media Integration:** Seamlessly connect your social media profiles for a comprehensive online presence.
 
 

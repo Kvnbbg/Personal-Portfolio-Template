@@ -92,64 +92,88 @@
       <section id="about">
           <h1  data-lang="aboutMe">About Me</h1>
           <p  data-lang="location"><strong >Location:</strong> France</p>
-        <p data-lang="languages"><strong>Languages:</strong> Good in conversational: <strong>French</strong> and <strong>English</strong></p>
-          <button id="language-switch" onclick="toggleLanguage()" class="language-button">
-            <span class="language-icon">🇫🇷</span>
-            <span class="language-text">Switch to French</span>
-            <div id="messageContainer" class=""></div>
-        </button>
-
+        <p data-lang="languages"><strong>Languages:</strong> Good in <strong>French</strong> and <strong>English</strong></p>
+            <div class="bubble-container">
+                <div class="bubble">
+                    <p data-lang="switchTo">This website is available in French and English.
+                    </p>
+                <button id="language-switch" onclick="toggleLanguage()" class="language-button">
+                    <span class="language-icon">🇫🇷</span>
+                    <span class="language-text">Switch to French</span>
+                </button>
+            </div>
+        </div>
           <br> 
           <section id="certifications">
-            <a href="https://www.linkedin.com/in/kvnbbg"
-            target="_blank">
-            <div class="certifications-container">
+            <div class="certifications-container"> 
+                
+                <!-- Open link in new tab -->
+                <a href="https://www.linkedin.com/in/kvnbbg"
+                target="_blank">
 
+                <!-- Certification item: game dev -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_game_dev.png" alt="Certification Game Dev">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: responsive design -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_responsive_web_design.png" alt="Certification Responsive Web Design">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: HTML -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_HTML.png" alt="Certification HTML">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: php -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_php.png" alt="Certification php ">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: python -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_python_intermediate.png" alt="Certification Python Intermediate">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: python -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_python_introduction.png" alt="Certification 2">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: javascript -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_javascript.png" alt="Certification javascript">
                     <div class="info-bubble"></div>
                 </div>
+
+                <!-- Certification item: tech for everyone -->
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_tech_for_every_one.png" alt="Certification tech for every one">
                     <div class="info-bubble"><p>TEST: info buble</p></div>
                 </div> 
             </a>
-                <br> 
-                <section id="biography">
+                <!-- Item: biography picture-->
                 <div class="certification-item">
                     <figure class="avatar-box">
-                        <img src="/assets/images/certif/my_picture.png" alt="My picture of me" width="80">
+                        <img src="/assets/images/certif/my_picture.png" alt="My picture of me" width="80%">
                     </figure>
                 </div>
+
+                <!-- Item: biography text-->
+                <section id="biography">
                 <div class="biography-text">
                     <p data-lang="biography">
                         As a passionate, my journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.</p>
                 </div>
             </section>
+            </div>
         </section>
 
     <br> 
