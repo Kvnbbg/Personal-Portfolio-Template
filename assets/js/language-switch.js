@@ -3,7 +3,7 @@ const languageContent = {
   en: {
     aboutMe: 'About Me',
     location: 'Location: France',
-    languages: 'Languages: Good in French 🇫🇷 and English 🇬🇧',
+    languages: 'Languages: Good in French and English',
     switchTo: 'Traduction en Français disponible!',
     biography: 'Passionate, my journey began in childhood when I started programming with friends, creating our first script in Visual Basic .batch file on Windows XP.',
     currentlyOn: 'Currently On 💡',
@@ -18,7 +18,7 @@ const languageContent = {
   fr: {
     aboutMe: 'À propos de moi',
     location: 'Localisation : France',
-    languages: 'Langues : Bon en Français 🇫🇷 et en Anglais 🇬🇧',
+    languages: 'Langues : Bon en Français et en Anglais',
     switchTo: 'Switch to English available!',
     biography: 'Passionné, mon parcours commence dans l\'enfance, avec des amis, créant notre premier script Visual Basic en .batch sur Windows XP.',
     currentlyOn: 'En ce moment 💡',
@@ -51,13 +51,13 @@ function toggleLanguage() {
   // Check if the button is active to determine the language
   if (button.classList.contains("active")) {
       // Set language to French
-      iconElement.textContent = "🇫🇷";
+      iconElement.textContent = "🇬🇧🇺🇸🇨🇦";
       textElement.textContent = 
       "Switch to English";
       console.log("Switched to French!");
   } else {
       // Set language to English
-      iconElement.textContent = "🇬🇧";
+      iconElement.textContent = "🇫🇷🇺🇸🇨";
       textElement.textContent = "Passer en Français";
       console.log("Switched to English!");
   }
