@@ -95,13 +95,13 @@
 
   --animation-duration: 4s;
   --animation-delay: 2s;
-  --animation-slide-duration: 12s;
+  --animation-slide-duration: 6s;
   --transition-duration: 0.3s;
-  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   --box-width-height: 60px;
   --animation-transition-background-color: darkgoldenrod;
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+  --transition-1: 0.2s ease;
+  --transition-2: 0.3s ease-in-out;
 }
 
 /* Global Styles */
@@ -197,26 +197,30 @@ main {
 
 @keyframes onlineAnimation {
   0% {
-    background-color: blueviolet;
+    background-color: var(--bg-gradient-yellow-1);
     transform: scale(0);
   }
   100% {
-    background-color: lawngreen;
+    background-color: var(--bg-gradient-yellow-2);
     transform: scale(1.3);
   }
 }
 
 @keyframes offlineAnimation {
   0% {
-    background-color: blueviolet;
+    background-color: var(--bg-gradient-jet);
   }
-  25%,
-  50%,
+  25% {
+    background-color: var(--bg-gradient-yellow);
+  }
+  50% {
+    background-color: var(--bg-gradient-yellow-1);
+  }
   75% {
-    background-color: lightseagreen;
+    background-color: var(--smoky-black);
   }
   100% {
-    background-color: darkviolet;
+    background-color: var(--bg-gradient-jet);
   }
 }
 
@@ -235,7 +239,7 @@ section {
   box-shadow: var(--vegas-gold);
   width: auto;
   height: auto;
-   text-align: center;
+  text-align: center;
 }
 
 /* List Styles */
@@ -327,12 +331,10 @@ img {
 
 /* Language Div Container Styles */
 .bubble-container {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  min-height: 100vh;
 }
 
 .bubble {
@@ -342,16 +344,16 @@ img {
   padding: 20px;
   width: 80vw;
   max-width: 400px;
-  box-shadow:0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .bubble:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+  animation: shake 1s 5; /* 5 iterations */
+  animation-delay: 2s; /* 2 seconds delay between each iteration */
 }
 
 .bubble p {
-  color: #333;
+  color: var(--white-2);
 }
 
 /* Language Button Styles */
@@ -378,24 +380,16 @@ img {
   display: inline;
 }
 
-/* Shake Animation */
+/* Shake and Dance Animation */
 @keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
   }
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: translateX(-5px);
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateY(-5px) rotate(-5deg);
   }
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translateX(5px);
+  20%, 40%, 60%, 80% {
+    transform: translateY(5px) rotate(5deg);
   }
 }
 
@@ -453,7 +447,7 @@ footer {
     padding: 15px;
   }
 
-  .round-button {
+  .language-button {
     padding: 10px;
   }
 
