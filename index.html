@@ -90,13 +90,15 @@
       <br>
       <main>
       <section id="about">
-          <h2  data-lang="aboutMe">About Me</h2>
+          <h1  data-lang="aboutMe">About Me</h1>
           <p  data-lang="location"><strong >Location:</strong> France</p>
-        <p data-lang="languages"><strong>Languages:</strong> Good in conversational  <strong>French</strong> and <strong>English</strong></p>
+        <p data-lang="languages"><strong>Languages:</strong> Good in conversational: <strong>French</strong> and <strong>English</strong></p>
           <button id="language-switch" onclick="toggleLanguage()" class="language-button">
             <span class="language-icon">🇫🇷</span>
-            <span class="language-text">Switch to French language</span>
+            <span class="language-text">Switch to French</span>
+            <div id="messageContainer" class=""></div>
         </button>
+
           <br> 
           <section id="certifications">
             <a href="https://www.linkedin.com/in/kvnbbg"
@@ -133,26 +135,27 @@
                 </div>
                 <div class="certification-item">
                     <img src="/assets/images/certif/certificat_tech_for_every_one.png" alt="Certification tech for every one">
-                    <div class="info-bubble"></div>
+                    <div class="info-bubble"><p>TEST: info buble</p></div>
+                </div> 
+            </a>
+                <br> 
+                <section id="biography">
+                <div class="certification-item">
+                    <figure class="avatar-box">
+                        <img src="/assets/images/certif/my_picture.png" alt="My picture of me" width="80">
+                    </figure>
                 </div>
-            </div>
-        </a>
+                <div class="biography-text">
+                    <p data-lang="biography">
+                        As a passionate, my journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.</p>
+                </div>
+            </section>
         </section>
-        <br> 
-  
-      <section id="biography">
-        <figure class="avatar-box">
-            <img src="/assets/images/certif/my_picture.png" alt="My picture of me" width="80">
-        </figure>
-        <div class="biography-text">
-            <p data-lang="biography">
-                As a passionate, m journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.</p>
-        </div>
-    </section>
+
     <br> 
 
       <section id="currently">
-        <h2 data-lang="currentlyOn">Currently On 💡</h2>
+        <h1 data-lang="currentlyOn">Currently On 💡</h1>
         <div class="current-activities">
             <p data-lang="activities">
                 I am actively contributing to the progress of diverse software projects. I'm always open to new opportunities and collaborations
@@ -162,15 +165,15 @@
     <br> 
 
 <section id="github">
-  <h2 data-lang="githubInsights">My GitHub Insights 📊</h2>
+  <h1 data-lang="githubInsights">My GitHub Insights 📊</h1>
   <div class="github-stats">
       <div class="github-stat">
-          <h3 data-lang="topLanguages">Top Languages</h3>
+          <h2 data-lang="topLanguages">Top Languages</h2>
           <a href="https://github.com/kvnbbg" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact" alt="Top Languages"></a>
       </div>
       <div class="github-stat">
-          <h3 data-lang="githubStats">GitHub Stats</h3>
+          <h2 data-lang="githubStats">GitHub Stats</h2>
           <a href="https://github.com/kvnbbg" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical" alt="GitHub Stats"></a>
       </div>
@@ -179,7 +182,7 @@
 <br> 
 
 <section id="connect">
-  <h2 data-lang="connect">Connect 💻</h2>
+  <h1 data-lang="connect">Connect 💻</h1>
   <p data-lang="reachOut">
       Feel free to reach out to me via email or social media.
   </p>

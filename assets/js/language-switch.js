@@ -30,6 +30,13 @@ const languageContent = {
   }
 };
 
+// ! OBFUSCATION NEEDEED BECAUSE SECURITY RISK  AT $MESSAGE !
+// Function to display a message on the page
+function showMessage(message, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = `<h3>${message}</h3>`;
+}
+
 // Set the default language to English
 let currentLanguage = 'en';
 
@@ -51,15 +58,15 @@ function toggleLanguage() {
   if (button.classList.contains("active")) {
       // Set language to French
       iconElement.textContent = "🇫🇷";
-      textElement.textContent = "Traduction française disponible";
-      console.log("Switched to French");
-      textElement.textContent = "Page traduite en français";
+      textElement.textContent = "Switch to English available!";
+      console.log("Switched to French!");
+      showMessage('Traduit en Français!', 'messageContainer');
   } else {
       // Set language to English
       iconElement.textContent = "🇬🇧";
-      textElement.textContent = "Switch to English available";
-      console.log("Switched to English");
-      textElement.textContent = "Switched to English";
+      textElement.textContent = "Traduction française disponible!";
+      console.log("Switched to English!");
+      showMessage('Switched to English!', 'messageContainer');
   }
   updateContent();
 }
