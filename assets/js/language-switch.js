@@ -57,7 +57,7 @@ function toggleLanguage() {
       console.log("Switched to French!");
   } else {
       // Set language to English
-      iconElement.textContent = "🇫🇷🇺🇸🇨";
+      iconElement.textContent = "🇫🇷🇨🇦";
       textElement.textContent = "Passer en Français";
       console.log("Switched to English!");
   }
