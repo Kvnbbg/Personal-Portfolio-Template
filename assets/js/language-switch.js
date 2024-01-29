@@ -4,28 +4,28 @@ const languageContent = {
     aboutMe: 'About Me',
     location: 'Location: France',
     languages: 'Languages: Good in French 🇫🇷 and English 🇬🇧',
-    biography: 'Passionate, my journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.',
+    biography: 'Passionate, my journey began in childhood when I started programming with friends, creating our first script in Visual Basic .batch file on Windows XP.',
     currentlyOn: 'Currently On 💡',
-    activities: 'Additionally, I am actively contributing to the development of bookish-octo-invention, and seeking collaboration opportunities.',
+    activities: 'Always open to new opportunities and collaborations. I am contributing the progress of diverse softwares.',
     githubInsights: 'My GitHub Insights 📊',
     topLanguages: 'Top Languages',
     githubStats: 'GitHub Stats',
     connect: 'Connect 💻',
-    reachOut: 'Feel free to reach out to me via email or social media. I\'m always open to new opportunities and collaborations.',
+    reachOut: 'Feel free to reach out to me via email or social media.',
     year: `©  ${new Date().getFullYear()} Portfolio of /Kvnbbg - Kevin Marville`
   },
   fr: {
     aboutMe: 'À propos de moi',
     location: 'Localisation : France',
     languages: 'Langues : Bon en Français 🇫🇷 et en Anglais 🇬🇧',
-    biography: 'Passioné, mon parcours a commencé dans l\'enfance lorsque j\'ai commencé à programmer avec des amis, créant notre premier programme en Visual Basic pour fichier batch sur Windows XP.',
-    currentlyOn: 'Actuellement en 💡',
-    activities: 'De plus, je contribue activement au développement de bookish-octo-invention, et je cherche des opportunités de collaboration.',
+    biography: 'Passioné, mon parcours à commencé dans l\'enfance avec des amis, créant notre premier script Visual Basic en .batch sur Windows XP.',
+    currentlyOn: 'En ce moment 💡',
+    activities: 'Toujours ouvert à de nouvelles opportunités et collaborations. Je contribue au développement de divers logiciels.',
     githubInsights: 'Mes statistiques GitHub 📊',
-    topLanguages: 'Langages les plus utilisés',
+    topLanguages: 'Les langages que j\'utilise le plus sont:',
     githubStats: 'Statistiques GitHub',
     connect: 'Connectez-vous 💻',
-    reachOut: 'N\'hésitez pas à me contacter par e-mail ou sur les réseaux sociaux. Je suis toujours ouvert à de nouvelles opportunités et collaborations.',
+    reachOut: 'N\'hésitez pas à me contacter par e-mail ou sur les réseaux sociaux.',
     year: `© ${new Date().getFullYear()} Portfolio de /Kvnbbg - Kevin Marville`
   }
 };
@@ -51,13 +51,15 @@ function toggleLanguage() {
   if (button.classList.contains("active")) {
       // Set language to French
       iconElement.textContent = "🇫🇷";
-      textElement.textContent = "Switch to French";
+      textElement.textContent = "Traduction française disponible";
       console.log("Switched to French");
+      textElement.textContent = "Page traduite en français";
   } else {
       // Set language to English
       iconElement.textContent = "🇬🇧";
-      textElement.textContent = "Switch to English";
+      textElement.textContent = "Switch to English available";
       console.log("Switched to English");
+      textElement.textContent = "Switched to English";
   }
   updateContent();
 }
