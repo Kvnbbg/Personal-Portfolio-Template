@@ -78,3 +78,9 @@ function updateContent() {
 }
 // Initial content update on page load
 updateContent();
+
+// Cybermalveillance
+    function improveMessage() {
+        var importantMessage = document.getElementById("importantMessage");
+        importantMessage.style.display = "none";
+    }
