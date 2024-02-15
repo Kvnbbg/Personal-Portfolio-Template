@@ -111,10 +111,14 @@ html {
 }
 
 body {
+  background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  border-radius: 20px;
+  background-image: url("assets/images/bg/bg0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: ;
   font-family: var(--ff-poppins), sans-serif;
 }
 
