@@ -113,7 +113,7 @@ html {
 body {
   background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
   border-radius: 20px;
-  background-image: url("assets/images/bg/bg0.jpg");
+  background-image: url("assets/images/bg/bg0.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
@@ -160,6 +160,7 @@ main {
 }
 
 .heading-letter {
+  animation: onlineAnimation 7s infinite;
   font-size: 1.5em;
   margin: 0 0.1em;
   display: inline-block;
@@ -352,8 +353,8 @@ img {
 }
 
 .bubble:hover {
-  animation: shake 1s 5; /* 5 iterations */
-  animation-delay: 2s; /* 2 seconds delay between each iteration */
+  animation: heartbeatAnimation var(--animation-slide-duration) infinite alternate ease-in-out var(--animation-delay);
+  transition: background-color var(--animation-transition-background-color);
 }
 
 .bubble p {
@@ -378,6 +379,8 @@ img {
 
 .language-button.active:hover {
   background-color: #0056b3;
+  animation: shake 1s 5; /* 5 iterations */
+  animation-delay: 2s; /* 2 seconds delay between each iteration */
 }
 
 .language-button.active .language-text {
@@ -429,14 +432,15 @@ footer {
   position: sticky;
   bottom: 0;
   width: 100%;
-  height: auto;
+  height: 15%;
+  animation: backgroundSpace var(--animation-slide-duration) infinite alternate ease-in-out var(--animation-delay);
+  transition: background-color var(--animation-transition-background-color);
 }
 
 /* Avatar Box Styles */
 .avatar-box {
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   border-radius: 20px;
-  background-image: url("assets/images/bg/bg1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   animation: heartbeatAnimation var(--animation-slide-duration) infinite alternate ease-in-out var(--animation-delay);
