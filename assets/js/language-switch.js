@@ -12,6 +12,8 @@ const languageContent = {
     topLanguages: 'Top Languages',
     githubStats: 'GitHub Stats',
     connect: 'Connect 💻',
+    leisureContact: 'My Leisure',
+    professionalContact: 'Professional Contact',
     reachOut: 'Feel free to reach out to me via email or social media.',
     year: `©  ${new Date().getFullYear()} Portfolio of /Kvnbbg - Kevin Marville`
   },
@@ -26,7 +28,9 @@ const languageContent = {
     githubInsights: 'Mes statistiques GitHub 📊',
     topLanguages: 'Les langages que j\'utilise le plus sont:',
     githubStats: 'Statistiques GitHub',
-    connect: 'Connectez-vous 💻',
+    connect: 'Se connecter à moi 💻',
+    leisureContact: 'Mes Loisirs',
+    professionalContact: 'Contact Pro',
     reachOut: 'N\'hésitez pas à me contacter par e-mail ou sur les réseaux sociaux.',
     year: `© ${new Date().getFullYear()} Portfolio de /Kvnbbg - Kevin Marville`
   }
