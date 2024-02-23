@@ -28,6 +28,10 @@
   --transition-fast: 0.2s ease-in-out;
 }
 
+html {
+  text-align: center;
+}
+
 body {
   font-family: var(--font-primary);
   color: var(--color-primary);
