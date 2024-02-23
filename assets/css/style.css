@@ -1,138 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
-  /* Simplified color palette for readability and consistency */
-  --color-primary: #282828; /* Dark gray for text */
-  --color-secondary: #04C2C9; /* Cyan for accents */
-  --color-background: #FFFFFF; /* White background */
-  --color-footer: #F3F3F3; /* Light gray for footer */
+  /* Enhanced color palette for a modern, professional look */
+  --color-primary: #333; /* Darker gray for stronger contrast */
+  --color-secondary: #007bff; /* Bootstrap's primary blue for a vibrant accent */
+  --color-background: #fff; /* Pure white for clarity and space */
+  --color-footer: #f8f9fa; /* Light gray for footer, slightly lighter for separation */
 
-  /* Spacing for layout consistency */
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 32px;
-  --spacing-xlarge: 64px;
+  /* Refined spacing for a clean, uncluttered layout */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-xlarge: 3rem;
 
-  /* Typography for better readability */
+  /* Updated typography for readability and professionalism */
   --font-primary: 'Poppins', sans-serif;
-  --font-size-normal: 16px;
-  --font-size-large: 24px;
+  --font-size-base: 1rem; /* 16px for body text */
+  --font-size-large: 1.25rem; /* 20px for headings */
   --font-weight-normal: 400;
   --font-weight-bold: 600;
 
-  /* Other design tokens */
-  --border-radius: 8px;
-  --shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+  /* Design tokens for consistent theming */
+  --border-radius: 0.5rem;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+  /* Transition for smooth hover effects */
+  --transition-fast: 0.2s ease-in-out;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: var(--font-primary);
   color: var(--color-primary);
   background-color: var(--color-background);
-  line-height: 1.5;
+  line-height: 1.6;
+  margin: 0;
+  padding: var(--spacing-medium) var(--spacing-large);
 }
 
-/* Header & Navigation */
-.header {
-  background-color: var(--color-background);
+.container {
+  max-width: 960px;
+  margin: auto;
   padding: var(--spacing-medium);
-  box-shadow: var(--shadow);
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-link {
-  color: var(--color-primary);
-  text-decoration: none;
-  margin-right: var(--spacing-large);
-  font-weight: var(--font-weight-normal);
-}
-
-.nav-link:last-child {
-  margin-right: 0;
-}
-
-/* Button Styles */
-.btn-primary {
-  background-color: var(--color-secondary);
-  color: var(--color-background);
-  border: none;
-  padding: var(--spacing-small) var(--spacing-medium);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: darken(var(--color-secondary), 10%);
-}
-
-/* Utility Classes */
+/* Centering content */
 .text-center {
   text-align: center;
 }
 
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .nav-link {
-    margin-bottom: var(--spacing-small);
-  }
-
-  .btn-primary {
-    width: 100%; /* Full width buttons on smaller screens */
-  }
+/* Navigation & Header Styling */
+.navbar {
+  margin-bottom: var(--spacing-large);
 }
 
-/* Footer Styles */
+/* Enhancing buttons and links */
+.btn-primary, .nav-link {
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, .btn-primary:hover {
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Image hover effect to enlarge */
+img:hover {
+  transform: scale(1.05); /* Enlarge images slightly on hover */
+  transition: transform var(--transition-fast);
+  z-index: 10; /* Ensure image is above other content */
+}
+
+/* Footer styling for clear separation from content */
 footer {
   background-color: var(--color-footer);
-  padding: var(--spacing-medium) var(--spacing-large);
-  text-align: center;
-  font-size: var(--font-size-normal);
+  padding: var(--spacing-medium) 0;
+  margin-top: var(--spacing-large);
 }
 
-/* Improvements to the certification and other sections */
-.certifications-container,
+/* Section styling for uncluttered look */
 .section {
-  padding: var(--spacing-medium);
-  margin: var(--spacing-large) 0;
-}
-
-.section {
-  background-color: #F9F9F9;
+  margin-bottom: var(--spacing-xlarge);
+  padding: var(--spacing-large);
+  background-color: #F9F9F9; /* Slight off-white for depth */
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 }
 
-/* General Responsiveness and Aesthetics */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacing-medium);
-}
-
-/* Correcting animations for clarity */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.heading-letter, .bubble, .certification-item {
-  animation: fadeIn 0.5s ease-in-out;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar, .container, footer {
+    padding: var(--spacing-small);
+  }
+  .section {
+    margin-bottom: var(--spacing-large);
+  }
 }
