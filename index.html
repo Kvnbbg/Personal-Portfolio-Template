@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lpygTIlFQ8N3lKB0T7RkFqzL0/7miNYrHnfbT7Wpu7UjVz3LUw6qvFZR8VUhRqGf" crossorigin="anonymous"></script>
+
     <!-- Open Graph meta tags for better sharing on social media -->
     <meta property="og:title" content="vCard - Personal Portfolio">
     <meta property="og:description" content="Kevin Marville portfolio: A fusion of creative web design, programming expertise, and captivating projects.">
@@ -87,7 +90,33 @@
           <h1 class="heading-letter" data-lang="welcome">o</h1>
           <br> 
       </header>
-      <br>
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Kevin MARVILLE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certifications">Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#github">GitHub Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#connect">Connect</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
       <main>
       <section id="about">
           <h1  data-lang="aboutMe">About Me</h1>
@@ -211,9 +240,7 @@
 </section>
 <br> 
 
-          <section id="connect">
-  <h1 data-lang="connect">Connect 💻</h1>
-
+ <section id="connect">
   <!-- Professional Contact -->
   <div id="professional-contact" data-lang="professionalContact">
     <h2>Professional Contact</h2>
@@ -221,43 +248,69 @@
     <ul>
       <li data-lang="email">
         <strong>Email:</strong>
-        <a href="mailto:kevinmarville@gmail.com" target="_blank">KevinMarville@kvnbbg-creations.io</a>
-      </li>
-      <li data-lang="linkedin">
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/kvnbbg" target="_blank">/kvnbbg</a>
+        <a href="mailto:code@kvnbbg-creations.io" target="_blank">code@kvnbbg-creations.io</a>
       </li>
     </ul>
   </div>
 
-  <!-- Leisure Gates Contact -->
-  <div id="leisure-contact" data-lang="leisureContact">
-    <h2>Leisure Gates & Some Contact</h2>
+  <!-- Sponsor -->
+    <h2>Sponsor</h2>
     <ul>
       <li data-lang="koFi">
-        <strong>Ko-fi:</strong>
-        <a href="https://ko-fi.com/kvnbbg" target="_blank">/kvnbbg</a>
+        <strong>Tip</strong>
+        <a href="https://ko-fi.com/kvnbbg" target="_blank">🎯kvnbbg</a>
       </li>
       <li data-lang="soundCloud">
-        <strong>SoundCloud:</strong>
-        <a href="https://soundcloud.com/kvnbbg" target="_blank">/kvnbbg</a>
-      </li>
-      <li data-lang="twitch">
-        <strong>Twitch:</strong>
-        <a href="https://www.twitch.tv/kvnbbg" target="_blank">/kvnbbg</a>
-      </li>
-      <li data-lang="youtube">
-        <strong>YouTube:</strong>
-        <a href="https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw" target="_blank">/kvnbbg</a>
+        <strong>Stream</strong>
+        <a href="https://soundcloud.com/kvnbbg" target="_blank">🎙️kvnbbg</a>
       </li>
     </ul>
-  </div>
 </section>
 
 </main>
-  <footer>
-    <p data-lang="year">© 2024 Portfolio of /Kvnbbg - Kevin Marville</p>
-</footer>
+       <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with me on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"><a href="https://www.twitter.com/techandream" target="_blank">twitter: techandstream</a></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"><a href="https://www.instagram.com/kvnbbg" target="_blank">instagram: kvnbbg</a></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"><a href="https://www.linkedin.com/in/kvnbbg" target="_blank">linkedin: kvnbbg</a></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"><a href="https://www.github.com/kvnbbg" target="_blank">github: kvnbbg</a></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block" data-lang="year">
+                <span>© 2024 Portfolio of Kevin Marville - All rights reserved.</span>
+            </div>
+            <!-- Left -->
+        </section>
+
+    </footer>
   <script src="/assets/js/script.js"></script>
     <script src="/assets/js/language-switch.js"></script>
   <script type="module" src="https:/unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
