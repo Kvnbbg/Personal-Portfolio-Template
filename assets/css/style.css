@@ -1,43 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
-  /* Color palette */
-  --color-bg-primary: hsl(240, 2%, 13%);
-  --color-bg-secondary: hsl(0, 0%, 19%);
-  --color-text-primary: hsl(0, 0%, 100%);
-  --color-text-secondary: hsl(0, 0%, 98%);
-  --color-accent: hsl(45, 100%, 72%);
-  --color-accent-dark: hsl(45, 54%, 58%);
+  /* Simplified color palette for readability and consistency */
+  --color-primary: #282828; /* Dark gray for text */
+  --color-secondary: #04C2C9; /* Cyan for accents */
+  --color-background: #FFFFFF; /* White background */
+  --color-footer: #F3F3F3; /* Light gray for footer */
 
-  /* Font sizing */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-lg: 1.25rem; /* 20px */
-  --font-size-md: 1rem; /* 16px */
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-xs: 0.75rem; /* 12px */
+  /* Spacing for layout consistency */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+  --spacing-xlarge: 64px;
 
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 3rem;
-  --spacing-xl: 4rem;
+  /* Typography for better readability */
+  --font-primary: 'Poppins', sans-serif;
+  --font-size-normal: 16px;
+  --font-size-large: 24px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
 
-  /* Borders */
-  --border-radius-sm: 0.25rem;
-  --border-radius-md: 0.5rem;
-  --border-radius-lg: 1rem;
-
-  /* Shadows */
-  --shadow-sm: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0px 20px 25px -5px rgba(0, 0, 0, 0.2), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  /* Fonts */
-  --font-family-primary: 'Poppins', sans-serif;
-
-  /* Transitions */
-  --transition-default: all 0.3s ease;
+  /* Other design tokens */
+  --border-radius: 8px;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 *,
@@ -49,65 +34,105 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-family-primary);
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
-  line-height: 1.6;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  line-height: 1.5;
 }
 
-/* Utility classes for text alignment */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-/* Responsive typography */
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+/* Header & Navigation */
+.header {
+  background-color: var(--color-background);
+  padding: var(--spacing-medium);
+  box-shadow: var(--shadow);
 }
 
-h1 { font-size: 2rem; } /* Example for heading 1 */
-p { margin-top: 0; }
-
-/* Responsive containers */
-.container {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: var(--spacing-md);
-  padding-left: var(--spacing-md);
-}
-
-/* Navigation Styles */
 .navbar {
-  background-color: var(--color-bg-secondary);
-  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Buttons - Example for a primary button */
+.nav-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-right: var(--spacing-large);
+  font-weight: var(--font-weight-normal);
+}
+
+.nav-link:last-child {
+  margin-right: 0;
+}
+
+/* Button Styles */
 .btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-primary);
-  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-secondary);
+  color: var(--color-background);
   border: none;
-  border-radius: var(--border-radius-md);
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--border-radius);
   cursor: pointer;
-  transition: var(--transition-default);
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-dark);
+  background-color: darken(var(--color-secondary), 10%);
 }
 
-/* Media queries for responsive design */
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
-  h1 { font-size: 1.75rem; } /* Adjusting font size for smaller screens */
-  
-  .container {
-    padding-right: var(--spacing-sm);
-    padding-left: var(--spacing-sm);
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    margin-bottom: var(--spacing-small);
+  }
+
+  .btn-primary {
+    width: 100%; /* Full width buttons on smaller screens */
   }
 }
 
-/* More responsive adjustments as needed */
+/* Footer Styles */
+footer {
+  background-color: var(--color-footer);
+  padding: var(--spacing-medium) var(--spacing-large);
+  text-align: center;
+  font-size: var(--font-size-normal);
+}
+
+/* Improvements to the certification and other sections */
+.certifications-container,
+.section {
+  padding: var(--spacing-medium);
+  margin: var(--spacing-large) 0;
+}
+
+.section {
+  background-color: #F9F9F9;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* General Responsiveness and Aesthetics */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-medium);
+}
+
+/* Correcting animations for clarity */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.heading-letter, .bubble, .certification-item {
+  animation: fadeIn 0.5s ease-in-out;
+}
