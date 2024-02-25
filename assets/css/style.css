@@ -1,59 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 :root {
-  --color-primary: #333; /* Dark shade for text */
-  --color-secondary: #fff; /* White for backgrounds */
-  --color-accent: #007bff; /* Bootstrap primary blue for accents */
-  --color-background: #f8f9fa; /* Light grey background */
-  --font-primary: 'Poppins', sans-serif;
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-  --border-radius: 4px;
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --transition-speed: 0.3s ease;
+  --color-background: #f0f0f0;
+  --color-text: #333;
+  --color-primary: #007bff;
+  --color-accent: #ff4081;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --font-lg: 1.25rem;
+  --transition-speed: 0.3s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: var(--font-primary);
-  color: var(--color-primary);
+  font-family: Arial, sans-serif;
   background-color: var(--color-background);
-  margin: 0;
-  padding-top: var(--spacing-md);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+.certification-item, .github-stat {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
 }
 
-a {
-  color: var(--color-accent);
-  transition: color var(--transition-speed);
-}
-
-a:hover, a:focus {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.navbar {
+.certification-item img, .github-stat img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
-
-.nav-link {
-  transition: color var(--transition-speed);
-}
-
-.nav-link:hover, .nav-link:focus {
-  color: var(--color-primary);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
   font-weight: 600;
   font-size: 2rem;
   margin-bottom: var(--spacing-md);
 }
+.heading-letter {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  opacity: 0; /* Initial state for animation */
+  animation: fadeInUp 0.8s ease forwards; /* Apply the animation */
+  cursor: pointer;
+}
+
+/* Apply staggered animation delays */
+.heading-letter:nth-child(1) { animation-delay: 0.1s; }
+.heading-letter:nth-child(2) { animation-delay: 0.2s; }
+.heading-letter:nth-child(3) { animation-delay: 0.3s; }
+.heading-letter:nth-child(4) { animation-delay: 0.4s; }
+.heading-letter:nth-child(5) { animation-delay: 0.5s; }
+.heading-letter:nth-child(6) { animation-delay: 0.6s; }
+.heading-letter:nth-child(7) { animation-delay: 0.7s; }
+.heading-letter:nth-child(8) { animation-delay: 0.8s; }
+.heading-letter:nth-child(9) { animation-delay: 0.9s; }
+
+.heading-letter:hover {
+  transform: scale(1.1);
+  color: var(--color-accent);
+}
+
+@media screen and (max-width: 768px) {
+  .heading-letter {
+    font-size: 2rem; /* Adjust font size for smaller screens to ensure responsiveness */
+    animation-delay: 0s; /* Optionally, reset or adjust animation delays for rapid appearance */
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center container */
+  padding: 0 var(--spacing-md);
+  text-align: center; /* Center-align text */
+}
+
+/* Target the body or a specific container to center all text within */
+body, .container {
+  text-align: center; /* Centers text for inline elements and text content */
+}
+
+/* To center block-level elements or inline elements within the container */
+.container > * {
+  display: flex; /* Use flexbox to center children */
+  justify-content: center; /* Horizontally center flex items */
+  flex-direction: column; /* Stack flex items vertically */
+  align-items: center; /* Vertically center items for when they are in a column layout */
+}
+
+/* Force all elements within the container to display inline */
+.container > * {
+  display: inline-block; /* Display elements inline with block properties */
+  margin: 0 auto; /* Additional centering for block elements if necessary */
+}
+
+/* Ensure all text within specific elements is centered, useful for inline elements */
+.container span, .container a, .container p {
+  text-align: center; /* Center text within these elements */
+  display: block; /* Make inline elements behave like block elements to respect text-align */
+}
+
+
+.header,
+.footer {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  min-height: 100vh;
+}
 
 .section {
   padding: var(--spacing-lg) var(--spacing-md); /* Ensure ample padding for readability and comfort */
+  margin: var(--spacing-lg) 0;
   text-align: center; /* Center-align text for a polished, focused look */
   transition: background-color var(--transition-speed); /* Smooth background transition for interactive hover effect */
 }
@@ -126,17 +214,68 @@ a:hover, a:focus {
   }
 }
 
-
-.certification-item, .github-stat {
-  margin-bottom: var(--spacing-md);
-  text-align: center;
+.section img {
+  max-width: 100%; /* Ensure images are not too big */
+  height: auto; /* Maintain aspect ratio */
+  margin: var(--spacing-md) 0; /* Add some space around images */
 }
 
-.certification-item img, .github-stat img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
+/* Remove text decorations from links */
+
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline; /* Optional: underline on hover for visual feedback */
+}
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.navbar {
   box-shadow: var(--box-shadow);
+}
+
+.nav-link {
+  transition: color var(--transition-speed);
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: var(--color-primary);
+}
+
+
+
+/* Styling for unordered lists */
+ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+ul li {
+  padding: var(--spacing-md) 0; /* Space out list items */
+}
+
+.button {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color var(--transition-speed);
+}
+
+.button:hover {
+  background-color: darken(var(--color-accent), 10%);
 }
 
 footer {
@@ -202,24 +341,18 @@ footer a:hover {
   }
 }
 
+/* Responsive adjustments */
 @media (min-width: 768px) {
-  .container, .container-fluid {
-    padding-right: var(--spacing-md);
-    padding-left: var(--spacing-md);
+  .container {
+    padding: 0 var(--spacing-lg);
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-brand, .nav-link {
-    text-align: center;
-    margin: auto;
-  }
+/* Specific adjustments for your images */
+.img-small {
+  width: 50%; /* Adjust based on your needs */
+}
 
-  .heading {
-    font-size: 1.5rem;
-  }
-
-  .section {
-    padding: var(--spacing-md);
-  }
+.img-large {
+  width: 100%; /* Adjust based on your needs */
 }
