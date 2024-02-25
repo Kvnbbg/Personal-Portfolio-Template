@@ -1,40 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 :root {
-  /* Enhanced color palette for a modern, professional look */
-  --color-primary: #333; /* Darker gray for stronger contrast */
-  --color-secondary: #007bff; /* Bootstrap's primary blue for a vibrant accent */
-  --color-background: #fff; /* Pure white for clarity and space */
-  --color-footer: #f8f9fa; /* Light gray for footer, slightly lighter for separation */
-
-  /* Refined spacing for a clean, uncluttered layout */
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 2rem;
-  --spacing-xlarge: 3rem;
-
-  /* Updated typography for readability and professionalism */
-  --font-primary: 'Poppins', sans-serif;
-  --font-size-base: 1rem; /* 16px for body text */
-  --font-size-large: 1.25rem; /* 20px for headings */
-  --font-weight-normal: 400;
-  --font-weight-bold: 600;
-
-  /* Design tokens for consistent theming */
-  --border-radius: 0.5rem;
-  --shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-  /* Transition for smooth hover effects */
-  --transition-fast: 0.2s ease-in-out;
+  --color-primary: #4a4e69; /* Deep indigo, reminiscent of ink */
+  --color-secondary: #f2e9e4; /* Soft off-white, inspired by rice paper */
+  --color-accent: #c9ada7; /* Subdued pink, reflecting cherry blossoms */
+  --color-background: #9a8c98; /* Light purple-grey, evoking early morning mist */
+  
+  --font-primary: 'Noto Sans JP', sans-serif;
+  
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+  
+  --border-radius: 4px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body {
   font-family: var(--font-primary);
   color: var(--color-primary);
-  background-color: var(--color-background);
+  background-color: var(--color-secondary);
   line-height: 1.6;
-  margin: 0;
-  padding: var(--spacing-medium) var(--spacing-large);
 }
 
 .container {
@@ -43,54 +29,30 @@ body {
   padding: var(--spacing-medium);
 }
 
-/* Centering content */
 .text-center {
   text-align: center;
 }
 
-/* Navigation & Header Styling */
-.navbar {
-  margin-bottom: var(--spacing-large);
+.bg-light {
+  background-color: var(--color-secondary);
 }
 
-/* Enhancing buttons and links */
-.btn-primary, .nav-link {
-  transition: var(--transition-fast);
+@media (min-width: 992px) {
+  .text-lg-start {
+    text-align: left;
+  }
 }
 
-.nav-link:hover, .btn-primary:hover {
-  transform: translateY(-2px); /* Slight lift effect */
-}
-
-/* Image hover effect to enlarge */
-img:hover {
-  transform: scale(1.05); /* Enlarge images slightly on hover */
-  transition: transform var(--transition-fast);
-  z-index: 10; /* Ensure image is above other content */
-}
-
-/* Footer styling for clear separation from content */
-footer {
-  background-color: var(--color-footer);
+.footer {
+  background-color: var(--color-background);
+  color: var(--color-secondary);
   padding: var(--spacing-medium) 0;
-  margin-top: var(--spacing-large);
 }
 
-/* Section styling for uncluttered look */
 .section {
-  margin-bottom: var(--spacing-xlarge);
-  padding: var(--spacing-large);
-  background-color: #F9F9F9; /* Slight off-white for depth */
+  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-medium);
+  background-color: var(--color-accent);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .navbar, .container, footer {
-    padding: var(--spacing-small);
-  }
-  .section {
-    margin-bottom: var(--spacing-large);
-  }
 }
