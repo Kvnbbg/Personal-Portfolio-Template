@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-  --color-primary: #4a4e69;
-  --color-secondary: #f2e9e4;
-  --color-accent: #c9ada7;
-  --color-background: #9a8c98;
-  --font-primary: 'Noto Sans JP', sans-serif;
+  --color-primary: #333; /* Dark shade for text */
+  --color-secondary: #fff; /* White for backgrounds */
+  --color-accent: #007bff; /* Bootstrap primary blue for accents */
+  --color-background: #f8f9fa; /* Light grey background */
+  --font-primary: 'Poppins', sans-serif;
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -19,176 +19,91 @@
 body {
   font-family: var(--font-primary);
   color: var(--color-primary);
-  background-color: var(--color-secondary);
-  line-height: 1.6;
+  background-color: var(--color-background);
   margin: 0;
-  padding: var(--spacing-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center alignment */
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.heading-letter {
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  opacity: 0; /* Initial state for animation */
-  animation: fadeInUp 0.8s ease forwards; /* Apply the animation */
-  display: inline-block; /* Change to inline-block for inline display */
-  cursor: pointer;
-}
-
-/* Staggered animation delays for each letter */
-.heading-letter:nth-child(1) { animation-delay: 0.1s; }
-.heading-letter:nth-child(2) { animation-delay: 0.2s; }
-/* Continue for each .heading-letter element as before */
-
-.heading-letter:hover {
-  transform: scale(1.1);
-  color: var(--color-accent);
-}
-
-@media screen and (max-width: 768px) {
-  .heading-letter {
-    font-size: 2rem; /* Adjust for responsiveness */
-    animation-delay: 0s; /* Adjust or remove delays if desired for quicker display */
-  }
-}
-
-
-img {
-  max-width: 100%; /* Limit maximum width to be responsive */
-  height: auto; /* Maintain aspect ratio */
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  display: block;
-  object-fit: cover; /* Improved handling for different aspect ratios */
-}
-
-img:hover, img:focus {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  padding-top: var(--spacing-md);
 }
 
 a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--transition-speed), text-decoration-color var(--transition-speed);
+  color: var(--color-accent);
+  transition: color var(--transition-speed);
 }
 
 a:hover, a:focus {
   color: var(--color-accent);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-ul {
-  list-style-type: none; /* Remove default list bullets */
-  padding: 0;
-  margin: 0; /* Remove default margins and padding */
-  font-family: var(--font-primary); /* Use the primary font */
+.navbar {
+  box-shadow: var(--box-shadow);
 }
 
-ul li {
-  padding: var(--spacing-xs) var(--spacing-sm); /* Add some padding for each list item */
-  margin-bottom: var(--spacing-xs); /* Add some space between list items */
-  background-color: var(--color-secondary); /* Subtle background color for each list item */
-  border-radius: var(--border-radius); /* Rounded corners for list items */
-  box-shadow: var(--box-shadow); /* Subtle shadow for depth */
-  transition: background-color var(--transition-speed); /* Smooth transition for hover effect */
+.nav-link {
+  transition: color var(--transition-speed);
 }
 
-ul li:hover {
-  background-color: var(--color-accent); /* Change background color on hover */
+.nav-link:hover, .nav-link:focus {
+  color: var(--color-primary);
 }
 
-ul li a {
-  color: var(--color-primary); /* Link color */
-  text-decoration: none; /* Remove underline from links */
-  display: block; /* Make the link fill the entire list item for easier clicking */
-  transition: color var(--transition-speed); /* Smooth transition for link color */
-}
-
-ul li a:hover, ul li a:focus {
-  color: var(--color-background); /* Change link color on hover/focus */
-}
-
-
-.container {
-  max-width: 960px;
-  width: 100%; /* Ensure it's responsive */
-  margin: auto;
-  padding: var(--spacing-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  align-items: center; /* Center content */
-}
-
-.text-center {
-  text-align: center;
+.heading {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .section {
-  background-color: var(--color-accent);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-md);
   margin-bottom: var(--spacing-lg);
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.certification-item, .github-stat {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.certification-item img, .github-stat img {
+  max-width: 100%;
+  height: auto;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
 
 footer {
-  background-color: var(--color-background);
+  background-color: var(--color-primary);
   color: var(--color-secondary);
   padding: var(--spacing-md) 0;
-  text-align: center;
+}
+
+footer a {
+  color: var(--color-secondary);
+}
+
+footer a:hover {
+  color: var(--color-accent);
 }
 
 @media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-    justify-content: space-around; /* Improved spacing for wider screens */
-    padding: var(--spacing-lg);
-  }
-
-  body, .container, footer {
-    padding: var(--spacing-md);
-  }
-
-  .section {
-    margin-bottom: var(--spacing-md);
-  }
-
-  .text-lg-start {
-    text-align: left;
+  .container, .container-fluid {
+    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-md);
   }
 }
 
 @media (max-width: 768px) {
-  body, .container, footer {
-    padding: var(--spacing-sm);
+  .navbar-brand, .nav-link {
+    text-align: center;
+    margin: auto;
+  }
+
+  .heading {
+    font-size: 1.5rem;
   }
 
   .section {
-    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
 }
