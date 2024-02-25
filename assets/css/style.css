@@ -53,12 +53,79 @@ a:hover, a:focus {
 }
 
 .section {
-  padding: var(--spacing-lg) var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  background-color: var(--color-secondary);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  padding: var(--spacing-lg) var(--spacing-md); /* Ensure ample padding for readability and comfort */
+  text-align: center; /* Center-align text for a polished, focused look */
+  transition: background-color var(--transition-speed); /* Smooth background transition for interactive hover effect */
 }
+
+.section:hover {
+  background-color: var(--color-light); /* Slightly lighten the section background on hover for a subtle interactive cue */
+}
+
+.section-title {
+  font-size: var(--font-lg); /* Larger font size for section titles for clear hierarchy */
+  color: var(--color-primary); /* Use primary color for emphasis */
+  margin-bottom: var(--spacing-md); /* Space between title and content */
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: var(--color-accent); /* Accent color underline for a visual pop */
+  transition: width var(--transition-speed); /* Animate the underline width on hover */
+}
+
+.section-title:hover::after {
+  width: 100%; /* Expand underline on hover for a dynamic effect */
+}
+
+.section-content {
+  max-width: 800px; /* Limit content width for optimal readability */
+  margin: auto; /* Center content horizontally */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--transition-speed) forwards; /* Smooth fade-in and move-up animation */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-inline {
+  display: flex; /* Display inline content in a row */
+  justify-content: center; /* Center content horizontally */
+  gap: var(--spacing-md); /* Space out elements evenly */
+  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+}
+
+.section-inline-item {
+  transition: transform var(--transition-speed); /* Smooth scaling transition for interactive elements */
+}
+
+.section-inline-item:hover {
+  transform: scale(1.05); /* Slightly enlarge items on hover */
+}
+
+@media (min-width: 768px) {
+  .section {
+    text-align: left; /* Align text to the start on larger screens for a traditional layout */
+  }
+
+  .section-content, .section-inline {
+    text-align: start; /* Align inline content text to the start on larger screens */
+  }
+}
+
 
 .certification-item, .github-stat {
   margin-bottom: var(--spacing-md);
@@ -73,17 +140,66 @@ a:hover, a:focus {
 }
 
 footer {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  padding: var(--spacing-md) 0;
+  background-color: var(--color-background); /* Light grey background for a subtle contrast */
+  color: var(--color-primary); /* Keeping the text color dark for readability */
+  padding: var(--spacing-lg) var(--spacing-md); /* Ample padding for a spacious look */
+  text-align: center; /* Center-align text for a polished look */
+  border-top: 2px solid var(--color-accent); /* A touch of accent color to define the footer's top boundary */
 }
 
 footer a {
-  color: var(--color-secondary);
+  color: var(--color-accent); /* Use the accent color for links for consistency and visibility */
+  transition: color var(--transition-speed); /* Smooth transition for hover effects */
 }
 
 footer a:hover {
-  color: var(--color-accent);
+  color: darken(var(--color-accent), 10%); /* Slightly darken the link color on hover for a subtle interaction cue */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically on smaller screens */
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md); /* Space out elements evenly */
+}
+
+.social-icons {
+  font-size: 24px; /* Ensure social icons are easily visible */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Display icons in a row */
+  gap: var(--spacing-md); /* Even spacing between icons */
+}
+
+.social-icons li {
+  transition: transform var(--transition-speed); /* Smooth scaling transition */
+}
+
+.social-icons li:hover {
+  transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+.footer-legal {
+  font-size: 0.75rem; /* Smaller text for legal and copyright notices */
+  margin-top: var(--spacing-lg); /* Space from main content of the footer */
+  opacity: 0.8; /* Slightly muted text for less emphasis */
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row; /* Align content in a row on larger screens */
+    justify-content: space-between; /* Maximize use of available space */
+  }
+
+  .social-icons {
+    order: 2; /* Position social icons to the right on larger screens */
+  }
+
+  footer {
+    text-align: start; /* Align text to the start on larger screens for a more traditional layout */
+  }
 }
 
 @media (min-width: 768px) {
