@@ -52,19 +52,14 @@ body {
   padding: 0;
   opacity: 0; /* Initial state for animation */
   animation: fadeInUp 0.8s ease forwards; /* Apply the animation */
+  display: inline-block; /* Change to inline-block for inline display */
   cursor: pointer;
 }
 
-/* Apply staggered animation delays */
+/* Staggered animation delays for each letter */
 .heading-letter:nth-child(1) { animation-delay: 0.1s; }
 .heading-letter:nth-child(2) { animation-delay: 0.2s; }
-.heading-letter:nth-child(3) { animation-delay: 0.3s; }
-.heading-letter:nth-child(4) { animation-delay: 0.4s; }
-.heading-letter:nth-child(5) { animation-delay: 0.5s; }
-.heading-letter:nth-child(6) { animation-delay: 0.6s; }
-.heading-letter:nth-child(7) { animation-delay: 0.7s; }
-.heading-letter:nth-child(8) { animation-delay: 0.8s; }
-.heading-letter:nth-child(9) { animation-delay: 0.9s; }
+/* Continue for each .heading-letter element as before */
 
 .heading-letter:hover {
   transform: scale(1.1);
@@ -73,10 +68,11 @@ body {
 
 @media screen and (max-width: 768px) {
   .heading-letter {
-    font-size: 2rem; /* Adjust font size for smaller screens to ensure responsiveness */
-    animation-delay: 0s; /* Optionally, reset or adjust animation delays for rapid appearance */
+    font-size: 2rem; /* Adjust for responsiveness */
+    animation-delay: 0s; /* Adjust or remove delays if desired for quicker display */
   }
 }
+
 
 img {
   max-width: 100%; /* Limit maximum width to be responsive */
