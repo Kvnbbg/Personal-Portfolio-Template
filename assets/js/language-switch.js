@@ -1,90 +1,66 @@
-// Define an object to store language-specific content
+// Object storing professionally tailored language-specific content
 const languageContent = {
   en: {
-    aboutMe: 'About Me',
-    location: 'Location: France',
-    languages: 'Languages: Good in French and English',
-    switchTo: 'Traduction en Français disponible!',
-    biography: 'Passionate, my journey began in childhood when I started programming with friends, creating our first script in Visual Basic .batch file on Windows XP.',
-    currentlyOn: 'Currently On 💡',
-    activities: 'Attentive to new opportunities and collaborations, I am contributing.',
-    githubInsights: 'My GitHub Insights 📊',
-    topLanguages: 'Top Languages',
-    githubStats: 'GitHub Stats',
-    connect: 'Connect 💻',
-    leisureContact: 'My Leisure',
-    professionalContact: 'Professional Contact',
-    reachOut: 'Feel free to reach out to me via email or social media.',
-    year: `©  ${new Date().getFullYear()} Portfolio of /Kvnbbg - Kevin Marville`
+    aboutMe: 'Professional Overview',
+    location: 'Location: Strategically Based in France',
+    languages: 'Languages: Proficient in French and English',
+    switchTo: 'French Translation Available',
+    biography: 'Embarking on a technological odyssey from a young age, I have transformed my early curiosity into a profound professional passion. My inaugural project, a Visual Basic script on Windows XP, laid the groundwork for a career characterized by continuous learning, innovation, and a commitment to excellence. Today, I leverage my extensive experience to develop solutions that merge creativity with technology, driving progress in the digital landscape.',
+    currentlyOn: 'Current Endeavors 💡',
+    activities: 'With an unwavering focus on the future, I am currently engaged in pioneering projects that challenge the status quo and set new benchmarks in technology. My approach is holistic, integrating cross-disciplinary expertise to foster innovation and deliver impactful results.',
+    githubInsights: 'GitHub Insights 📊',
+    topLanguages: 'Primary Programming Languages',
+    githubStats: 'GitHub Performance Metrics',
+    connect: 'Connect with Me 💻',
+    leisureContact: 'Interests Beyond Coding',
+    professionalContact: 'Professional Inquiries',
+    reachOut: 'I welcome discussions on technological advancements, potential collaborations, or any professional inquiries. Please feel free to contact me via email or connect on social media platforms.',
+    year: `© ${new Date().getFullYear()} - Kevin Marville's Portfolio`
   },
   fr: {
-    aboutMe: 'À propos de moi',
-    location: 'Localisation : France',
-    languages: 'Langues : Bon en Français et en Anglais',
-    switchTo: 'Switch to English available!',
-    biography: 'Passionné, mon parcours commence dans l\'enfance, avec des amis, créant notre premier script Visual Basic en .batch sur Windows XP.',
-    currentlyOn: 'En ce moment 💡',
-    activities: 'Attentif à de nouvelles opportunités et collaborations, je contribue.',
-    githubInsights: 'Mes statistiques GitHub 📊',
-    topLanguages: 'Les langages que j\'utilise le plus sont:',
-    githubStats: 'Statistiques GitHub',
-    connect: 'Se connecter à moi 💻',
-    leisureContact: 'Mes Loisirs',
-    professionalContact: 'Contact Pro',
-    reachOut: 'N\'hésitez pas à me contacter par e-mail ou sur les réseaux sociaux.',
-    year: `© ${new Date().getFullYear()} Portfolio de /Kvnbbg - Kevin Marville`
+    aboutMe: 'Aperçu Professionnel',
+    location: 'Localisation : Stratégiquement basé en France',
+    languages: 'Langues : Maîtrise du Français et de l\'Anglais',
+    switchTo: 'Traduction en Anglais Disponible',
+    biography: 'Lancé dans une odyssée technologique dès mon plus jeune âge, j\'ai transformé ma curiosité initiale en une passion professionnelle profonde. Mon premier projet, un script Visual Basic sous Windows XP, a jeté les bases d\'une carrière caractérisée par un apprentissage continu, l\'innovation et un engagement envers l\'excellence. Aujourd\'hui, je mets à profit mon expérience étendue pour développer des solutions qui fusionnent créativité et technologie, stimulant le progrès dans le paysage numérique.',
+    currentlyOn: 'Projets Actuels 💡',
+    activities: 'Avec un focus inébranlable sur l\'avenir, je suis actuellement engagé dans des projets pionniers qui remettent en question le statu quo et établissent de nouveaux repères technologiques. Mon approche est holistique, intégrant une expertise interdisciplinaire pour favoriser l\'innovation et fournir des résultats impactants.',
+    githubInsights: 'Aperçus GitHub 📊',
+    topLanguages: 'Langages de Programmation Principaux',
+    githubStats: 'Métriques de Performance GitHub',
+    connect: 'Se Connecter 💻',
+    leisureContact: 'Intérêts au-delà du Codage',
+    professionalContact: 'Demandes Professionnelles',
+    reachOut: 'Je suis ouvert aux discussions sur les avancées technologiques, les collaborations potentielles ou toute demande professionnelle. N\'hésitez pas à me contacter par e-mail ou à vous connecter sur les plateformes de réseaux sociaux.',
+    year: `© ${new Date().getFullYear()} - Portfolio de Kevin Marville`
   }
 };
-// Set the default language to English
-let currentLanguage = 'en';
+
+let currentLanguage = 'en'; // Default language set to English
 
 function toggleLanguage() {
-  // Toggle between English and French
   currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-
-  // Get the button element
-  var button = document.getElementById("language-switch");
-
-  // Toggle the 'active' class
+  const button = document.getElementById("language-switch");
   button.classList.toggle("active");
 
-  // Get the language icon and text elements
-  var iconElement = button.querySelector(".language-icon");
-  var textElement = button.querySelector(".language-text");
+  const iconElement = button.querySelector(".language-icon");
+  const textElement = button.querySelector(".language-text");
 
-  // Check if the button is active to determine the language
-  if (button.classList.contains("active")) {
-      // Set language to French
-      iconElement.textContent = "🇬🇧🇺🇸🇨🇦";
-      textElement.textContent = 
-      "Switch to English";
-      console.log("Switched to French!");
-  } else {
-      // Set language to English
-      iconElement.textContent = "🇫🇷🇨🇦";
-      textElement.textContent = "Passer en Français";
-      console.log("Switched to English!");
-  }
+  iconElement.textContent = currentLanguage === 'en' ? "🇫🇷" : "🇬🇧";
+  textElement.textContent = languageContent[currentLanguage].switchTo;
+  console.log(`Language set to ${currentLanguage === 'en' ? 'English' : 'French'}.`);
   updateContent();
 }
 
 function updateContent() {
-  // Get all elements with a data-lang attribute
-  const elementsToUpdate = document.querySelectorAll('[data-lang]');
-
-  // Update the content based on the current language
-  elementsToUpdate.forEach(element => {
+  document.querySelectorAll('[data-lang]').forEach(element => {
     const key = element.dataset.lang;
-    if (languageContent[currentLanguage][key]) {
-      element.textContent = languageContent[currentLanguage][key];
-    }
+    element.textContent = languageContent[currentLanguage][key];
   });
 }
-// Initial content update on page load
-updateContent();
 
-// Cybermalveillance
-    function improveMessage() {
-        var importantMessage = document.getElementById("importantMessage");
-        importantMessage.style.display = "none";
-    }
+document.addEventListener('DOMContentLoaded', updateContent);
+
+function improveMessage() {
+  document.getElementById("importantMessage").style.display = "none";
+}
