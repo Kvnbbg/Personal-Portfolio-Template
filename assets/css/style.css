@@ -7,6 +7,11 @@
   --spacing-lg: 2rem;
   --font-lg: 1.25rem;
   --transition-speed: 0.3s;
+  --border-radius: 5px;
+  --box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  --font-lg-desktop: 1.75rem;
+  --spacing-lg-desktop: 3rem;
+  --container-max-width: 1200px;
 }
 
 *,
@@ -22,9 +27,10 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
 .certification-item, .github-stat {
   margin-bottom: var(--spacing-md);
   text-align: center;
@@ -36,6 +42,7 @@ body {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -56,17 +63,17 @@ body {
   font-size: 2rem;
   margin-bottom: var(--spacing-md);
 }
+
 .heading-letter {
   font-size: 4rem;
   font-weight: 700;
   margin: 0;
   padding: 0;
-  opacity: 0; /* Initial state for animation */
-  animation: fadeInUp 0.8s ease forwards; /* Apply the animation */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
   cursor: pointer;
 }
 
-/* Apply staggered animation delays */
 .heading-letter:nth-child(1) { animation-delay: 0.1s; }
 .heading-letter:nth-child(2) { animation-delay: 0.2s; }
 .heading-letter:nth-child(3) { animation-delay: 0.3s; }
@@ -84,76 +91,63 @@ body {
 
 @media screen and (max-width: 768px) {
   .heading-letter {
-    font-size: 2rem; /* Adjust font size for smaller screens to ensure responsiveness */
-    animation-delay: 0s; /* Optionally, reset or adjust animation delays for rapid appearance */
+    font-size: 2rem;
   }
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto; /* Center container */
+  max-width: var(--container-max-width);
+  margin: 0 auto;
   padding: 0 var(--spacing-md);
-  text-align: center; /* Center-align text */
+  text-align: center;
 }
 
-/* Target the body or a specific container to center all text within */
 body, .container {
-  text-align: center; /* Centers text for inline elements and text content */
+  text-align: center;
 }
 
-/* To center block-level elements or inline elements within the container */
 .container > * {
-  display: flex; /* Use flexbox to center children */
-  justify-content: center; /* Horizontally center flex items */
-  flex-direction: column; /* Stack flex items vertically */
-  align-items: center; /* Vertically center items for when they are in a column layout */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Force all elements within the container to display inline */
-.container > * {
-  display: inline-block; /* Display elements inline with block properties */
-  margin: 0 auto; /* Additional centering for block elements if necessary */
-}
-
-/* Ensure all text within specific elements is centered, useful for inline elements */
 .container span, .container a, .container p {
-  text-align: center; /* Center text within these elements */
-  display: block; /* Make inline elements behave like block elements to respect text-align */
+  text-align: center;
+  display: block;
 }
 
-
-.header,
-.footer {
+.header, .footer {
   background-color: var(--color-primary);
   color: #fff;
   padding: var(--spacing-lg) 0;
   text-align: center;
 }
 
-
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 }
 
 .section {
-  padding: var(--spacing-lg) var(--spacing-md); /* Ensure ample padding for readability and comfort */
+  padding: var(--spacing-lg) var(--spacing-md);
   margin: var(--spacing-lg) 0;
-  text-align: center; /* Center-align text for a polished, focused look */
-  transition: background-color var(--transition-speed); /* Smooth background transition for interactive hover effect */
+  text-align: center;
+  transition: background-color var(--transition-speed);
 }
 
 .section:hover {
-  background-color: var(--color-light); /* Slightly lighten the section background on hover for a subtle interactive cue */
+  background-color: var(--color-light);
 }
 
 .section-title {
-  font-size: var(--font-lg); /* Larger font size for section titles for clear hierarchy */
-  color: var(--color-primary); /* Use primary color for emphasis */
-  margin-bottom: var(--spacing-md); /* Space between title and content */
+  font-size: var(--font-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
   position: relative;
   display: inline-block;
 }
@@ -166,99 +160,75 @@ body, .container {
   transform: translateX(-50%);
   width: 50%;
   height: 3px;
-  background-color: var(--color-accent); /* Accent color underline for a visual pop */
-  transition: width var(--transition-speed); /* Animate the underline width on hover */
+  background-color: var(--color-accent);
+  transition: width var(--transition-speed);
 }
 
 .section-title:hover::after {
-  width: 100%; /* Expand underline on hover for a dynamic effect */
+  width: 100%;
 }
 
 .section-content {
-  max-width: 800px; /* Limit content width for optimal readability */
-  margin: auto; /* Center content horizontally */
+  max-width: 800px;
+  margin: auto;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp var(--transition-speed) forwards; /* Smooth fade-in and move-up animation */
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: fadeInUp var(--transition-speed) forwards;
 }
 
 .section-inline {
-  display: flex; /* Display inline content in a row */
-  justify-content: center; /* Center content horizontally */
-  gap: var(--spacing-md); /* Space out elements evenly */
-  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
-}
-
-.section-inline-item {
-  transition: transform var(--transition-speed); /* Smooth scaling transition for interactive elements */
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 .section-inline-item:hover {
-  transform: scale(1.05); /* Slightly enlarge items on hover */
+  transform: scale(1.05);
 }
 
 @media (min-width: 768px) {
   .section {
-    text-align: left; /* Align text to the start on larger screens for a traditional layout */
+    text-align: left;
   }
 
   .section-content, .section-inline {
-    text-align: start; /* Align inline content text to the start on larger screens */
+    text-align: start;
   }
 }
 
 .section img {
-  max-width: 100%; /* Ensure images are not too big */
-  height: auto; /* Maintain aspect ratio */
-  margin: var(--spacing-md) 0; /* Add some space around images */
+  max-width: 100%;
+  height: auto;
+  margin: var(--spacing-md) 0;
 }
-
-/* Remove text decorations from links */
 
 a:hover {
   color: var(--color-primary);
-  text-decoration: underline; /* Optional: underline on hover for visual feedback */
+  text-decoration: underline;
 }
+
 a {
   color: var(--color-accent);
   text-decoration: none;
   transition: color var(--transition-speed);
 }
 
-a:focus {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
 .navbar {
   box-shadow: var(--box-shadow);
-}
-
-.nav-link {
-  transition: color var(--transition-speed);
 }
 
 .nav-link:hover, .nav-link:focus {
   color: var(--color-primary);
 }
 
-
-
-/* Styling for unordered lists */
 ul {
-  list-style: none; /* Remove bullet points */
+  list-style: none;
   padding: 0;
 }
 
 ul li {
-  padding: var(--spacing-md) 0; /* Space out list items */
+  padding: var(--spacing-md) 0;
 }
 
 .button {
@@ -279,80 +249,64 @@ ul li {
 }
 
 footer {
-  background-color: var(--color-background); /* Light grey background for a subtle contrast */
-  color: var(--color-primary); /* Keeping the text color dark for readability */
-  padding: var(--spacing-lg) var(--spacing-md); /* Ample padding for a spacious look */
-  text-align: center; /* Center-align text for a polished look */
-  border-top: 2px solid var(--color-accent); /* A touch of accent color to define the footer's top boundary */
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  border-top: 2px solid var(--color-accent);
 }
 
 footer a {
-  color: var(--color-accent); /* Use the accent color for links for consistency and visibility */
-  transition: color var(--transition-speed); /* Smooth transition for hover effects */
+  color: var(--color-accent);
+  transition: color var(--transition-speed);
 }
 
 footer a:hover {
-  color: darken(var(--color-accent), 10%); /* Slightly darken the link color on hover for a subtle interaction cue */
+  color: darken(var(--color-accent), 10%);
 }
 
 .footer-content {
   display: flex;
-  flex-direction: column; /* Stack content vertically on smaller screens */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-md); /* Space out elements evenly */
+  gap: var(--spacing-md);
 }
 
 .social-icons {
-  font-size: 24px; /* Ensure social icons are easily visible */
-  list-style: none; /* Remove default list styling */
+  font-size: 24px;
+  list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Display icons in a row */
-  gap: var(--spacing-md); /* Even spacing between icons */
-}
-
-.social-icons li {
-  transition: transform var(--transition-speed); /* Smooth scaling transition */
+  display: flex;
+  gap: var(--spacing-md);
 }
 
 .social-icons li:hover {
-  transform: scale(1.1); /* Slightly enlarge icons on hover */
+  transform: scale(1.1);
 }
 
 .footer-legal {
-  font-size: 0.75rem; /* Smaller text for legal and copyright notices */
-  margin-top: var(--spacing-lg); /* Space from main content of the footer */
-  opacity: 0.8; /* Slightly muted text for less emphasis */
+  font-size: 0.75rem;
+  margin-top: var(--spacing-lg);
+  opacity: 0.8;
 }
 
 @media (min-width: 768px) {
   .footer-content {
-    flex-direction: row; /* Align content in a row on larger screens */
-    justify-content: space-between; /* Maximize use of available space */
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .social-icons {
-    order: 2; /* Position social icons to the right on larger screens */
+    order: 2;
   }
 
   footer {
-    text-align: start; /* Align text to the start on larger screens for a more traditional layout */
+    text-align: start;
   }
-}
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
   .container {
     padding: 0 var(--spacing-lg);
   }
-}
-
-/* Specific adjustments for your images */
-.img-small {
-  width: 50%; /* Adjust based on your needs */
-}
-
-.img-large {
-  width: 100%; /* Adjust based on your needs */
 }
