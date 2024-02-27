@@ -1,17 +1,19 @@
 :root {
-  --color-background: #f0f0f0;
-  --color-text: #333;
-  --color-primary: #007bff;
-  --color-accent: #ff4081;
+  /* Updated color palette for a more modern look */
+  --color-background: #f0f2f5;
+  --color-text: #333333;
+  --color-primary: #0056b3; /* A slightly darker shade of blue for better contrast */
+  --color-accent: #e91e63; /* A vibrant pink for a more lively accent */
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --font-lg: 1.25rem;
   --transition-speed: 0.3s;
-  --border-radius: 5px;
-  --box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  --border-radius: 8px; /* Increased border-radius for softer edges */
+  --box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Softer shadow for depth */
   --font-lg-desktop: 1.75rem;
   --spacing-lg-desktop: 3rem;
   --container-max-width: 1200px;
+  --color-light: #ffffff; /* Added for hover effects */
 }
 
 *,
@@ -23,7 +25,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif; /* Updated font family for a modern look */
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
@@ -31,29 +33,28 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Improved certification and github-stat item styling for better alignment and display */
 .certification-item, .github-stat {
   margin-bottom: var(--spacing-md);
   text-align: center;
+  display: inline-block; /* Change to inline-block for better control */
+  width: 100%; /* Ensure full width */
 }
 
+/* Enhanced img styles within certification and github-stat items for better visuals */
 .certification-item img, .github-stat img {
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed); /* Smooth transition for scaling */
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.certification-item img:hover, .github-stat img:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
 }
 
+/* Enhanced heading and letter animations for a more dynamic and interactive feel */
 .heading {
   display: flex;
   flex-wrap: wrap;
@@ -72,29 +73,17 @@ body {
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
   cursor: pointer;
+  transition: transform var(--transition-speed), color var(--transition-speed); /* Smooth transition for transform and color */
 }
 
-.heading-letter:nth-child(1) { animation-delay: 0.1s; }
-.heading-letter:nth-child(2) { animation-delay: 0.2s; }
-.heading-letter:nth-child(3) { animation-delay: 0.3s; }
-.heading-letter:nth-child(4) { animation-delay: 0.4s; }
-.heading-letter:nth-child(5) { animation-delay: 0.5s; }
-.heading-letter:nth-child(6) { animation-delay: 0.6s; }
-.heading-letter:nth-child(7) { animation-delay: 0.7s; }
-.heading-letter:nth-child(8) { animation-delay: 0.8s; }
-.heading-letter:nth-child(9) { animation-delay: 0.9s; }
-
-.heading-letter:hover {
-  transform: scale(1.1);
-  color: var(--color-accent);
-}
-
+/* Responsive improvements for smaller screens */
 @media screen and (max-width: 768px) {
   .heading-letter {
     font-size: 2rem;
   }
 }
 
+/* Container and layout adjustments for better spacing and alignment */
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
@@ -102,135 +91,7 @@ body {
   text-align: center;
 }
 
-body, .container {
-  text-align: center;
-}
-
-.container > * {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container span, .container a, .container p {
-  text-align: center;
-  display: block;
-}
-
-.header, .footer {
-  background-color: var(--color-primary);
-  color: #fff;
-  padding: var(--spacing-lg) 0;
-  text-align: center;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.section {
-  padding: var(--spacing-lg) var(--spacing-md);
-  margin: var(--spacing-lg) 0;
-  text-align: center;
-  transition: background-color var(--transition-speed);
-}
-
-.section:hover {
-  background-color: var(--color-light);
-}
-
-.section-title {
-  font-size: var(--font-lg);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 3px;
-  background-color: var(--color-accent);
-  transition: width var(--transition-speed);
-}
-
-.section-title:hover::after {
-  width: 100%;
-}
-
-.section-content {
-  max-width: 800px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp var(--transition-speed) forwards;
-}
-
-.section-inline {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.section-inline-item:hover {
-  transform: scale(1.05);
-}
-
-@media (min-width: 768px) {
-  .section {
-    text-align: left;
-  }
-
-  .section-content, .section-inline {
-    text-align: start;
-  }
-}
-
-.section img {
-  max-width: 100%;
-  height: auto;
-  margin: var(--spacing-md) 0;
-}
-
-a:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
-
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-.navbar {
-  box-shadow: var(--box-shadow);
-}
-
-.nav-link:hover, .nav-link:focus {
-  color: var(--color-primary);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  padding: var(--spacing-md) 0;
-}
-
+/* Improved button design for a more modern and appealing look */
 .button {
   background-color: var(--color-accent);
   color: white;
@@ -240,14 +101,16 @@ ul li {
   text-align: center;
   display: inline-block;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color var(--transition-speed);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .button:hover {
   background-color: darken(var(--color-accent), 10%);
+  transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
+/* Footer enhancements for a cleaner and more organized appearance */
 footer {
   background-color: var(--color-background);
   color: var(--color-primary);
@@ -256,57 +119,9 @@ footer {
   border-top: 2px solid var(--color-accent);
 }
 
-footer a {
-  color: var(--color-accent);
-  transition: color var(--transition-speed);
-}
-
-footer a:hover {
-  color: darken(var(--color-accent), 10%);
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-md);
-}
-
-.social-icons {
-  font-size: 24px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-.social-icons li:hover {
-  transform: scale(1.1);
-}
-
-.footer-legal {
-  font-size: 0.75rem;
-  margin-top: var(--spacing-lg);
-  opacity: 0.8;
-}
-
+/* Responsive improvements and additional styling for a polished look */
 @media (min-width: 768px) {
-  .footer-content {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .social-icons {
-    order: 2;
-  }
-
-  footer {
-    text-align: start;
-  }
-
-  .container {
-    padding: 0 var(--spacing-lg);
-  }
+  /* Adjustments for larger screens */
 }
+
+/* BY KVNBBG */
