@@ -1,86 +1,143 @@
-html {
-  font-size: 62.5%;
-}
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
+/* Enhanced Reset and Box Sizing */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* Body and Typography Enhancements */
 body {
-  font-family: Arial, sans-serif; /* Use a basic, web-safe font */
-  background-color: #f0f0f0; /* Light grey background for easier reading */
-  color: #333; /* Dark grey text for contrast */
-  line-height: 1.6; /* Improve readability */
+  font-family: 'Poppins', sans-serif; /* Modern, readable font */
+  background-color: #f5f5f5; /* Neutral background color */
+  color: #333; /* Optimal contrast for readability */
+  line-height: 1.6;
+  font-size: 16px; /* Base font size for scalability */
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
-/* Basic typography settings */
+/* Responsive Typography */
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: normal;
+  font-weight: 600; /* Adds distinction to headings */
 }
 
-p {
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p, a, li, button { /* Ensuring consistent font rendering */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Link Enhancements */
+a {
+  color: #007bff;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover, a:focus {
+  color: #0056b3;
+  text-decoration: none; /* Modern look without underline */
+}
+
+/* Container and Grid System */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col,
+[class*="col-"] {
+  padding-right: 15px;
+  padding-left: 15px;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 100%;
+}
+
+/* Utility Classes for Spacing and Alignment */
+.mt-4 { margin-top: 1.5rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.text-center { text-align: center; }
+
+/* Buttons and Forms */
+.button, button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover, button:hover {
+  background-color: #0056b3;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+/* Responsive Design Adjustments */
+@media (min-width: 576px) { .col-sm, [class*="col-sm-"] { min-width: 50%; } }
+@media (min-width: 768px) { .col-md, [class*="col-md-"] { min-width: 33.33333%; } }
+@media (min-width: 992px) { .col-lg, [class*="col-lg-"] { min-width: 25%; } }
+@media (min-width: 1200px) { .col-xl, [class*="col-xl-"] { min-width: 20%; } }
+
+/* Hover Effects and Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Accessibility Enhancements */
+:focus {
+  outline: 3px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Custom Components */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
   margin-bottom: 1rem;
 }
 
-/* Links */
-a {
-  color: #007bff; /* Bootstrap-like blue for links */
-  text-decoration: none;
+.card-header, .card-body, .card-footer {
+  padding: 1rem;
 }
 
-a:hover {
-  text-decoration: underline;
+.card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 
-/* Containers */
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* For small to medium devices (over 576px) */
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-/* For medium to large devices (over 768px) */
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-/* For large devices (over 992px) */
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-/* For extra large devices (over 1200px) */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-/* Utility Classes */
-.text-center {
-  text-align: center;
-}
-
-.mt-4 {
-  margin-top: 1.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 1.5rem;
+.card-text {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
