@@ -1,195 +1,162 @@
-/* CSS Variables for Easy Customization */
+/* Placeholder comment */
+/* CSS Variables for Theme Customization */
 :root {
   --primary-color: #007bff;
-  --primary-hover: #0056b3;
-  --background-color: #f5f5f5;
-  --text-color: #333;
-  --font-family: 'Poppins', sans-serif;
-  --warning-background: #ffcc00;
-  --warning-text-color: black;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+  --font-family-base: 'Poppins', sans-serif;
 }
 
-/* Enhanced Reset and Box Sizing */
-*, *::before, *::after {
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and Typography Enhancements */
 body {
-  font-family: var(--font-family);
-  background-color: var(--background-color);
+  font-family: var(--font-family-base);
   color: var(--text-color);
+  background-color: var(--background-color);
   line-height: 1.6;
-  font-size: 16px;
-  overflow-x: hidden;
 }
 
-/* Responsive Typography */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
-
-p, a, li, button {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-color);
+p {
+  margin-bottom: 1rem;
 }
 
-/* Link Enhancements */
 a {
   color: var(--primary-color);
-  transition: color 0.3s ease-in-out;
-}
-
-a:hover, a:focus {
-  color: var(--primary-hover);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-/* Container and Grid System */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+a:hover,
+a:focus {
+  color: darken(var(--primary-color), 10%);
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.col,
-[class*="col-"] {
-  padding-right: 15px;
-  padding-left: 15px;
-  flex-basis: 0;
-  flex-grow: 1;
-  min-width: 100%;
-}
-
-/* Responsive Adjustments */
-@media (min-width: 576px) { .col-sm, [class*="col-sm-"] { min-width: 50%; } }
-@media (min-width: 768px) { .col-md, [class*="col-md-"] { min-width: 33.33333%; } }
-@media (min-width: 992px) { .col-lg, [class*="col-lg-"] { min-width: 25%; } }
-@media (min-width: 1200px) { .col-xl, [class*="col-xl-"] { min-width: 20%; } }
-
-/* Buttons and Forms */
-.button, button {
+/* Navigation Bar */
+.navbar {
   background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
 }
 
-.button:hover, button:hover {
-  background-color: var(--primary-hover);
+.navbar a.navbar-brand {
+  color: #ffffff;
 }
 
-input, textarea {
+.navbar-nav a.nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s;
+}
+
+.navbar-nav a.nav-link:hover,
+.navbar-nav a.nav-link:focus {
+  color: #ffffff;
+}
+
+/* Main Content */
+main {
+  padding: 2rem 0;
+}
+
+/* Sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Certifications Grid */
+.certifications-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.certification-item img {
   width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
+  height: auto;
   border-radius: 0.25rem;
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #fff;
-  }
-
-  .card {
-    background-color: #1e1e1e;
-    border-color: #333;
-  }
-
-  a, p, li, button {
-    color: #bbb;
-  }
-
-  .warning-div {
-    background-color: #333;
-    color: var(--warning-background);
-  }
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  padding: 1rem 0;
+  font-size: 0.875rem;
 }
 
-/* Utility Classes for Spacing and Alignment */
-.mt-4 { margin-top: 1.5rem; }
-.mb-4 { margin-bottom: 1.5rem; }
-.text-center { text-align: center; }
-
-/* Hover Effects and Animations */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out forwards;
-  opacity: 0;
+footer a {
+  color: #ffffff;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+footer a:hover {
+  color: lighten(#ffffff, 10%);
 }
 
-/* Custom Components */
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  overflow: hidden;
-  margin-bottom: 1rem;
+/* Responsive Typography */
+@media (min-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
 }
 
-.card-header, .card-body, .card-footer {
-  padding: 1rem;
+/* Utility Classes */
+.text-center {
+  text-align: center;
 }
 
-.card-title {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+.bg-light {
+  background-color: var(--background-color) !important;
 }
 
-.card-text {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+.text-muted {
+  color: var(--secondary-color) !important;
 }
 
-.warning-div {
-  padding: 20px;
-  background-color: var(--warning-background); /* Use variable for easy customization */
-  color: var(--warning-text-color);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0px -2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
 }
 
-.close-button {
-  float: right;
-  padding: 0 10px;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
+.d-flex {
+  display: flex;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-lg-between {
+  justify-content: space-between;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.me-4 {
+  margin-right: 1.5rem !important;
+}
+
+.me-5 {
+  margin-right: 3rem !important;
+}
+
+/* Accessibility Enhancements */
 :focus {
-  outline: 3px solid var(--primary-color);
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
