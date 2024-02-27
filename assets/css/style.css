@@ -33,6 +33,27 @@ p, a, li, button { /* Ensuring consistent font rendering */
   color: #333;
 }
 
+.warning-div {
+  padding: 20px;
+  background-color: #ffcc00; /* Adjust to match your design */
+  color: black; /* Adjust to match your design */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -2px 5px rgba(0,0,0,0.1); /* Optional: Adds depth */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.close-button {
+  float: right;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: transparent; /* Adjust if needed */
+  border: none;
+  font-size: 20px; /* Adjust to match your design */
+}
+
+
 /* Link Enhancements */
 a {
   color: #007bff;

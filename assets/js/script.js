@@ -1,54 +1,26 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Certification items functionality
-    const certificationItemsContainer = document.querySelector('.certification-items-container');
+document.body.appendChild(createWarningDiv());
 
-    const handleCertificationItemHover = (e, action) => {
-        const targetItem = e.target.closest('.certification-item');
-        if (targetItem) {
-            const altText = targetItem.querySelector('img').alt;
-            const infoBubble = targetItem.querySelector('.info-bubble');
-
-            infoBubble.innerText = altText;
-            targetItem.classList[action]('touch-hold');
-        }
+function createWarningDiv() {
+    const userLang = navigator.language || navigator.userLanguage;
+    const messages = {
+        en: `To fully enjoy our site, please enable JavaScript in your browser. <a href='https://www.wikihow.com/Enable-Javascript'>Learn how</a>.`,
+        fr: `Pour profiter pleinement de notre site, veuillez activer JavaScript dans votre navigateur. <a href='https://www.wikihow.com/Enable-Javascript'>Apprenez comment faire</a>.`
     };
+    const message = messages[userLang.startsWith('fr') ? 'fr' : 'en'];
 
-    certificationItemsContainer.addEventListener('mouseover', (e) => {
-        handleCertificationItemHover(e, 'add');
-    });
+    const warningDiv = document.createElement('div');
+    warningDiv.setAttribute('role', 'alert');
+    warningDiv.classList.add('warning-div');
+    warningDiv.innerHTML = message;
 
-    certificationItemsContainer.addEventListener('mouseout', (e) => {
-        handleCertificationItemHover(e, 'remove');
-    });
+    const closeButton = document.createElement('button');
+    closeButton.setAttribute('aria-label', userLang.startsWith('fr') ? 'Fermer le message d\'avertissement' : 'Close warning message');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = 'X';
+    closeButton.onclick = () => warningDiv.style.display = 'none';
+    warningDiv.appendChild(closeButton);
 
-    // Touch events for certification items
-    certificationItemsContainer.addEventListener('touchstart', (e) => {
-        handleCertificationItemHover(e, 'add');
-    });
-
-    certificationItemsContainer.addEventListener('touchend', (e) => {
-        handleCertificationItemHover(e, 'remove');
-    });
-
-    // Create and style the warning message
-    const warningDiv = createWarningDiv();
-    document.body.appendChild(warningDiv);
-
-    function createWarningDiv() {
-        const warningDiv = document.createElement('div');
-        warningDiv.innerHTML = `This website isn't free. If you like it, tap the like button and visit <a href='https://ko-fi.com/kvnbbg/' target='_blank'>here</a>.`;
-        warningDiv.classList.add('warning-div');
-
-        const closeButton = document.createElement('span');
-        closeButton.innerHTML = 'X';
-        closeButton.classList.add('close-button');
-        closeButton.onclick = () => {
-            warningDiv.style.display = 'none';
-        };
-
-        warningDiv.appendChild(closeButton);
-        return warningDiv;
-    }
-});
+    return warningDiv;
+}
