@@ -1,3 +1,14 @@
+/* CSS Variables for Easy Customization */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --font-family: 'Poppins', sans-serif;
+  --warning-background: #ffcc00;
+  --warning-text-color: black;
+}
+
 /* Enhanced Reset and Box Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -5,19 +16,19 @@
 
 /* Body and Typography Enhancements */
 body {
-  font-family: 'Poppins', sans-serif; /* Modern, readable font */
-  background-color: #f5f5f5; /* Neutral background color */
-  color: #333; /* Optimal contrast for readability */
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
-  font-size: 16px; /* Base font size for scalability */
-  overflow-x: hidden; /* Prevents horizontal scroll */
+  font-size: 16px;
+  overflow-x: hidden;
 }
 
 /* Responsive Typography */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 600; /* Adds distinction to headings */
+  font-weight: 600;
 }
 
 h1 { font-size: 2.5rem; }
@@ -27,42 +38,21 @@ h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
 
-p, a, li, button { /* Ensuring consistent font rendering */
+p, a, li, button {
   font-size: 1rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
 }
-
-.warning-div {
-  padding: 20px;
-  background-color: #ffcc00; /* Adjust to match your design */
-  color: black; /* Adjust to match your design */
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0px -2px 5px rgba(0,0,0,0.1); /* Optional: Adds depth */
-  z-index: 1000; /* Ensure it's above other content */
-}
-
-.close-button {
-  float: right;
-  padding: 0 10px;
-  cursor: pointer;
-  background-color: transparent; /* Adjust if needed */
-  border: none;
-  font-size: 20px; /* Adjust to match your design */
-}
-
 
 /* Link Enhancements */
 a {
-  color: #007bff;
+  color: var(--primary-color);
   transition: color 0.3s ease-in-out;
 }
 
 a:hover, a:focus {
-  color: #0056b3;
-  text-decoration: none; /* Modern look without underline */
+  color: var(--primary-hover);
+  text-decoration: none;
 }
 
 /* Container and Grid System */
@@ -88,14 +78,15 @@ a:hover, a:focus {
   min-width: 100%;
 }
 
-/* Utility Classes for Spacing and Alignment */
-.mt-4 { margin-top: 1.5rem; }
-.mb-4 { margin-bottom: 1.5rem; }
-.text-center { text-align: center; }
+/* Responsive Adjustments */
+@media (min-width: 576px) { .col-sm, [class*="col-sm-"] { min-width: 50%; } }
+@media (min-width: 768px) { .col-md, [class*="col-md-"] { min-width: 33.33333%; } }
+@media (min-width: 992px) { .col-lg, [class*="col-lg-"] { min-width: 25%; } }
+@media (min-width: 1200px) { .col-xl, [class*="col-xl-"] { min-width: 20%; } }
 
 /* Buttons and Forms */
 .button, button {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -106,7 +97,7 @@ a:hover, a:focus {
 }
 
 .button:hover, button:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-hover);
 }
 
 input, textarea {
@@ -117,11 +108,32 @@ input, textarea {
   border-radius: 0.25rem;
 }
 
-/* Responsive Design Adjustments */
-@media (min-width: 576px) { .col-sm, [class*="col-sm-"] { min-width: 50%; } }
-@media (min-width: 768px) { .col-md, [class*="col-md-"] { min-width: 33.33333%; } }
-@media (min-width: 992px) { .col-lg, [class*="col-lg-"] { min-width: 25%; } }
-@media (min-width: 1200px) { .col-xl, [class*="col-xl-"] { min-width: 20%; } }
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #fff;
+  }
+
+  .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+
+  a, p, li, button {
+    color: #bbb;
+  }
+
+  .warning-div {
+    background-color: #333;
+    color: var(--warning-background);
+  }
+}
+
+/* Utility Classes for Spacing and Alignment */
+.mt-4 { margin-top: 1.5rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.text-center { text-align: center; }
 
 /* Hover Effects and Animations */
 .fade-in {
@@ -131,12 +143,6 @@ input, textarea {
 
 @keyframes fadeIn {
   to { opacity: 1; }
-}
-
-/* Accessibility Enhancements */
-:focus {
-  outline: 3px solid #007bff;
-  outline-offset: 2px;
 }
 
 /* Custom Components */
@@ -161,4 +167,29 @@ input, textarea {
 .card-text {
   margin-bottom: 1rem;
   font-size: 1rem;
+}
+
+.warning-div {
+  padding: 20px;
+  background-color: var(--warning-background); /* Use variable for easy customization */
+  color: var(--warning-text-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.close-button {
+  float: right;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
 }
