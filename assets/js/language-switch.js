@@ -39,8 +39,8 @@ let currentLanguage = 'en'; // Default language set to English
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-  const li = document.getElementById("language-switch");
-  li.classList.toggle("active");
+  const a = document.getElementById("language-switch");
+  a.classList.toggle("active");
 
   // const iconElement = button.querySelector(".language-icon");
   // const textElement = button.querySelector(".language-text");
