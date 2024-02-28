@@ -1,95 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Basic Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vCard - Portfolio of Kevin MARVILLE</title>
-    <meta name="description" content="Kevin Marville portfolio: A showcase of creative web design, programming skills, and innovative projects. Explore the intersection of art and technology.">
-    <meta name="keywords" content="portfolio, web design, programming, Kevin Marville">
+    <meta
+      name="description"
+      content="Kevin Marville portfolio: A showcase of creative web design, programming skills, and innovative projects. Explore the intersection of art and technology."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, web design, programming, Kevin Marville"
+    />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.ico"
+      type="image/x-icon"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap Bundle with Popper -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lpygTIlFQ8N3lKB0T7RkFqzL0/7miNYrHnfbT7Wpu7UjVz3LUw6qvFZR8VUhRqGf" crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"
+      integrity="sha384-lpygTIlFQ8N3lKB0T7RkFqzL0/7miNYrHnfbT7Wpu7UjVz3LUw6qvFZR8VUhRqGf"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Open Graph meta tags for better sharing on social media -->
-    <meta property="og:title" content="vCard - Personal Portfolio">
-    <meta property="og:description" content="Kevin Marville portfolio: A fusion of creative web design, programming expertise, and captivating projects.">
-    <meta property="og:image" content="./website-demo-image/desktop.png">
-    <meta property="og:url" content="https://kvnbbg-creations.io">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Kevin Marville Portfolio">
+    <meta property="og:title" content="vCard - Personal Portfolio" />
+    <meta
+      property="og:description"
+      content="Kevin Marville portfolio: A fusion of creative web design, programming expertise, and captivating projects."
+    />
+    <meta property="og:image" content="./website-demo-image/desktop.png" />
+    <meta property="og:url" content="https://kvnbbg-creations.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kevin Marville Portfolio" />
 
     <!-- Twitter meta tags for Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="vCard - Personal Portfolio">
-    <meta name="twitter:description" content="Kevin Marville portfolio: A fusion of creative web design, programming expertise, and captivating projects.">
-    <meta name="twitter:image" content="./website-demo-image/mobile.png">
-    <meta name="twitter:site" content="@techandstream">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="vCard - Personal Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Kevin Marville portfolio: A fusion of creative web design, programming expertise, and captivating projects."
+    />
+    <meta name="twitter:image" content="./website-demo-image/mobile.png" />
+    <meta name="twitter:site" content="@techandstream" />
 
     <!-- Additional meta tags for SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Kevin Marville">
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kevin Marville" />
 
     <!-- Structured Data for Rich Snippets (Schema.org) -->
     <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "Person",
-            "name": "Kevin Marville",
-            "url": "https://kvnbbg-creations.io",
-            "sameAs": [
-                "https://github.com/kvnbbg",
-                "https://twitter.com/techandstream",
-                "https://www.linkedin.com/in/kvnbbg"
-            ]
-        }
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Kevin Marville",
+        "url": "https://kvnbbg-creations.io",
+        "sameAs": [
+          "https://github.com/kvnbbg",
+          "https://twitter.com/techandstream",
+          "https://www.linkedin.com/in/kvnbbg"
+        ]
+      }
     </script>
-        <!-- Google Analytics -->
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z2B7B25VV"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6Z2B7B25VV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-6Z2B7B25VV');
-      </script>
-      <!-- Ads meta tags -->
-      <script type="text/javascript" data-cfasync="false">
-/*<![CDATA[/* */
-(function(){(function(){var m=window,r="b3ba037b4c193ca77e068eb50d686b39",j=[["siteId",975*878-128*604+4218563],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer",!0]],q=["d3d3LmRpc3BsYXl2ZXJ0aXNpbmcuY29tL2xwYWdlLm1pbi5jc3M=","ZDNtem9rdHk5NTFjNXcuY2xvdWRmcm9udC5uZXQvY3NzL3JPcmdDaGFydC5taW4uanM="],c=-1,h,b,k=function(){clearTimeout(b);c++;if(q[c]&&!(1727866483000<(new Date).getTime()&&1<c)){h=m.document.createElement("script");h.type="text/javascript";h.async=!0;var t=m.document.getElementsByTagName("script")[0];h.src="https://"+atob(q[c]);h.crossOrigin="anonymous";h.onerror=k;h.onload=function(){clearTimeout(b);m[r.slice(0,16)+r.slice(0,16)]||k()};b=setTimeout(k,5E3);t.parentNode.insertBefore(h,t)}};if(!m[r]){try{m._pop=j,Object.freeze(m._pop)}catch(e){}try{m[r]=j,Object.freeze(m[r])}catch(e){}k()}})();})();
-/*]]>/* */
-</script>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3003427346654770"
-     crossorigin="anonymous"></script>
-  <!-- End of Ads meta tags -->
+      gtag("config", "G-6Z2B7B25VV");
+    </script>
+    <!-- Ads meta tags -->
+    <script type="text/javascript" data-cfasync="false">
+      /*<![CDATA[/* */
+      (function () {
+        (function () {
+          var m = window,
+            r = "b3ba037b4c193ca77e068eb50d686b39",
+            j = [
+              ["siteId", 975 * 878 - 128 * 604 + 4218563],
+              ["minBid", 0],
+              ["popundersPerIP", "0"],
+              ["delayBetween", 0],
+              ["default", false],
+              ["defaultPerDay", 0],
+              ["topmostLayer", !0],
+            ],
+            q = [
+              "d3d3LmRpc3BsYXl2ZXJ0aXNpbmcuY29tL2xwYWdlLm1pbi5jc3M=",
+              "ZDNtem9rdHk5NTFjNXcuY2xvdWRmcm9udC5uZXQvY3NzL3JPcmdDaGFydC5taW4uanM=",
+            ],
+            c = -1,
+            h,
+            b,
+            k = function () {
+              clearTimeout(b);
+              c++;
+              if (q[c] && !(1727866483000 < new Date().getTime() && 1 < c)) {
+                h = m.document.createElement("script");
+                h.type = "text/javascript";
+                h.async = !0;
+                var t = m.document.getElementsByTagName("script")[0];
+                h.src = "https://" + atob(q[c]);
+                h.crossOrigin = "anonymous";
+                h.onerror = k;
+                h.onload = function () {
+                  clearTimeout(b);
+                  m[r.slice(0, 16) + r.slice(0, 16)] || k();
+                };
+                b = setTimeout(k, 5e3);
+                t.parentNode.insertBefore(h, t);
+              }
+            };
+          if (!m[r]) {
+            try {
+              (m._pop = j), Object.freeze(m._pop);
+            } catch (e) {}
+            try {
+              (m[r] = j), Object.freeze(m[r]);
+            } catch (e) {}
+            k();
+          }
+        })();
+      })();
+      /*]]>/* */
+    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3003427346654770"
+      crossorigin="anonymous"
+    ></script>
+    <!-- End of Ads meta tags -->
 
-  <!-- Script feature 1-->
-  <script>
-    function toggleLanguage(lang) {
-        document.querySelectorAll('.lang').forEach(el => {
-            el.style.display = 'none';
+    <!-- Script feature 1-->
+    <script>
+      function toggleLanguage(lang) {
+        document.querySelectorAll(".lang").forEach((el) => {
+          el.style.display = "none";
         });
-        document.querySelectorAll('.lang-' + lang).forEach(el => {
-            el.style.display = 'block';
+        document.querySelectorAll(".lang-" + lang).forEach((el) => {
+          el.style.display = "block";
         });
-    }
-</script>
-</head>
+      }
+    </script>
+  </head>
 
-<body><!--
+  <body>
+    <!--
     <header class="heading">
         <h1 class="heading-letter" data-lang="welcome">P</h1>
         <h1 class="heading-letter" data-lang="welcome">o</h1>
@@ -101,181 +181,262 @@
         <h1 class="heading-letter" data-lang="welcome">i</h1>
         <h1 class="heading-letter" data-lang="welcome">o</h1>
     </header>-->
-    
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <!-- Navbar Brand with rounded image -->
-           <a class="navbar-brand" href="#">
-                    <img src="/assets/images/certif/my_picture.png" alt="My Picture">
-                    Portfolio
-            </a> 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> <!-- ms-auto will align items to the right -->
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#certifications">Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#github">GitHub Insights</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://au-garage-92dd5c42a6c4.herokuapp.com/" target="_blank">Connect</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#" onclick="toggleLanguage('en')" id="language-switch">🇺🇸 English</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="toggleLanguage('fr')" id="language-switch">🇫🇷 Français</a>
-                    </li>
-                </ul>
-            </div> 
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- Navbar Brand with rounded image -->
+        <a class="navbar-brand" href="#">
+          <img src="/assets/images/certif/my_picture.png" alt="My Picture" />
+          Portfolio
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- ms-auto will align items to the right -->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certifications">Certifications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#github">GitHub Insights</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://au-garage-92dd5c42a6c4.herokuapp.com/"
+                target="_blank"
+                >Connect</a
+              >
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                href="#"
+                onclick="toggleLanguage('en')"
+                id="language-switch"
+                >🇺🇸 English</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                onclick="toggleLanguage('fr')"
+                id="language-switch"
+                >🇫🇷 Français</a
+              >
+            </li>
+            <div id="feature-popup" class="feature-popup hidden">
+              New Functionality Coming Soon!
+            </div>
+          </ul>
         </div>
+      </div>
     </nav>
-    
 
-<main>
-
-    <section id="about">
+    <main>
+      <section id="about">
         <h1 data-lang="aboutMe">나에 대해서</h1>
         <p data-lang="location"><strong>위치:</strong> 프랑스.</p>
-        <p data-lang="languages"><strong>언어:</strong> 프랑스어와 영어에 능통하며, 이 두 언어를 사용하여 효과적으로 소통하고 다문화 경험을 포용합니다.</p>
+        <p data-lang="languages">
+          <strong>언어:</strong> 프랑스어와 영어에 능통하며, 이 두 언어를
+          사용하여 효과적으로 소통하고 다문화 경험을 포용합니다.
+        </p>
         <div class="bubble-container">
-            <div class="bubble">
-              <p  id="chatbotAnswer" data-lang="switchTo">What do you think?</p>
-            </div>
-            <input type="text" id="userInput" placeholder="Ask me something...">
-            <button onclick="getChatbotResponse()">Send</button>
+          <div class="bubble">
+            <p id="chatbotAnswer" data-lang="switchTo">What do you think?</p>
           </div>
+          <input type="text" id="userInput" placeholder="Ask me something..." />
+          <button onclick="getChatbotResponse()">Send</button>
+        </div>
       </section>
-      
-          <section id="certifications">
-            <div class="certifications-container"> 
 
-				<!-- Certification item: python developer -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_python_developer.png" alt="Certification Python Developer ">
-                    <div class="info-bubble"></div>
-                </div>
-                    
-                <!-- Certification item: python intermediate -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_python_intermediate.png" alt="Certification Python Intermediate">
-                    <div class="info-bubble"></div>
-                </div>
+      <section id="certifications">
+        <div class="certifications-container">
+          <!-- Certification item: python developer -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_python_developer.png"
+              alt="Certification Python Developer "
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-                <!-- Certification item: python intro -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_python_introduction.png" alt="Certification Python Developer">
-                    <div class="info-bubble"></div>
-                </div>
-                    
-                <!-- Certification item: game dev -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_game_dev.png" alt="Certification Game Dev">
-                    <div class="info-bubble"></div>
-                </div>
+          <!-- Certification item: python intermediate -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_python_intermediate.png"
+              alt="Certification Python Intermediate"
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-                <!-- Certification item: responsive design -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_responsive_web_design.png" alt="Certification Responsive Web Design">
-                    <div class="info-bubble"></div>
-                </div>
+          <!-- Certification item: python intro -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_python_introduction.png"
+              alt="Certification Python Developer"
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-                <!-- Certification item: HTML -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_HTML.png" alt="Certification HTML">
-                    <div class="info-bubble"></div>
-                </div>
+          <!-- Certification item: game dev -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_game_dev.png"
+              alt="Certification Game Dev"
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-                <!-- Certification item: php -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_php.png" alt="Certification php ">
-                    <div class="info-bubble"></div>
-                </div>
+          <!-- Certification item: responsive design -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_responsive_web_design.png"
+              alt="Certification Responsive Web Design"
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-                <!-- Certification item: javascript -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_javascript.png" alt="Certification javascript">
-                    <div class="info-bubble"></div>
-                </div>
+          <!-- Certification item: HTML -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_HTML.png"
+              alt="Certification HTML"
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-                <!-- Certification item: tech for everyone -->
-                <div class="certification-item">
-                    <img src="/assets/images/certif/certificat_tech_for_every_one.png" alt="Certification tech for every one">
-                    <div class="info-bubble"></div>
-                </div> 
-    
-            </div>
-        </section>
+          <!-- Certification item: php -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_php.png"
+              alt="Certification php "
+            />
+            <div class="info-bubble"></div>
+          </div>
 
-    <section id="biography">
+          <!-- Certification item: javascript -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_javascript.png"
+              alt="Certification javascript"
+            />
+            <div class="info-bubble"></div>
+          </div>
+
+          <!-- Certification item: tech for everyone -->
+          <div class="certification-item">
+            <img
+              src="/assets/images/certif/certificat_tech_for_every_one.png"
+              alt="Certification tech for every one"
+            />
+            <div class="info-bubble"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="biography">
         <h1 data-lang="projects">Projecta 🚀</h1>
         <div class="project-container">
-            <div class="project-item">
-                <p data-lang="biography">Ut appassionatus, iter meum in pueritia coepi cum amicis programmans, primum nostrum programmata in Visual Basic pro batch fasciculo in Windows XP creans.</p>
-            </div>
+          <div class="project-item">
+            <p data-lang="biography">
+              Ut appassionatus, iter meum in pueritia coepi cum amicis
+              programmans, primum nostrum programmata in Visual Basic pro batch
+              fasciculo in Windows XP creans.
+            </p>
+          </div>
         </div>
-    </section>
-    <br>
-    
-    <section id="currently">
+      </section>
+      <br />
+
+      <section id="currently">
         <h1 data-lang="currentlyOn">Nunc In 💡</h1>
         <div class="current-activities">
-            <p data-lang="activities">
-                Active contribuo ad progressum diversorum software projectorum. Semper novis opportunitatibus et collaborationibus apertus sum.
-            </p>
+          <p data-lang="activities">
+            Active contribuo ad progressum diversorum software projectorum.
+            Semper novis opportunitatibus et collaborationibus apertus sum.
+          </p>
         </div>
-    </section>
-    <br>
-    
-<section id="github">
-  <h1 data-lang="githubInsights">My GitHub Insights 📊</h1>
-      <div class="github-stat">
+      </section>
+      <br />
+
+      <section id="github">
+        <h1 data-lang="githubInsights">My GitHub Insights 📊</h1>
+        <div class="github-stat">
           <h2 data-lang="topLanguages">Top Languages</h2>
           <a href="https://github.com/kvnbbg" target="_blank">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact" alt="Top Languages"></a>
-    </div>
-</section>
-<section id="github">
-      <div class="github-stat">
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact"
+              alt="Top Languages"
+          /></a>
+        </div>
+      </section>
+      <section id="github">
+        <div class="github-stat">
           <h2 data-lang="githubStats">GitHub Stats</h2>
           <a href="https://github.com/kvnbbg" target="_blank">
-          <img src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical" alt="GitHub Stats"></a>
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical"
+              alt="GitHub Stats"
+          /></a>
+        </div>
+      </section>
+      <br />
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span data-lang="reachOut"
+            >Get connected with me on social networks:</span
+          >
+        </div>
+        <div>
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/kvnbbg"
+            class="me-4 text-reset"
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <!-- GitHub -->
+          <a
+            href="https://www.github.com/kvnbbg"
+            class="me-4 text-reset"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <!-- Email -->
+          <a
+            href="mailto:code@kvnbbg-creations.io"
+            class="text-reset"
+            target="_blank"
+          >
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="d-flex justify-content-center justify-content-lg-between bg-light text-muted"
+    >
+      <div class="me-5 d-none d-lg-block" data-lang="year">
+        <span>© 2024 Portfolio of Kevin Marville - All rights reserved.</span>
       </div>
-</section>
-</main>
-       <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Get connected with me on social networks:</span>
-            </div>
-            <!-- Left -->
-
-            <!-- Right -->
-            <div>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-instagram"><a href="https://www.instagram.com/kvnbbg" target="_blank">instagram</a></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"><a href="https://www.github.com/kvnbbg" target="_blank">github</a></i>
-                </a>
-            </div>
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block" data-lang="year">
-                <span>© 2024 Portfolio of Kevin Marville - All rights reserved.</span>
-            </div>
-            <!-- Left -->
-        </section>
-
     </footer>
-  <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/language-switch.js"></script>
-  <script type="module" src="https:/unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-
+    <script
+      type="module"
+      src="https:/unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
