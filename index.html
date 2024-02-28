@@ -105,17 +105,14 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <!-- Navbar Brand with rounded image -->
-            <a class="navbar-brand" href="#">
-                <img src="/assets/images/certif/my_picture.png" alt="My Picture">
-                Kevin MARVILLE
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+           <a class="navbar-brand" href="#">
+                    <img src="/assets/images/certif/my_picture.png" alt="My Picture">
+                    Kevin MARVILLE
+            </a> 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- ms-auto will align items to the right -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About</a>
+                        <a class="nav-link" aria-current="page" href="#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#certifications">Certifications</a>
@@ -127,15 +124,12 @@
                         <a class="nav-link" href="https://au-garage-92dd5c42a6c4.herokuapp.com/" target="_blank">Connect</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#" onclick="toggleLanguage('en')">🇺🇸 English</a>
+                        <a class="nav-link" href="#" onclick="toggleLanguage('en')" id="language-switch">🇺🇸 English</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="toggleLanguage('fr')">🇫🇷 Français</a>
+                        <a class="nav-link" href="#" onclick="toggleLanguage('fr')" id="language-switch">🇫🇷 Français</a>
                     </li>
                 </ul>
-                <button id="language-switch" onclick="toggleLanguage()" class="language-button">
-                    <span class="language-icon"></span>
-                  </button>
             </div> 
         </div>
     </nav>
@@ -219,9 +213,6 @@
     <section id="biography">
         <h1 data-lang="projects">Projecta 🚀</h1>
         <div class="project-container">
-            <div class="project-item">
-                <img src="assets/images/project-1.png" alt="Projectum 1">
-            </div>
             <div class="project-item">
                 <p data-lang="biography">Ut appassionatus, iter meum in pueritia coepi cum amicis programmans, primum nostrum programmata in Visual Basic pro batch fasciculo in Windows XP creans.</p>
             </div>

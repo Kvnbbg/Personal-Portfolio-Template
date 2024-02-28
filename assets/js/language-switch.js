@@ -39,11 +39,11 @@ let currentLanguage = 'en'; // Default language set to English
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-  const button = document.getElementById("language-switch");
-  button.classList.toggle("active");
+  const li = document.getElementById("language-switch");
+  li.classList.toggle("active");
 
-  const iconElement = button.querySelector(".language-icon");
-  const textElement = button.querySelector(".language-text");
+  // const iconElement = button.querySelector(".language-icon");
+  // const textElement = button.querySelector(".language-text");
 
   iconElement.textContent = currentLanguage === 'en' ? "💻" : "💡";
   textElement.textContent = techLanguageContent[currentLanguage].switchTo;
