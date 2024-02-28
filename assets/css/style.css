@@ -1,15 +1,15 @@
-/* Enhanced CSS Variables for More Flexibility */
-:root {
-  --primary-color: #0056b3; /* A more vibrant primary color */
-  --secondary-color: #495057; /* A softer secondary color for text and less prominent elements */
-  --background-color: #ffffff; /* A clean, white background for better contrast */
-  --text-color: #212529; /* A dark color for text to ensure readability */
-  --accent-color: #17a2b8; /* An accent color for highlighting interactive elements or sections */
-  --font-family-base: 'Poppins', sans-serif;
-  --transition-speed: 0.3s; /* Standardize transition speed for cohesive animations */
+/* Force Vertical Scrollbar */
+html {
+  min-height: 101vh; /* Slightly more than full viewport height to ensure scrollbar */
 }
 
-/* Reset and Base Styles */
+/* Resizing Images */
+img {
+  max-width: 100%; /* Ensure images do not overflow their container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Basic Reset */
 *,
 *::before,
 *::after {
@@ -18,13 +18,17 @@
   box-sizing: border-box;
 }
 
+/* Typography, Layout, and Other Styles */
 body {
-  font-family: var(--font-family-base);
-  color: var(--text-color);
-  background-color: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+  color: #212529;
+  background-color: #f8f9fa;
   line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar if not needed */
 }
+
+/* Continue with your existing styles... */
+
 
 /* Improved Typography for Visual Hierarchy */
 h1, h2, h3, h4, h5, h6 {
