@@ -1,40 +1,39 @@
-// Object storing language-specific content tailored for a student's portfolio
-const languageContent = {
+const techLanguageContent = {
   en: {
-    aboutMe: 'About Me',
-    location: 'Location: France',
-    languages: 'Languages: Fluent in French and English',
-    switchTo: 'Switch to French',
-    biography: 'A journey from curiosity to passion, my adventure in technology started with creating simple scripts and has evolved into a pursuit of innovation and excellence. As a student, I am continuously expanding my knowledge and skills, aiming to contribute significantly to the tech industry.',
-    currentlyOn: 'Current Projects',
-    activities: 'Actively engaging in academic projects and personal exploration of new technologies, I am always on the lookout for opportunities to apply my learning in real-world scenarios.',
-    githubInsights: 'GitHub Insights',
-    topLanguages: 'Top Languages',
-    githubStats: 'GitHub Stats',
-    connect: 'Connect With Me',
-    leisureContact: 'Hobbies & Interests',
-    professionalContact: 'Professional Contact',
-    reachOut: 'Interested in discussing technology, potential projects, or just want to say hi? Feel free to reach out via email or connect with me on social media.',
+    aboutMe: 'Developer Profile',
+    location: 'Geographical Node: France',
+    languages: 'Programming Dialects: Fluent in Python and JavaScript',
+    switchTo: 'Initiate Communication, via the Chat Interface!',
+    biography: `Initiating from a vector of relentless inquisitiveness and steadfast ardor, my trajectory in the digital sphere ignited with the concoction of elementary Python scripts. This nascent spark has since evolved into an unswerving expedition in quest of technological innovation and computational excellence. Python, as the lingua franca of my digital odyssey, with its eloquent syntax and dynamic semantics, has been my primary vehicle for traversing the intricacies of software architecture and algorithmic design. Drawing sustenance from luminaries like Steve Wozniak, heralded for his pioneering strides in hands-on innovation, and Steve Jobs, celebrated for his visionary prowess in technological entrepreneurship, my voyage mirrors a symbiosis of technical prowess and romanticism.`,
+    currentlyOn: 'Ongoing Endeavors',
+    activities: 'Engaged fervently in the exploration of emergent paradigms and the unraveling of algorithmic enigmas, my pursuits span the spectrum from web development, leveraging frameworks like Flask, to delving deep into the realms of data science, harnessing the power of libraries such as NumPy, Pandas, and TensorFlow.',
+    githubInsights: '🚀',
+    topLanguages: 'Dominant Lexicons',
+    githubStats: 'Statistical Analyses',
+    connect: 'Establish Contact',
+    leisureContact: 'Interests & Avocations',
+    professionalContact: 'Professional Liaison',
+    reachOut: 'Desiring to partake in discussions pertaining to advanced Pythonic constructs, algorithmic intricacies, or eager for collaborative ventures? Do not hesitate to initiate contact via electronic mail or through the conduits of social media platforms.',
     year: `© ${new Date().getFullYear()} - Kevin Marville's Portfolio`
   },
   fr: {
-    aboutMe: 'À Propos',
-    location: 'Localisation : France',
-    languages: 'Langues : Français et Anglais courants',
-    switchTo: 'Switch to English',
-    biography: 'D\'une curiosité à une passion, mon aventure technologique a commencé par la création de scripts simples et s\'est évoluée vers une quête d\'innovation et d\'excellence. En tant qu\'étudiant, je continue d\'élargir mes connaissances et compétences, visant à apporter une contribution significative à l\'industrie technologique.',
-    currentlyOn: 'Projets Actuels',
-    activities: 'Engagé activement dans des projets académiques et l\'exploration personnelle de nouvelles technologies, je suis constamment à la recherche d\'opportunités pour appliquer mon apprentissage dans des scénarios du monde réel.',
-    githubInsights: 'Aperçus GitHub',
-    topLanguages: 'Langages Principaux',
-    githubStats: 'Statistiques GitHub',
-    connect: 'Me Contacter',
-    leisureContact: 'Loisirs & Intérêts',
-    professionalContact: 'Contact Professionnel',
-    reachOut: 'Intéressé par une discussion sur la technologie, des projets potentiels, ou juste envie de dire bonjour ? N\'hésitez pas à me contacter par e-mail ou à vous connecter avec moi sur les réseaux sociaux.',
-    year: `© ${new Date().getFullYear()} - Portfolio de Kevin Marville`
-  }
-};
+    aboutMe: 'Profil de Développeur',
+    location: 'Noeud Géographique : France',
+    languages: 'Dialectes de Programmation : Maîtrise du Python et du JavaScript',
+    switchTo: 'Entamer la Communication, via l\'Interface de Chat!',
+    biography: `Émanant d'un vecteur d'insatiable curiosité et d'ardente passion, ma trajectoire dans la sphère numérique a pris son envol avec la conception de scripts Python élémentaires. Cette étincelle naissante a depuis évolué en une expédition inébranlable en quête d'innovation technologique et d'excellence computationnelle. Python, comme la lingua franca de mon odyssée numérique, avec sa syntaxe éloquente et sa sémantique dynamique, a été mon véhicule principal pour traverser les intrications de l'architecture logicielle et de la conception algorithmique. S'inspirant de luminaires tels que Steve Wozniak, célèbre pour ses avancées pionnières dans l'innovation pratique, et Steve Jobs, célébré pour sa maîtrise visionnaire de l'entrepreneuriat technologique, mon voyage reflète une symbiose de compétence technique et de romantisme.`,
+    currentlyOn: 'Entreprises Actuelles',
+    activities: 'Engagé ardemment dans l\'exploration de paradigmes émergents et le dévoilement d\'énigmes algorithmiques, mes activités couvrent le spectre du développement web, en tirant parti de framework tel que Flask, à l\'exploration des domaines de la science des données, en exploitant la puissance de bibliothèques telles que NumPy, Pandas et TensorFlow.',
+    githubInsights: '🚀',
+    topLanguages: 'Lexiques Dominants',
+    githubStats: 'Analyses Statistiques',
+    connect: 'Établir le Contact',
+    leisureContact: 'Intérêts & Loisirs',
+    professionalContact: 'Liaison Professionnelle',
+    reachOut: 'Désirant participer à des discussions portant sur des concepts Python avancés, des intrications algorithmiques ou enthousiaste pour des ventures collaboratives ? N\'hésitez pas à entamer le contact via courrier électronique ou à travers les canaux des plateformes de médias sociaux.',
+    year: `© ${new Date().getFullYear()} Portfolio de Kevin Marville`
+  },
+}
 
 let currentLanguage = 'en'; // Default language set to English
 
@@ -46,8 +45,8 @@ function toggleLanguage() {
   const iconElement = button.querySelector(".language-icon");
   const textElement = button.querySelector(".language-text");
 
-  iconElement.textContent = currentLanguage === 'en' ? "🇫🇷" : "🇬🇧";
-  textElement.textContent = languageContent[currentLanguage].switchTo;
+  iconElement.textContent = currentLanguage === 'en' ? "💻" : "💡";
+  textElement.textContent = techLanguageContent[currentLanguage].switchTo;
   console.log(`Language set to ${currentLanguage === 'en' ? 'English' : 'French'}.`);
   updateContent();
 }
@@ -55,7 +54,7 @@ function toggleLanguage() {
 function updateContent() {
   document.querySelectorAll('[data-lang]').forEach(element => {
     const key = element.dataset.lang;
-    element.textContent = languageContent[currentLanguage][key];
+    element.textContent = techLanguageContent[currentLanguage][key];
   });
 }
 

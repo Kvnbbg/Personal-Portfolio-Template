@@ -21,6 +21,49 @@
 /* Force Vertical Scrollbar */
 html {
   min-height: 101vh; /* Slightly more than full viewport height to ensure scrollbar */
+  font-size: large;
+}
+
+.nav-item {
+  margin: 5px;
+  transition: transform 0.5s ease, font-size 0.5s ease;
+  cursor: pointer;
+}
+
+/* Animation for reverse effect with bamboo emoji */
+@keyframes reverseAnimation {
+  0% {
+    transform: scale(1);
+    font-size: 1rem;
+  }
+  50% {
+    transform: scale(0.8);
+    font-size: 1.5rem;
+    content: "🎍"; /* Temporarily show bamboo emoji */
+  }
+  100% {
+    transform: scale(1);
+    font-size: 1rem;
+  }
+}
+
+
+/* Animation for reverse effect with bamboo emoji */
+.bubble-container {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  animation: reverseAnimation 2s;
+}
+
+.bubble {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  animation: fadeIn 1s;
 }
 
 /* Resizing Images */
@@ -64,27 +107,61 @@ a:focus {
   color: var(--accent-color); /* Use accent color for hover and focus states */
 }
 
-/* Navigation Enhancements */
+/* Enhanced Navigation Styles */
+
 .navbar {
-  background-color: var(--primary-color);
-  padding: 1rem;
+  background-color: var(--primary-color); /* Use a primary color variable for easy theme changes */
+  padding: 0.5rem 1rem; /* Adjust padding for a balanced spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  display: flex;
+  justify-content: space-between; /* Ensure nav items are spaced out properly */
+  align-items: center;
 }
 
 .navbar a.navbar-brand {
   color: #ffffff;
-  font-size: 1.25rem; /* Increase font size for brand name */
+  font-size: 1.5rem; /* Slightly larger font size for brand prominence */
+  display: flex;
+  align-items: center; /* Vertically center logo and text */
+  gap: 0.5rem; /* Space between logo and brand name */
+}
+
+.navbar-brand img {
+  width: 40px; /* Slightly larger for visibility */
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none; /* Remove default list styling */
+  gap: 1rem; /* Space between nav links */
 }
 
 .navbar-nav a.nav-link {
   color: rgba(255, 255, 255, 0.8);
-  transition: color var(--transition-speed);
+  transition: color var(--transition-speed), background-color var(--transition-speed);
+  padding: 0.5rem 0.75rem; /* Add padding for a larger clickable area */
+  border-radius: var(--border-radius); /* Use variable for consistent border radius */
+  text-decoration: none; /* Remove underline */
 }
 
 .navbar-nav a.nav-link:hover,
 .navbar-nav a.nav-link:focus {
   color: #ffffff;
-  background-color: var(--accent-color); /* Add a background color on hover/focus for better visibility */
-  border-radius: 5px; /* Soften the edges */
+  background-color: var(--accent-color); /* Enhanced visibility on hover/focus */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically on smaller screens */
+    gap: 0.5rem;
+  }
+
+  .navbar-brand img {
+    margin-right: 0; /* Adjust spacing for mobile */
+  }
 }
 
 /* Certification Gallery Improvements */
@@ -103,12 +180,63 @@ a:focus {
   box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* Subtle shadow for depth */
 }
 
+/* Section Styling Enhancements */
+section {
+  padding: 2rem 0; /* Add padding for a spacious feel */
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  text-align: center; /* Centers text inside children */
+  flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+  gap: 2%; /* Optional: Adds space between items */
+  margin: 6% 2%; /* Optional: Centers the section on the page */
+}
+section > div {
+  max-width: 100%; /* Ensures images are responsive and do not overflow their container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block; /* Treats the image as a block-level element, enabling margin auto to work */
+
+}
+
+.warning-div {
+  position: sticky;
+  padding: 20px; /* Increased padding for better spacing around the content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Increased gap for better separation between items */
+  margin: 10% auto; /* Adjusted for better centering and responsiveness */
+  max-width: 600px; /* Ensures the div doesn't stretch too wide on larger screens */
+  background-color: #ffeded; /* Soft red background for warning indication */
+  border: 1px solid #ffcccc; /* Lighter red border for subtle contrast */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  color: #333; /* Darker text for better readability against the light background */
+  font-size: 16px; /* Ensures text is neither too small nor too large */
+  line-height: 1.5; /* Improves readability of text */
+}
+
+/* Additional Styling for Responsive Design */
+@media (max-width: 768px) {
+  .warning-div {
+    margin: 20px; /* Reduces margin for smaller screens */
+    padding: 15px; /* Adjusts padding for smaller screens */
+    gap: 10px; /* Adjusts gap to maintain layout on smaller screens */
+  }
+}
+
+
 /* Footer Styling Enhancements */
 footer {
   background-color: var(--secondary-color);
   color: #fff;
   padding: 2rem 0;
   font-size: 0.875rem;
+  height: auto;
 }
 
 footer a {

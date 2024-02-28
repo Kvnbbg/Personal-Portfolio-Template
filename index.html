@@ -75,31 +75,45 @@
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3003427346654770"
      crossorigin="anonymous"></script>
   <!-- End of Ads meta tags -->
+
+  <!-- Script feature 1-->
+  <script>
+    function toggleLanguage(lang) {
+        document.querySelectorAll('.lang').forEach(el => {
+            el.style.display = 'none';
+        });
+        document.querySelectorAll('.lang-' + lang).forEach(el => {
+            el.style.display = 'block';
+        });
+    }
+</script>
 </head>
 
-<body>
-        <header class="heading">
-          <h1 class="heading-letter" data-lang="welcome">P</h1>
-          <h1 class="heading-letter" data-lang="welcome">o</h1>
-          <h1 class="heading-letter" data-lang="welcome">r</h1>
-          <h1 class="heading-letter" data-lang="welcome">t</h1>
-          <h1 class="heading-letter" data-lang="welcome">f</h1>
-          <h1 class="heading-letter" data-lang="welcome">o</h1>
-          <h1 class="heading-letter" data-lang="welcome">l</h1>
-          <h1 class="heading-letter" data-lang="welcome">i</h1>
-          <h1 class="heading-letter" data-lang="welcome">o</h1>
-          <br> 
-      </header>
-
-    <!-- Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body><!--
+    <header class="heading">
+        <h1 class="heading-letter" data-lang="welcome">P</h1>
+        <h1 class="heading-letter" data-lang="welcome">o</h1>
+        <h1 class="heading-letter" data-lang="welcome">r</h1>
+        <h1 class="heading-letter" data-lang="welcome">t</h1>
+        <h1 class="heading-letter" data-lang="welcome">f</h1>
+        <h1 class="heading-letter" data-lang="welcome">o</h1>
+        <h1 class="heading-letter" data-lang="welcome">l</h1>
+        <h1 class="heading-letter" data-lang="welcome">i</h1>
+        <h1 class="heading-letter" data-lang="welcome">o</h1>
+    </header>-->
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Kevin MARVILLE</a>
+            <!-- Navbar Brand with rounded image -->
+            <a class="navbar-brand" href="#">
+                <img src="/assets/images/certif/my_picture.png" alt="My Picture">
+                Kevin MARVILLE
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><img src="assets/images/avatar-4.png" alt="avatar of someone"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto will align items to the right -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#about">About</a>
                     </li>
@@ -110,31 +124,38 @@
                         <a class="nav-link" href="#github">GitHub Insights</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Connect</a>
+                        <a class="nav-link" href="https://au-garage-92dd5c42a6c4.herokuapp.com/" target="_blank">Connect</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="toggleLanguage('en')">🇺🇸 English</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="toggleLanguage('fr')">🇫🇷 Français</a>
                     </li>
                 </ul>
+                <button id="language-switch" onclick="toggleLanguage()" class="language-button">
+                    <span class="language-icon"></span>
+                  </button>
             </div> 
         </div>
     </nav>
+    
 
 <main>
 
-<section id="about">
-  <h1 data-lang="aboutMe">About Me</h1>
-  <p data-lang="location"><strong>Location:</strong> France.</p>
-  <p data-lang="languages"><strong>Languages:</strong> Fluent in both French and English, I leverage these skills to communicate effectively and embrace multicultural experiences.</p>
-  <div class="bubble-container">
-    <div class="bubble">
-      <p data-lang="switchTo">Explore this website in your preferred language. Currently available in both French and English for a tailored browsing experience.</p>
-      <button id="language-switch" onclick="toggleLanguage()" class="language-button">
-        <span class="language-icon">🇫🇷</span>
-        <span class="language-text">Switch to French</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-          <br> 
+    <section id="about">
+        <h1 data-lang="aboutMe">나에 대해서</h1>
+        <p data-lang="location"><strong>위치:</strong> 프랑스.</p>
+        <p data-lang="languages"><strong>언어:</strong> 프랑스어와 영어에 능통하며, 이 두 언어를 사용하여 효과적으로 소통하고 다문화 경험을 포용합니다.</p>
+        <div class="bubble-container">
+            <div class="bubble">
+              <p  id="chatbotAnswer" data-lang="switchTo">What do you think?</p>
+            </div>
+            <input type="text" id="userInput" placeholder="Ask me something...">
+            <button onclick="getChatbotResponse()">Send</button>
+          </div>
+      </section>
+      
           <section id="certifications">
             <div class="certifications-container"> 
 
@@ -192,50 +213,47 @@
                     <div class="info-bubble"></div>
                 </div> 
     
-               <section id="biography">
-                <!-- Item: biography picture-->
-                <div class="certification-item">
-                    <figure class="avatar-box">
-                        <img src="/assets/images/certif/my_picture.png" alt="My picture of me" width="80%">
-                    </figure>
-                </div>
-                <div class="biography-text">
-                    <p data-lang="biography">
-                        As a passionate, my journey began in childhood when I started programming with friends, creating our first program in Visual Basic for batch file on Windows XP.
-                  	</p>
-                 </div>
-                </section>
             </div>
         </section>
 
-    <br> 
-
-      <section id="currently">
-        <h1 data-lang="currentlyOn">Currently On 💡</h1>
+    <section id="biography">
+        <h1 data-lang="projects">Projecta 🚀</h1>
+        <div class="project-container">
+            <div class="project-item">
+                <img src="assets/images/project-1.png" alt="Projectum 1">
+            </div>
+            <div class="project-item">
+                <p data-lang="biography">Ut appassionatus, iter meum in pueritia coepi cum amicis programmans, primum nostrum programmata in Visual Basic pro batch fasciculo in Windows XP creans.</p>
+            </div>
+        </div>
+    </section>
+    <br>
+    
+    <section id="currently">
+        <h1 data-lang="currentlyOn">Nunc In 💡</h1>
         <div class="current-activities">
             <p data-lang="activities">
-                I am actively contributing to the progress of diverse software projects. I'm always open to new opportunities and collaborations
+                Active contribuo ad progressum diversorum software projectorum. Semper novis opportunitatibus et collaborationibus apertus sum.
             </p>
         </div>
     </section>
-    <br> 
-
+    <br>
+    
 <section id="github">
   <h1 data-lang="githubInsights">My GitHub Insights 📊</h1>
-  <div class="github-stats">
       <div class="github-stat">
           <h2 data-lang="topLanguages">Top Languages</h2>
           <a href="https://github.com/kvnbbg" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact" alt="Top Languages"></a>
-      </div>
+    </div>
+</section>
+<section id="github">
       <div class="github-stat">
           <h2 data-lang="githubStats">GitHub Stats</h2>
           <a href="https://github.com/kvnbbg" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical" alt="GitHub Stats"></a>
       </div>
-  </div>
 </section>
-<br> 
 </main>
        <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
@@ -255,11 +273,6 @@
                     <i class="fab fa-github"><a href="https://www.github.com/kvnbbg" target="_blank">github</a></i>
                 </a>
             </div>
-            <!-- Right -->
-        </section>
-
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block" data-lang="year">
                 <span>© 2024 Portfolio of Kevin Marville - All rights reserved.</span>

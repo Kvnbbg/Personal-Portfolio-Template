@@ -5,9 +5,10 @@ document.body.appendChild(createWarningDiv());
 function createWarningDiv() {
     const userLang = navigator.language || navigator.userLanguage;
     const messages = {
-        en: `To fully enjoy our site, please enable JavaScript in your browser. <a href='https://www.wikihow.com/Enable-Javascript'>Learn how</a>.`,
-        fr: `Pour profiter pleinement de notre site, veuillez activer JavaScript dans votre navigateur. <a href='https://www.wikihow.com/Enable-Javascript'>Apprenez comment faire</a>.`
+        en: `If you see the Korean word for "happiness" on our site, it's because JavaScript is not activated in your browser. To fully enjoy our content in English or French, please enable JavaScript. <a href='https://www.wikihow.com/Enable-Javascript' target='_blank'>Learn how</a>.`,
+        fr: `Si vous voyez le mot coréen pour "bonheur" sur notre site, c'est parce que JavaScript n'est pas activé dans votre navigateur. Pour profiter pleinement de notre contenu en anglais ou en français, veuillez activer JavaScript. <a href='https://www.wikihow.com/Enable-Javascript'>Apprenez comment faire</a>.`
     };
+    
     const message = messages[userLang.startsWith('fr') ? 'fr' : 'en'];
 
     const warningDiv = document.createElement('div');
@@ -24,3 +25,26 @@ function createWarningDiv() {
 
     return warningDiv;
 }
+
+// Language Model for the Portfolio Site [assets/js/language-switch.js]
+
+// CHATBOT SCRIPT 
+function getChatbotResponse() {
+    const userInput = document.getElementById('userInput').value.toLowerCase();
+    let response = '';
+  
+    // Define responses to certain inputs
+    if (userInput.includes('how are you')) {
+      response = 'I am fine, thank you! How can I assist you today?';
+    } else if (userInput.includes('name')) {
+      response = 'I am a simple AI chatbot here to help you.';
+    } else if (userInput.includes('thank you')) {
+      response = 'You\'re welcome!';
+    } else {
+      response = 'Sorry, I am not sure how to respond to that.';
+    }
+  
+    // Update the chatbot response in the HTML
+    document.getElementById('chatbotAnswer').innerText = response;
+  }
+  
