@@ -16,7 +16,7 @@ const techLanguageContent = {
     professionalContact: "Professional Liaison",
     reachOut:
       "Desiring to partake in discussions pertaining to advanced Pythonic constructs, algorithmic intricacies, or eager for collaborative ventures? Do not hesitate to initiate contact via electronic mail or through the conduits of social media platforms.",
-    year: `© ${new Date().getFullYear()} - Kevin Marville's Portfolio`,
+    year: `© ${new Date().getFullYear()} - Kevin, J MARVILLE Portfolo`,
   },
   fr: {
     aboutMe: "Profil de Développeur",
@@ -35,7 +35,7 @@ const techLanguageContent = {
     professionalContact: "Liaison Professionnelle",
     reachOut:
       "Désirant participer à des discussions portant sur des concepts Python avancés, des intrications algorithmiques ou enthousiaste pour des ventures collaboratives ? N'hésitez pas à entamer le contact via courrier électronique ou à travers les canaux des plateformes de médias sociaux.",
-    year: `© ${new Date().getFullYear()} Portfolio de Kevin Marville`,
+    year: `© ${new Date().getFullYear()} Portfolio de Kevin, J MARVILLE`,
   },
 };
 
