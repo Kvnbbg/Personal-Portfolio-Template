@@ -110,6 +110,7 @@ a:focus {
   display: flex;
   justify-content: space-between; /* Ensure nav items are spaced out properly */
   align-items: center;
+  position: sticky;
 }
 
 .navbar a.navbar-brand {
