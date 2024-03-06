@@ -1,5 +1,6 @@
 const techLanguageContent = {
   en: {
+    welcome: "Welcome✨",
     aboutMe: "Developer Profile",
     location: "Geographical Node: France",
     languages: "Programming Dialects: Fluent in Python and JavaScript",
@@ -19,6 +20,7 @@ const techLanguageContent = {
     year: `© ${new Date().getFullYear()} - Kevin, J MARVILLE Portfolo`,
   },
   fr: {
+  	welcome: "Bonjour✨",
     aboutMe: "Profil de Développeur",
     location: "Noeud Géographique : France",
     languages:
