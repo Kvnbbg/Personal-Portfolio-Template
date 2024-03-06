@@ -1,5 +1,18 @@
 "use strict";
 
+// Warning maintenance
+        function updateDateTime() {
+            const now = new Date();
+            const dateString = now.toLocaleString(); // Adjust according to your timezone if necessary
+            document.getElementById('date-time').textContent = dateString;
+        }
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+
+        // Initialize with the current date and time on load
+        window.onload = updateDateTime;
+
 // Warning Div for JavaScript
 function createWarningDiv() {
   const userLang = navigator.language || navigator.userLanguage;
