@@ -1,25 +1,28 @@
 "use strict";
 
 // Generates a random integer between min and max values
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Fetches real IP address or simulates a fake one with a country emoji
 const updateDisplayWithIPAndCountry = async () => {
-  const displayElement = document.getElementById('ip-display'); // Ensure an element with id="ip-display" exists in your HTML
+  const displayElement = document.getElementById("ip-display"); // Ensure an element with id="ip-display" exists in your HTML
   const onVPN = Math.random() < 0.5; // Simulate 50% chance of being "on VPN"
 
   try {
-    const content = await (onVPN ? getFakeIPWithCountryEmoji() : getRealIPAddress());
+    const content = await (onVPN
+      ? getFakeIPWithCountryEmoji()
+      : getRealIPAddress());
     displayElement.textContent = content;
   } catch (error) {
-    console.error('Error fetching or simulating IP:', error);
-    displayElement.textContent = 'Error fetching IP address';
+    console.error("Error fetching or simulating IP:", error);
+    displayElement.textContent = "Error fetching IP address";
   }
 };
 
 // Fetches the real IP address using the ipify API
 const getRealIPAddress = async () => {
-  const response = await fetch('https://api.ipify.org?format=json');
+  const response = await fetch("https://api.ipify.org?format=json");
   const data = await response.json();
   return data.ip;
 };
@@ -27,21 +30,24 @@ const getRealIPAddress = async () => {
 // Generates a fake IP address with a country emoji
 const getFakeIPWithCountryEmoji = () => {
   const fakeIP = `${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}`;
-  const countryEmojis = ['🇺🇸', '🇨🇦', '🇬🇧', '🇩🇪', '🇯🇵', '🇦🇺', '🇫🇷'];
+  const countryEmojis = ["🇺🇸", "🇨🇦", "🇬🇧", "🇩🇪", "🇯🇵", "🇦🇺", "🇫🇷"];
   const randomEmoji = countryEmojis[getRandomInt(0, countryEmojis.length - 1)];
   return `${fakeIP} ${randomEmoji}`;
 };
 
 // Embeds a YouTube video
 const embedYouTubeVideo = () => {
-  const videoContainer = document.getElementById('video-container'); // Ensure an element with id="video-container" exists in your HTML
-  const iframe = document.createElement('iframe');
-  iframe.setAttribute('width', '560');
-  iframe.setAttribute('height', '315');
-  iframe.setAttribute('src', 'https://www.youtube.com/embed/YOUR_VIDEO_ID'); // Replace YOUR_VIDEO_ID
-  iframe.setAttribute('frameborder', '0');
-  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-  iframe.setAttribute('allowfullscreen', true);
+  const videoContainer = document.getElementById("video-container"); // Ensure an element with id="video-container" exists in your HTML
+  const iframe = document.createElement("iframe");
+  iframe.setAttribute("width", "560");
+  iframe.setAttribute("height", "315");
+  iframe.setAttribute("src", "https://www.youtube.com/embed/PE4JJ80QDNE");
+  iframe.setAttribute("frameborder", "0");
+  iframe.setAttribute(
+    "allow",
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+  );
+  iframe.setAttribute("allowfullscreen", true);
   videoContainer.appendChild(iframe);
 };
 
@@ -63,7 +69,7 @@ const createWarningDiv = () => {
 };
 
 // Initialize functionalities after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   embedYouTubeVideo();
   updateDisplayWithIPAndCountry();
   if (!document.querySelector(".warning-div")) {
@@ -71,12 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 // implmentations of triggering fireworks as needed
 function triggerFireworks() {
   // Example fireworks effect. Replace this with other effect or library call.
-  const fireworksDiv = document.createElement('div');
-  fireworksDiv.classList.add('fireworks-animation');
+  const fireworksDiv = document.createElement("div");
+  fireworksDiv.classList.add("fireworks-animation");
   document.body.appendChild(fireworksDiv);
 
   setTimeout(() => {
