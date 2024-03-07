@@ -1,150 +1,357 @@
 :root {
-  --primary-color: #0056b3;
-  --secondary-color: #495057;
-  --background-color: #ffffff;
-  --text-color: #212529;
-  --accent-color: #17a2b8;
+  --primary-color: #0056b3; /* A more vibrant primary color */
+  --secondary-color: #495057; /* A softer secondary color for text and less prominent elements */
+  --background-color: #ffffff; /* A clean, white background for better contrast */
+  --text-color: #212529; /* A dark color for text to ensure readability */
+  --accent-color: #17a2b8; /* An accent color for highlighting interactive elements or sections */
   --font-family-base: 'Poppins', sans-serif;
-  --transition-speed: 0.3s;
-  --border-radius: 4px;
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --hover-background-color: #004494;
-  --padding-small: 10px;
-  --margin-small: 10px;
-  --font-size-large: 1.5rem;
-  --font-size-base: 1rem;
-  --line-height-base: 1.6;
+  --transition-speed: 0.3s; /* Standardize transition speed for cohesive animations */
 }
 
 /* Reset and Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Force Vertical Scrollbar */
 html {
-  min-height: 101vh;
-  font-size: var(--font-size-base);
+  min-height: 101vh; /* Slightly more than full viewport height to ensure scrollbar */
+  font-size: large;
+}
+
+/* Styles for the IP display */
+#ip-display {
+  background-color: #fff;
+  width: auto;
+  height: auto;
+  opacity: 0.6;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* YouTube video container styles */
+#video-container {
+  margin-bottom: 20px;
+  width: auto;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Animation for reverse effect with bamboo emoji */
+@keyframes reverseAnimation {
+  0% {
+    transform: scale(1);
+    font-size: 1rem;
+  }
+  50% {
+    transform: scale(0.8);
+    font-size: 1.5rem;
+    content: "🎍"; /* Temporarily show bamboo emoji */
+  }
+  100% {
+    transform: scale(1);
+    font-size: 1rem;
+  }
+}
+
+
+/* Animation for reverse effect with bamboo emoji */
+.bubble-container {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  animation: reverseAnimation 2s;
+}
+
+.bubble {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  animation: fadeIn 1s;
+}
+
+/* Resizing Images */
+img {
+  max-width: 100%; /* Ensure images do not overflow their container */
+  height: auto; /* Maintain aspect ratio */
 }
 
 body {
-  font-family: var(--font-family-base);
+  font-family: 'Poppins', sans-serif;
   color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: var(--line-height-base);
-  overflow-x: hidden;
+  background-color: #f8f9fa;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
+
+/* Improved Typography for Visual Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary-color); /* Soften the color for headings to reduce harshness */
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+/* Continue for h4, h5, h6 with proportional size adjustments */
+
+p, a, li, button {
+  font-size: 1rem;
+  transition: color var(--transition-speed); /* Smooth transition for color changes */
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none; /* Remove underline from links for a cleaner look */
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-color); /* Use accent color for hover and focus states */
+}
+
+/* Enhanced Navigation Styles */
+
+.navbar {
+  background-color: var(--primary-color); /* Use a primary color variable for easy theme changes */
+  padding: 0.5rem 1rem; /* Adjust padding for a balanced spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  display: flex;
+  justify-content: space-between; /* Ensure nav items are spaced out properly */
+  align-items: center;
+  position: sticky;
+}
+
+.navbar a.navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem; /* Slightly larger font size for brand prominence */
+  display: flex;
+  align-items: center; /* Vertically center logo and text */
+  gap: 0.5rem; /* Space between logo and brand name */
+}
+
+.navbar-brand img {
+  width: 40px; /* Slightly larger for visibility */
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none; /* Remove default list styling */
+  gap: 1rem; /* Space between nav links */
+}
+
+.navbar-nav a.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--transition-speed), background-color var(--transition-speed);
+  padding: 0.5rem 0.75rem; /* Add padding for a larger clickable area */
+  border-radius: var(--border-radius); /* Use variable for consistent border radius */
+  text-decoration: none; /* Remove underline */
+}
+
+.navbar-nav a.nav-link:hover,
+.navbar-nav a.nav-link:focus {
+  color: #ffffff;
+  background-color: var(--accent-color); /* Enhanced visibility on hover/focus */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.feature-popup {
+  position: absolute;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  z-index: 100;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  /* Initially hidden */
+  display: none;
+}
+
+/* Position the pop-up near the triggering element */
+.nav-item .feature-popup {
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+}
+
+.nav-item {
+  margin: 5px;
+  transition: transform 0.5s ease, font-size 0.5s ease;
+  cursor: pointer;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically on smaller screens */
+    gap: 0.5rem;
+  }
+
+  .navbar-brand img {
+    margin-right: 0; /* Adjust spacing for mobile */
+  }
+}
+
+/* Certification Gallery Improvements */
+.certifications-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.certification-item {
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.certification-item:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* Subtle shadow for depth */
+}
+
+/* Section Styling Enhancements */
+section {
+  padding: 2rem 0; /* Add padding for a spacious feel */
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  text-align: center; /* Centers text inside children */
+  flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+  gap: 2%; /* Optional: Adds space between items */
+  margin: 6% 2%; /* Optional: Centers the section on the page */
+}
+section > div {
+  max-width: 100%; /* Ensures images are responsive and do not overflow their container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block; /* Treats the image as a block-level element, enabling margin auto to work */
+
+}
+
+/* Warning div as pop up */
+.warning-div {
+  position: fixed; /* Centers the div in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050; /* High z-index to ensure visibility above other content */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  width: 90%; /* Responsive width */
+  max-width: 500px; /* Maximum width to maintain readability */
+  background-color: #ffffff; /* Neutral background to reduce strain */
+  border: 1px solid #d1d1d1; /* Subtle border */
+  border-radius: 10px; /* Softened corners for a modern look */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Smoother shadow for depth */
+  color: #333; /* Contrast color for readability */
+  font-size: 18px; /* Slightly larger font for clarity */
+  line-height: 1.6; /* Improved line spacing for readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+}
+
+/* Button styling for a more engaging user interaction */
+.warning-div button {
+  padding: 10px 20px;
+  margin-top: 10px; /* Space above buttons for separation from text */
+  border: none;
+  border-radius: 5px; /* Rounded corners for buttons */
+  background-color: #007bff; /* Primary action color */
+  color: #ffffff; /* Text color for contrast */
+  font-size: 16px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.2s; /* Smooth transition for interaction */
+}
+
+/* Button hover effect */
+.warning-div button:hover {
+  background-color: #0056b3; /* Darker shade on hover for feedback */
+  animation: reverseAnimation 2s infinite; /* Add animation for fun */
+}
+
+/* Close button specific styling */
+.warning-div .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent; /* No background for the close button */
+  color: #aaa; /* Subtle color for the close button */
+  font-size: 24px; /* Larger close button for easy interaction */
+}
+
+/* Close button hover effect */
+.warning-div .close-button:hover {
+  color: #777; /* Darker shade on hover for feedback */
+}
+
+
+
+/* Additional Styling for Responsive Design */
+@media (max-width: 768px) {
+  .warning-div {
+    margin: 20px; /* Reduces margin for smaller screens */
+    padding: 15px; /* Adjusts padding for smaller screens */
+    gap: 10px; /* Adjusts gap to maintain layout on smaller screens */
+  }
+}
+
+/* Footer Styling Enhancements */
+footer {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 2rem 0;
+  font-size: 0.875rem;
+  height: auto;
+}
+
+footer a {
+  color: #fff;
+  transition: color var(--transition-speed);
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive Design Improvements */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; } /* Adjust heading sizes for smaller screens */
+  #ip-display, .warning-div {
+    font-size: 16px;
+  }
+}
+
+/* Add more media queries as needed for responsive adjustments */
 
 /* Accessibility Improvements */
 :focus {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
-}
-
-/* Utility Classes */
-.m-0 { margin: 0 !important; }
-.p-0 { padding: 0 !important; }
-.text-center { text-align: center; }
-.d-flex { display: flex; }
-.flex-column { flex-direction: column; }
-.align-items-center { align-items: center; }
-.justify-content-center { justify-content: center; }
-.gap-1 { gap: 1rem; }
-.hidden { display: none !important; }
-
-/* Typography & Links */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: var(--margin-small);
-  font-weight: 600;
-  color: var(--secondary-color);
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-a:hover, a:focus {
-  color: var(--accent-color);
-}
-
-/* Navigation Bar */
-.navbar {
-  background-color: var(--primary-color);
-  padding: var(--padding-small);
-  box-shadow: var(--box-shadow);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-}
-
-.navbar-nav {
-  list-style: none;
-  display: flex;
-  gap: var(--margin-small);
-}
-
-.nav-link {
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--border-radius);
-  transition: color var(--transition-speed), background-color var(--transition-speed);
-}
-
-.nav-link:hover, .nav-link:focus {
-  background-color: var(--accent-color);
-  color: #ffffff;
-}
-
-/* Media Queries for Responsiveness */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #121212;
-    --text-color: #e0e0e0;
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --accent-color: #fd7e14;
-  }
-
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-
-  .navbar {
-    background-color: var(--primary-color);
-  }
-
-  a {
-    color: var(--accent-color);
-  }
-
-  a:hover, a:focus {
-    color: var(--primary-color);
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column;
-  }
-
-  .nav-link {
-    padding: 10px;
-    text-align: center;
-  }
 }
 
 /* Subtle Animations for Interactivity */

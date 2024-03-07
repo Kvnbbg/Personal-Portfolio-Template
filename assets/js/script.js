@@ -1,18 +1,19 @@
 "use strict";
 
-// Generates a random integer between min and max values
-const getRandomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
+// Improved function to generate random integers
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-// Fetches real IP address or simulates a fake one with a country emoji
+// Optimized and improved error handling for fetching IP addresses
 const updateDisplayWithIPAndCountry = async () => {
-  const displayElement = document.getElementById("ip-display"); // Ensure an element with id="ip-display" exists in your HTML
-  const onVPN = Math.random() < 0.5; // Simulate 50% chance of being "on VPN"
+  const displayElement = document.getElementById("ip-display");
+  if (!displayElement) {
+    console.error("Element with id='ip-display' not found.");
+    return;
+  }
 
   try {
-    const content = await (onVPN
-      ? getFakeIPWithCountryEmoji()
-      : getRealIPAddress());
+    const onVPN = Math.random() < 0.5; // 50% chance
+    const content = onVPN ? getFakeIPWithCountryEmoji() : await getRealIPAddress();
     displayElement.textContent = content;
   } catch (error) {
     console.error("Error fetching or simulating IP:", error);
@@ -20,38 +21,41 @@ const updateDisplayWithIPAndCountry = async () => {
   }
 };
 
-// Fetches the real IP address using the ipify API
+// Using fetch API with error checking for getting real IP address
 const getRealIPAddress = async () => {
   const response = await fetch("https://api.ipify.org?format=json");
+  if (!response.ok) throw new Error('Failed to fetch IP address');
   const data = await response.json();
   return data.ip;
 };
 
-// Generates a fake IP address with a country emoji
+// Simplified fake IP address generation
 const getFakeIPWithCountryEmoji = () => {
-  const fakeIP = `${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}`;
+  const fakeIP = Array.from({length: 4}, () => getRandomInt(0, 255)).join('.');
   const countryEmojis = ["🇺🇸", "🇨🇦", "🇬🇧", "🇩🇪", "🇯🇵", "🇦🇺", "🇫🇷"];
   const randomEmoji = countryEmojis[getRandomInt(0, countryEmojis.length - 1)];
-  return `${fakeIP} ${randomEmoji}`;
+  return `${fakeIP}, ${randomEmoji}`;
 };
 
-// Embeds a YouTube video
+// Embed YouTube video with more robust element checking
 const embedYouTubeVideo = () => {
-  const videoContainer = document.getElementById("video-container"); // Ensure an element with id="video-container" exists in your HTML
+  const videoContainer = document.getElementById("video-container");
+  if (!videoContainer) {
+    console.error("Element with id='video-container' not found.");
+    return;
+  }
+
   const iframe = document.createElement("iframe");
-  iframe.setAttribute("width", "560");
-  iframe.setAttribute("height", "315");
-  iframe.setAttribute("src", "https://www.youtube.com/embed/PE4JJ80QDNE");
-  iframe.setAttribute("frameborder", "0");
-  iframe.setAttribute(
-    "allow",
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-  );
-  iframe.setAttribute("allowfullscreen", true);
+  iframe.width = "560";
+  iframe.height = "315";
+  iframe.src = "https://www.youtube.com/embed/PE4JJ80QDNE";
+  iframe.frameBorder = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
   videoContainer.appendChild(iframe);
 };
 
-// Creates a dynamic warning message for JavaScript enablement
+// Improved dynamic warning message creation
 const createWarningDiv = () => {
   const userLang = navigator.language || navigator.userLanguage;
   const messages = {
@@ -64,18 +68,52 @@ const createWarningDiv = () => {
   warningDiv.setAttribute("role", "alert");
   warningDiv.classList.add("warning-div");
   warningDiv.textContent = message;
+  document.body.appendChild(warningDiv);
+
+  const yesButton = document.createElement("button");
+  yesButton.textContent = userLang.startsWith("fr") ? "Oui, j'ai JavaScript" : "Yes, I have JavaScript";
+  yesButton.onclick = () => {
+    warningDiv.style.display = "none";
+    triggerFireworks();
+  };
+
+  const noButton = document.createElement("button");
+  noButton.textContent = userLang.startsWith("fr") ? "Non, je n'ai pas JavaScript" : "No, I don't have JavaScript";
+  noButton.onclick = () => window.open("https://www.wikihow.com/Enable-Javascript", "_blank");
+
+  warningDiv.appendChild(yesButton);
+  warningDiv.appendChild(noButton);
 
   return warningDiv;
 };
 
-// Initialize functionalities after the DOM is fully loaded
+// Initialization after DOM load
 document.addEventListener("DOMContentLoaded", () => {
   embedYouTubeVideo();
   updateDisplayWithIPAndCountry();
   if (!document.querySelector(".warning-div")) {
-    document.body.appendChild(createWarningDiv());
+    createWarningDiv();
   }
 });
+
+// Simplified chatbot response function
+function getChatbotResponse() {
+  const userInput = document.getElementById("userInput")?.value.toLowerCase();
+  let response;
+
+  if (userInput?.includes("how are you")) {
+    response = "I am fine, thank you! How can I assist you today?";
+  } else if (userInput?.includes("name")) {
+    response = "I am a simple AI chatbot here to help you.";
+  } else if (userInput?.includes("thank you")) {
+    response = "You're welcome!";
+  } else {
+    response = "Sorry, I am not sure how to respond to that.";
+  }
+
+  const answerElement = document.getElementById("chatbotAnswer");
+  if (answerElement) answerElement.innerText = response;
+}
 
 // implmentations of triggering fireworks as needed
 function triggerFireworks() {
@@ -87,24 +125,4 @@ function triggerFireworks() {
   setTimeout(() => {
     document.body.removeChild(fireworksDiv);
   }, 1000); // Adjust time according to your animation
-}
-
-/**
- * Handles user input in a chatbot interface, responding to common queries.
- */
-function getChatbotResponse() {
-  const userInput = document.getElementById("userInput").value.toLowerCase();
-  let response;
-
-  if (userInput.includes("how are you")) {
-    response = "I am fine, thank you! How can I assist you today?";
-  } else if (userInput.includes("name")) {
-    response = "I am a simple AI chatbot here to help you.";
-  } else if (userInput.includes("thank you")) {
-    response = "You're welcome!";
-  } else {
-    response = "Sorry, I am not sure how to respond to that.";
-  }
-
-  document.getElementById("chatbotAnswer").innerText = response;
 }

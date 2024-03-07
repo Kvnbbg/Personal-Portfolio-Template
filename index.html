@@ -170,9 +170,8 @@
 
   <body>
     <header class="text-center">
-      <h1>Welcome, <span id="ip-display">..</span>.</h1>
       <div class="alert alert-warning" role="alert">
-        <p><strong>We're currently undergoing maintenance.</strong></p>
+        <p><strong>Hi, </strong> <span id="ip-display">..</span></p>
       </div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -186,20 +185,20 @@
           <ul class="navbar-nav ms-auto">
             <!-- ms-auto will align items to the right -->
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#about">About</a>
+              <a class="nav-link" aria-current="page" href="#about">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#certifications">Certifications</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#github">GitHub Insights</a>
+              <a class="nav-link" href="#github">Insights</a>
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="https://au-garage-92dd5c42a6c4.herokuapp.com/"
+                href="https://www.youtube.com/embed/PE4JJ80QDNE"
                 target="_blank"
-                >Working on</a
+                >CV</a
               >
             </li>
             <li class="nav-item active">
@@ -221,7 +220,6 @@
               >
             </li>
             <div id="feature-popup" class="feature-popup hidden">
-              New Functionality Coming Soon!
             </div>
           </ul>
         </div>
@@ -236,8 +234,7 @@
           <strong>언어:</strong> 프랑스어와 영어에 능통하며, 이 두 언어를
           사용하여 효과적으로 소통하고 다문화 경험을 포용합니다.
         </p>
-        <div class="fireworks-animation">  </div>
-        <div class="video-container"></div>
+        <div class="fireworks-animation"></div>
       </section>
 
       <section id="certifications">
@@ -337,18 +334,20 @@
           </div>
         </div>
       </section>
-      <br />
+
+      <section>
+        <div class="bubble-container">
+          <div class="bubble">
+            <p id="chatbotAnswer" data-lang="switchTo">What do you think?</p>
+          </div>
+          <input type="text" id="userInput" placeholder="Ask me something..." />
+          <button onclick="getChatbotResponse()">Send</button>
+        </div>
+      </section>
 
       <section id="currently">
         <h1 data-lang="currentlyOn">Nunc In 💡</h1>
         <div class="current-activities">
-          <div class="bubble-container">
-            <div class="bubble">
-              <p id="chatbotAnswer" data-lang="switchTo">What do you think?</p>
-            </div>
-            <input type="text" id="userInput" placeholder="Ask me something..." />
-            <button onclick="getChatbotResponse()">Send</button>
-          </div>
           <p data-lang="activities">
             Active contribuo ad progressum diversorum software projectorum.
             Semper novis opportunitatibus et collaborationibus apertus sum.
