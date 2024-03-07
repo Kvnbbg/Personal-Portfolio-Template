@@ -1,70 +1,56 @@
 "use strict";
 
-/**
- * Utility function to generate a random integer between min and max values.
- * @param {number} min - The minimum value.
- * @param {number} max - The maximum value.
- * @returns {number} A random integer between min and max.
- */
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// Generates a random integer between min and max values
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-/**
- * Fetches the real IP address from the ipify API or simulates a fake IP address with a country emoji.
- */
-async function updateDisplayWithIPAndCountry() {
-  const onVPN = Math.random() < 0.5; // 50% chance of being "on VPN"
-  const displayElement = document.getElementById('date-time');
-  
+// Fetches real IP address or simulates a fake one with a country emoji
+const updateDisplayWithIPAndCountry = async () => {
+  const displayElement = document.getElementById('ip-display'); // Ensure an element with id="ip-display" exists in your HTML
+  const onVPN = Math.random() < 0.5; // Simulate 50% chance of being "on VPN"
+
   try {
-    if (!onVPN) {
-      const response = await fetch('https://api.ipify.org?format=json');
-      const data = await response.json();
-      displayElement.textContent = `Your IP Address: ${data.ip}`;
-    } else {
-      const fakeIP = `${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}`;
-      const countryEmojis = ['🇺🇸', '🇨🇦', '🇬🇧', '🇩🇪', '🇯🇵', '🇦🇺', '🇫🇷'];
-      const randomEmoji = countryEmojis[getRandomInt(0, countryEmojis.length - 1)];
-      displayElement.textContent = `Fake IP Address: ${fakeIP} ${randomEmoji}`;
-    }
+    const content = await (onVPN ? getFakeIPWithCountryEmoji() : getRealIPAddress());
+    displayElement.textContent = content;
   } catch (error) {
     console.error('Error fetching or simulating IP:', error);
     displayElement.textContent = 'Error fetching IP address';
   }
-}
+};
 
-window.onload = updateDisplayWithIPAndCountry;
+// Fetches the real IP address using the ipify API
+const getRealIPAddress = async () => {
+  const response = await fetch('https://api.ipify.org?format=json');
+  const data = await response.json();
+  return data.ip;
+};
 
-/**
- * Creates a warning div that encourages users to enable JavaScript for a better experience.
- * @returns {HTMLElement} The created warning div.
- */
+// Generates a fake IP address with a country emoji
+const getFakeIPWithCountryEmoji = () => {
+  const fakeIP = `${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}.${getRandomInt(0, 255)}`;
+  const countryEmojis = ['🇺🇸', '🇨🇦', '🇬🇧', '🇩🇪', '🇯🇵', '🇦🇺', '🇫🇷'];
+  const randomEmoji = countryEmojis[getRandomInt(0, countryEmojis.length - 1)];
+  return `${fakeIP} ${randomEmoji}`;
+};
 
-document.addEventListener('DOMContentLoaded', function() {
-  embedYouTubeVideo();
-  if (!document.querySelector(".warning-div")) {
-    document.body.appendChild(createWarningDiv());
-  }
-});
-
-function embedYouTubeVideo() {
-  const videoUrl = 'https://www.youtube.com/embed/PE4JJ80QDNE';
+// Embeds a YouTube video
+const embedYouTubeVideo = () => {
+  const videoContainer = document.getElementById('video-container'); // Ensure an element with id="video-container" exists in your HTML
   const iframe = document.createElement('iframe');
-  iframe.setAttribute('src', videoUrl);
   iframe.setAttribute('width', '560');
   iframe.setAttribute('height', '315');
+  iframe.setAttribute('src', 'https://www.youtube.com/embed/YOUR_VIDEO_ID'); // Replace YOUR_VIDEO_ID
   iframe.setAttribute('frameborder', '0');
   iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
   iframe.setAttribute('allowfullscreen', true);
-  document.body.insertBefore(iframe, document.body.firstChild);
-}
+  videoContainer.appendChild(iframe);
+};
 
-function createWarningDiv() {
+// Creates a dynamic warning message for JavaScript enablement
+const createWarningDiv = () => {
   const userLang = navigator.language || navigator.userLanguage;
   const messages = {
-    en: "JavaScript is required to fully enjoy our content. Please confirm: ",
-    fr: "JavaScript est nécessaire pour profiter pleinement de notre contenu. Veuillez confirmer : ",
+    en: "JavaScript is required to fully enjoy our content. Please enable it in your browser settings.",
+    fr: "JavaScript est nécessaire pour profiter pleinement de notre contenu. Veuillez l'activer dans les paramètres de votre navigateur.",
   };
 
   const message = messages[userLang.startsWith("fr") ? "fr" : "en"];
@@ -73,25 +59,22 @@ function createWarningDiv() {
   warningDiv.classList.add("warning-div");
   warningDiv.textContent = message;
 
-  const yesButton = document.createElement("button");
-  yesButton.textContent = userLang.startsWith("fr") ? "Oui, j'ai JavaScript" : "Yes, I have JavaScript";
-  yesButton.onclick = () => {
-    warningDiv.style.display = "none";
-    triggerFireworks();
-  };
-
-  const noButton = document.createElement("button");
-  noButton.textContent = userLang.startsWith("fr") ? "Non, je n'ai pas JavaScript" : "No, I don't have JavaScript";
-  noButton.onclick = () => window.open("https://www.wikihow.com/Enable-Javascript", "_blank");
-
-  warningDiv.appendChild(yesButton);
-  warningDiv.appendChild(noButton);
-
   return warningDiv;
-}
+};
 
+// Initialize functionalities after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  embedYouTubeVideo();
+  updateDisplayWithIPAndCountry();
+  if (!document.querySelector(".warning-div")) {
+    document.body.appendChild(createWarningDiv());
+  }
+});
+
+
+// implmentations of triggering fireworks as needed
 function triggerFireworks() {
-  // Example fireworks effect. Replace this with your own effect or library call.
+  // Example fireworks effect. Replace this with other effect or library call.
   const fireworksDiv = document.createElement('div');
   fireworksDiv.classList.add('fireworks-animation');
   document.body.appendChild(fireworksDiv);
