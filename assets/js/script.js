@@ -6,7 +6,8 @@ function toggleTheme() {
 }
 
 // Improved function to generate random integers
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Optimized and improved error handling for fetching IP addresses
 const updateDisplayWithIPAndCountry = async () => {
@@ -18,7 +19,9 @@ const updateDisplayWithIPAndCountry = async () => {
 
   try {
     const onVPN = Math.random() < 0.5; // 50% chance
-    const content = onVPN ? getFakeIPWithCountryEmoji() : await getRealIPAddress();
+    const content = onVPN
+      ? getFakeIPWithCountryEmoji()
+      : await getRealIPAddress();
     displayElement.textContent = content;
   } catch (error) {
     console.error("Error fetching or simulating IP:", error);
@@ -36,7 +39,9 @@ const getRealIPAddress = async () => {
 
 // Simplified fake IP address generation
 const getFakeIPWithCountryEmoji = () => {
-  const fakeIP = Array.from({ length: 4 }, () => getRandomInt(0, 255)).join(".");
+  const fakeIP = Array.from({ length: 4 }, () => getRandomInt(0, 255)).join(
+    ".",
+  );
   const countryEmojis = ["🇺🇸", "🇨🇦", "🇬🇧", "🇩🇪", "🇯🇵", "🇦🇺", "🇫🇷"];
   const randomEmoji = countryEmojis[getRandomInt(0, countryEmojis.length - 1)];
   return `${fakeIP}, ${randomEmoji}`;
@@ -55,7 +60,8 @@ const embedYouTubeVideo = () => {
   iframe.height = "315";
   iframe.src = "https://www.youtube.com/embed/PE4JJ80QDNE";
   iframe.frameBorder = "0";
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allow =
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
   iframe.allowFullscreen = true;
   videoContainer.appendChild(iframe);
 };
@@ -76,15 +82,20 @@ const createWarningDiv = () => {
   document.body.appendChild(warningDiv);
 
   const yesButton = document.createElement("button");
-  yesButton.textContent = userLang.startsWith("fr") ? "Oui, j'ai JavaScript" : "Yes, I have JavaScript";
+  yesButton.textContent = userLang.startsWith("fr")
+    ? "Oui, j'ai JavaScript"
+    : "Yes, I have JavaScript";
   yesButton.onclick = () => {
     warningDiv.style.display = "none";
     triggerFireworks();
   };
 
   const noButton = document.createElement("button");
-  noButton.textContent = userLang.startsWith("fr") ? "Non, je n'ai pas JavaScript" : "No, I don't have JavaScript";
-  noButton.onclick = () => window.open("https://www.wikihow.com/Enable-Javascript", "_blank");
+  noButton.textContent = userLang.startsWith("fr")
+    ? "Non, je n'ai pas JavaScript"
+    : "No, I don't have JavaScript";
+  noButton.onclick = () =>
+    window.open("https://www.wikihow.com/Enable-Javascript", "_blank");
 
   warningDiv.appendChild(yesButton);
   warningDiv.appendChild(noButton);
@@ -149,7 +160,10 @@ function getChatbotResponse() {
   const responseElement = document.getElementById("chatbotAnswer");
 
   if (!userInput || userInput.trim() === "") {
-    responseElement.innerText = userLang === "en" ? "Please type something!" : "Veuillez taper quelque chose !";
+    responseElement.innerText =
+      userLang === "en"
+        ? "Please type something!"
+        : "Veuillez taper quelque chose !";
     return;
   }
 
@@ -157,25 +171,37 @@ function getChatbotResponse() {
 
   if (currentChallenge) {
     const userAnswer = parseFloat(userInput);
-    if (!isNaN(userAnswer) && userAnswer === parseFloat(currentChallenge.answer)) {
-      response = userLang === "en" ? "Correct! Well done!" : "Correct! Bien joué!";
+    if (
+      !isNaN(userAnswer) &&
+      userAnswer === parseFloat(currentChallenge.answer)
+    ) {
+      response =
+        userLang === "en" ? "Correct! Well done!" : "Correct! Bien joué!";
       currentChallenge = null;
     } else {
-      response = userLang === "en" ? `Incorrect. Try again: ${currentChallenge.challenge} = ?` : `Incorrect. Essayez encore : ${currentChallenge.challenge} = ?`;
+      response =
+        userLang === "en"
+          ? `Incorrect. Try again: ${currentChallenge.challenge} = ?`
+          : `Incorrect. Essayez encore : ${currentChallenge.challenge} = ?`;
     }
   } else if (Math.random() < 0.5) {
-    const joke = developerJokes[userLang][getRandomInt(0, developerJokes[userLang].length)];
+    const joke =
+      developerJokes[userLang][
+        getRandomInt(0, developerJokes[userLang].length)
+      ];
     response = joke;
   } else {
     currentChallenge = generateMathChallenge();
-    response = userLang === "en"
-      ? `Let's play a math game! Solve this: ${currentChallenge.challenge} = ?`
-      : `Jouons à un jeu de mathématiques ! Résolvez ceci : ${currentChallenge.challenge} = ?`;
+    response =
+      userLang === "en"
+        ? `Let's play a math game! Solve this: ${currentChallenge.challenge} = ?`
+        : `Jouons à un jeu de mathématiques ! Résolvez ceci : ${currentChallenge.challenge} = ?`;
   }
 
   responseElement.innerText = response;
 
-  if (Math.random() < 0.2) { // 20% chance to trigger fireworks
+  if (Math.random() < 0.2) {
+    // 20% chance to trigger fireworks
     triggerFireworks();
   }
 }
@@ -223,7 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.querySelector(".warning-div")) {
     createWarningDiv();
   }
-  document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", toggleTheme);
   document.getElementById("userInput").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       getChatbotResponse();
