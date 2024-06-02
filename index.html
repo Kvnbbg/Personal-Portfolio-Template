@@ -310,22 +310,18 @@
             </li>
             <li class="nav-item active">
               <a
-                class="nav-link"
+                class="nav-link language-switch"
                 href="#"
-                onclick="toggleLanguage('en')"
                 id="language-switch"
-                >🇺🇸 English</a
-              >
+              >🇺🇸 English</a>
             </li>
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link language-switch"
                 href="#"
-                onclick="toggleLanguage('fr')"
-                id="language-switch"
-                >🇫🇷 Français</a
-              >
+              >🇫🇷 Français</a>
             </li>
+            
             <li class="nav-link">
               <a class="nav-link" href="#" onclick="toggleTheme()">🌙</a>
             </li>
@@ -336,54 +332,172 @@
     </nav>
 
     <main>
-      <section id="about">
-        <h1 data-lang="aboutMe">나에 대해서</h1>
-        <p data-lang="location"><strong>위치:</strong> 프랑스.</p>
-        <p data-lang="languages">
-          <strong>언어:</strong> 프랑스어와 영어에 능통하며, 이 두 언어를
-          사용하여 효과적으로 소통하고 다문화 경험을 포용합니다.
-        </p>
-        <div class="fireworks-animation"></div>
-      </section>
-      <section id="biography">
-        <div class="project-container">
-          <div class="project-item">
-            <p data-lang="biography">
-              I began my journey as a passionate programmer in my childhood,
-              coding with friends. Our first programs were created in Visual
-              Basic for a batch file in Windows XP.
-            </p>
+
+      <section>
+        <style>
+          .bubble-container {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+          }
+      
+          .bubble {
+            margin: 10px 0;
+            padding: 10px 15px;
+            max-width: 80%;
+            background-color: #007aff;
+            color: white;
+            border-radius: 20px 20px 20px 0;
+            position: relative;
+            animation: fadeIn 0.5s;
+          }
+      
+          .bubble p {
+            margin: 0;
+          }
+      
+          .bubble.received {
+            background-color: #e5e5ea;
+            color: black;
+            border-radius: 20px 20px 0 20px;
+            align-self: flex-start;
+          }
+      
+          .bubble.sent {
+            background-color: #007aff;
+            color: white;
+            border-radius: 20px 20px 20px 0;
+            align-self: flex-end;
+          }
+      
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+      
+          .typing {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            animation: fadeIn 1s infinite;
+          }
+      
+          .typing .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: blink 1s infinite;
+          }
+      
+          .typing .dot:nth-child(1) {
+            animation-delay: 0s;
+          }
+      
+          .typing .dot:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+      
+          .typing .dot:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+      
+          @keyframes blink {
+            0%,
+            100% {
+              opacity: 0.2;
+            }
+            50% {
+              opacity: 1;
+            }
+          }
+      
+          .input-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+          }
+      
+          .input-container input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 16px;
+          }
+      
+          .input-container button {
+            padding: 10px 20px;
+            background-color: #007aff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+          }
+      
+          .input-container button:hover {
+            background-color: #005bb5;
+          }
+        </style>
+      
+        <div class="bubble-container">
+          <div class="bubble received">
+            <p id="chatbotAnswer">What do you think?</p>
           </div>
-          <div class="project-item">
-            <blockquote class="twitter-tweet">
-              <p lang="en" dir="ltr">
-                🖱️💻😱 Can you believe it? Using a computer without a mousepad
-                in this day and age is like trying to eat soup with a fork –
-                it's just not right!<a
-                  href="https://twitter.com/hashtag/TechLife?src=hash&amp;ref_src=twsrc%5Etfw"
-                  >#TechLife</a
-                >
-                <a
-                  href="https://twitter.com/hashtag/MousepadMatters?src=hash&amp;ref_src=twsrc%5Etfw"
-                  >#MousepadMatters</a
-                >
-                🐭🛡️
-                <a href="https://t.co/stRwQ43COM">https://t.co/stRwQ43COM</a>
-              </p>
-              &mdash; Kvnbbg.fr (@techandstream)
-              <a
-                href="https://twitter.com/techandstream/status/1797198840962973932?ref_src=twsrc%5Etfw"
-                >June 2, 2024</a
-              >
-            </blockquote>
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
-            ></script>
+          <div class="input-container">
+            <input type="text" id="userInput" placeholder="Ask me something..." />
+            <button onclick="getChatbotResponse()">Send</button>
           </div>
         </div>
       </section>
+      
+      <script>
+        function getChatbotResponse() {
+          const userInput = document.getElementById('userInput').value;
+          if (userInput.trim() === '') return;
+      
+          const bubbleContainer = document.querySelector('.bubble-container');
+      
+          const userBubble = document.createElement('div');
+          userBubble.classList.add('bubble', 'sent');
+          userBubble.innerHTML = `<p>${userInput}</p>`;
+          bubbleContainer.insertBefore(userBubble, bubbleContainer.querySelector('.input-container'));
+      
+          // Clear input
+          document.getElementById('userInput').value = '';
+      
+          // Typing indicator
+          const typingIndicator = document.createElement('div');
+          typingIndicator.classList.add('typing');
+          typingIndicator.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+          bubbleContainer.insertBefore(typingIndicator, bubbleContainer.querySelector('.input-container'));
+      
+          // Simulate chatbot response
+          setTimeout(() => {
+            bubbleContainer.removeChild(typingIndicator);
+      
+            const botBubble = document.createElement('div');
+            botBubble.classList.add('bubble', 'received');
+            botBubble.innerHTML = '<p>This is a response from the bot.</p>';
+            bubbleContainer.insertBefore(botBubble, bubbleContainer.querySelector('.input-container'));
+          }, 2000);
+        }
+      </script>
+      
 
       <section id="projects" class="text-center py-5 bg-light">
         <div class="container">
@@ -505,6 +619,54 @@
           </div>
         </div>
       </section>
+      <section id="about">
+        <h1 data-lang="aboutMe">나에 대해서</h1>
+        <p data-lang="location"><strong>위치:</strong> 프랑스.</p>
+        <p data-lang="languages">
+          <strong>언어:</strong> 프랑스어와 영어에 능통하며, 이 두 언어를
+          사용하여 효과적으로 소통하고 다문화 경험을 포용합니다.
+        </p>
+        <div class="fireworks-animation"></div>
+      </section>
+      <section id="biography">
+        <div class="project-container">
+          <div class="project-item">
+            <p data-lang="biography">
+              I began my journey as a passionate programmer in my childhood,
+              coding with friends. Our first programs were created in Visual
+              Basic for a batch file in Windows XP.
+            </p>
+          </div>
+          <div class="project-item">
+            <blockquote class="twitter-tweet">
+              <p lang="en" dir="ltr">
+                🖱️💻😱 Can you believe it? Using a computer without a mousepad
+                in this day and age is like trying to eat soup with a fork –
+                it's just not right!<a
+                  href="https://twitter.com/hashtag/TechLife?src=hash&amp;ref_src=twsrc%5Etfw"
+                  >#TechLife</a
+                >
+                <a
+                  href="https://twitter.com/hashtag/MousepadMatters?src=hash&amp;ref_src=twsrc%5Etfw"
+                  >#MousepadMatters</a
+                >
+                🐭🛡️
+                <a href="https://t.co/stRwQ43COM">https://t.co/stRwQ43COM</a>
+              </p>
+              &mdash; Kvnbbg.fr (@techandstream)
+              <a
+                href="https://twitter.com/techandstream/status/1797198840962973932?ref_src=twsrc%5Etfw"
+                >June 2, 2024</a
+              >
+            </blockquote>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </div>
+      </section>
 
       <section id="certifications">
         <div class="certifications-container">
@@ -599,20 +761,102 @@
         </div>
       </section>
 
-      <section id="blog" class="text-center py-5">
-        <div class="container">
-          <h1 data-lang="blogTitle">
-            <a href="https://kvnbbg.fr" target="_blank">Blog</a>
-          </h1>
-          <p data-lang="blogDesc">
-            Explore my blog at
-            <a href="https://kvnbbg.fr" class="text-primary" target="_blank"
-              >kvnbbg.fr</a
-            >
-            for insights on web development, tech trends, and project updates.
-            Follow me on social media for the latest updates.
+      <section id="github">
+        <h1 data-lang="githubInsights">My GitHub Insights 📊</h1>
+        <div class="github-stat">
+          <h2 data-lang="topLanguages">Top Languages</h2>
+          <a href="https://github.com/kvnbbg" target="_blank">
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact"
+              alt="Top Languages"
+            />
+          </a>
+        </div>
+        <div class="github-stat">
+          <h2 data-lang="githubStats">GitHub Stats</h2>
+          <a href="https://github.com/kvnbbg" target="_blank">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical"
+              alt="GitHub Stats"
+            />
+          </a>
+        </div>
+      </section>
+
+
+
+      <section id="currently">
+        <h1 data-lang="currentlyOn">Nunc In 💡</h1>
+        <div class="current-activities">
+          <p data-lang="activities">
+            Active contribuo ad progressum diversorum software projectorum.
+            Semper novis opportunitatibus et collaborationibus apertus sum.
           </p>
         </div>
+      </section>
+
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <br />
+        <div class="me-5 d-none d-lg-block">
+          <section id="contact" class="text-center py-5 bg-light">
+            <div class="container">
+              <h2 data-lang="connect">Contact Me</h2>
+              <p data-lang="reachOut">
+                If you're interested in discussing advanced Python concepts,
+                algorithmic challenges, or seeking collaboration, feel free to
+                reach out via email or through social media. I'm always open to
+                new opportunities and collaborations.
+              </p>
+            </div>
+            <br />
+            <div class="container">
+              <a
+                href="https://ko-fi.com/kvnbbg"
+                class="btn btn-primary"
+                data-lang="sponsorMe"
+                >Sponsor Me on Ko-fi</a
+              >
+            </div>
+            <br />
+            <div class="container">
+              <a
+                href="https://www.linkedin.com/in/kevinmarville"
+                class="btn btn-primary"
+                data-lang="connectLinkedIn"
+                >Connect on LinkedIn</a
+              >
+            </div>
+          </section>
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <link
+            href="https://calendar.google.com/calendar/scheduling-button-script.css"
+            rel="stylesheet"
+          />
+          <script
+            src="https://calendar.google.com/calendar/scheduling-button-script.js"
+            async
+          ></script>
+          <script>
+            (function () {
+              var target = document.currentScript;
+              window.addEventListener("load", function () {
+                calendar.schedulingButton.load({
+                  url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ117RKmb0-3ERA1oCVJgOujX7IGDsG0-zLN64-fNK4GxeCuq-ZEaRbg_aRJoBUogKWLX5WY3MPP?gv=true",
+                  color: "#33B679",
+                  label: "Réserver un rendez-vous",
+                  target,
+                });
+              });
+            })();
+          </script>
+          <!-- end Google Calendar Appointment Scheduling -->
+        </div>
+      </section>
+
+
+      <section id="blog" class="text-center py-5">
         <div class="row">
           <div class="col-md-6 mb-4">
             <div class="row">
@@ -683,108 +927,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="bubble-container">
-          <div class="bubble">
-            <p id="chatbotAnswer" data-lang="switchTo">What do you think?</p>
-          </div>
-          <input type="text" id="userInput" placeholder="Ask me something..." />
-          <button onclick="getChatbotResponse()">Send</button>
-        </div>
-      </section>
-
-      <section id="currently">
-        <h1 data-lang="currentlyOn">Nunc In 💡</h1>
-        <div class="current-activities">
-          <p data-lang="activities">
-            Active contribuo ad progressum diversorum software projectorum.
-            Semper novis opportunitatibus et collaborationibus apertus sum.
-          </p>
-        </div>
-      </section>
-
-      <section id="github">
-        <h1 data-lang="githubInsights">My GitHub Insights 📊</h1>
-        <div class="github-stat">
-          <h2 data-lang="topLanguages">Top Languages</h2>
-          <a href="https://github.com/kvnbbg" target="_blank">
-            <img
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvnbbg&layout=compact"
-              alt="Top Languages"
-            />
-          </a>
-        </div>
-        <div class="github-stat">
-          <h2 data-lang="githubStats">GitHub Stats</h2>
-          <a href="https://github.com/kvnbbg" target="_blank">
-            <img
-              src="https://github-readme-stats.vercel.app/api?username=kvnbbg&show_icons=true&theme=radical"
-              alt="GitHub Stats"
-            />
-          </a>
-        </div>
-      </section>
-
-      <section
-        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-      >
-        <br />
-        <div class="me-5 d-none d-lg-block">
-          <section id="contact" class="text-center py-5 bg-light">
-            <div class="container">
-              <h2 data-lang="connect">Contact Me</h2>
-              <p data-lang="reachOut">
-                If you're interested in discussing advanced Python concepts,
-                algorithmic challenges, or seeking collaboration, feel free to
-                reach out via email or through social media. I'm always open to
-                new opportunities and collaborations.
-              </p>
-            </div>
-            <br />
-            <div class="container">
-              <a
-                href="https://ko-fi.com/kvnbbg"
-                class="btn btn-primary"
-                data-lang="sponsorMe"
-                >Sponsor Me on Ko-fi</a
-              >
-            </div>
-            <br />
-            <div class="container">
-              <a
-                href="https://www.linkedin.com/in/kevinmarville"
-                class="btn btn-primary"
-                data-lang="connectLinkedIn"
-                >Connect on LinkedIn</a
-              >
-            </div>
-          </section>
-          <!-- Google Calendar Appointment Scheduling begin -->
-          <link
-            href="https://calendar.google.com/calendar/scheduling-button-script.css"
-            rel="stylesheet"
-          />
-          <script
-            src="https://calendar.google.com/calendar/scheduling-button-script.js"
-            async
-          ></script>
-          <script>
-            (function () {
-              var target = document.currentScript;
-              window.addEventListener("load", function () {
-                calendar.schedulingButton.load({
-                  url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ117RKmb0-3ERA1oCVJgOujX7IGDsG0-zLN64-fNK4GxeCuq-ZEaRbg_aRJoBUogKWLX5WY3MPP?gv=true",
-                  color: "#33B679",
-                  label: "Réserver un rendez-vous",
-                  target,
-                });
-              });
-            })();
-          </script>
-          <!-- end Google Calendar Appointment Scheduling -->
         </div>
       </section>
     </main>

@@ -377,22 +377,7 @@ iframe {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.bubble-container {
-  max-width: 300px;
-  margin: 20px auto;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
-  animation: reverseAnimation 2s;
-}
 
-.bubble {
-  margin: 10px 0;
-  padding: 5px;
-  background-color: #f1f1f1;
-  border-radius: var(--border-radius);
-  animation: fadeIn 1s;
-}
 
 .warning-div {
   position: fixed;
