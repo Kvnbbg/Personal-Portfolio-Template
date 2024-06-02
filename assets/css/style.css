@@ -4,7 +4,7 @@
   --background-color: #ffffff;
   --text-color: #212529;
   --accent-color: #17a2b8;
-  --font-family-base: 'Poppins', sans-serif;
+  --font-family-base: "Poppins", sans-serif;
   --transition-speed: 0.3s;
   --border-radius: 5px;
   --font-size-base: 16px;
@@ -36,18 +36,32 @@ body {
   padding: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--secondary-color);
 }
 
-h1 { font-size: 2.25rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
 /* Continue for h4, h5, h6 with proportional size adjustments */
 
-p, a, li, button {
+p,
+a,
+li,
+button {
   font-size: 1rem;
   transition: color var(--transition-speed);
 }
@@ -77,13 +91,21 @@ a:focus::before {
 }
 
 a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%
+  );
   background-size: 200% 100%;
   transition: opacity var(--transition-speed);
   opacity: 0;
@@ -108,7 +130,9 @@ a:focus::before {
 a:hover,
 a:focus {
   border-radius: var(--border-radius);
-  transition: border-color var(--transition-speed), color var(--transition-speed);
+  transition:
+    border-color var(--transition-speed),
+    color var(--transition-speed);
 }
 
 a:hover::after,
@@ -117,7 +141,7 @@ a:focus::after {
 }
 
 a::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -6px; /* Adjusted for border width */
   left: -6px; /* Adjusted for border width */
@@ -130,15 +154,14 @@ a::after {
 }
 
 @keyframes border-glow {
-  0%, 100% {
+  0%,
+  100% {
     border-color: rgba(0, 0, 0, 0.1);
   }
   50% {
     border-color: var(--accent-color);
   }
 }
-
-
 
 /* Navbar Styling */
 .navbar {
@@ -235,7 +258,9 @@ section {
   border-radius: var(--border-radius);
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   background-color: #ffffff;
 }
 
@@ -267,7 +292,9 @@ section {
   border-radius: var(--border-radius);
   padding: 1rem;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   background-color: #ffffff;
 }
 
@@ -306,8 +333,12 @@ footer a:hover {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .fade-in {
@@ -444,7 +475,7 @@ iframe {
   color: #333333;
   font-size: 18px;
   line-height: 1.6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .warning-div button {
