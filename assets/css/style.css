@@ -1,6 +1,8 @@
 :root {
-  --primary-color: #4CAF50; /* Represents health and life */
-  --secondary-color: #37474F; /* Represents effort and work */
+  /*--primary-color: #4CAF50; /* Represents health and life */
+  /* --secondary-color: #37474F; /* Represents effort and work */
+  --primary-color: #0056b3;
+  --secondary-color: #495057;
   --background-color: #FFFFFF; /* Clean and neutral background */
   --text-color: #212121; /* Dark color for text readability */
   --accent-color: #FFC107; /* Represents money and attention */
@@ -267,21 +269,6 @@ section {
 
 .certification-item img:hover {
   transform: scale(1.05);
-}
-
-blockquote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-style: italic;
-  padding: 1rem;
-  margin: 1rem 0;
-  background-color: var(--primary-color);
-  color: #fff;
-  border-radius: var(--border-radius);
-  text-align: center;
-  max-width: 800px;
-  margin: 2rem auto;
 }
 
 footer {
