@@ -1,42 +1,48 @@
+"use strict";
+
 const techLanguageContent = {
   en: {
-    welcome: "Welcome✨",
+    welcome: "Welcome to My Digital Universe✨",
     aboutMe: "Developer Profile",
+    latestPostTitle: "Latest Post: The Future of Web Development",
+    latestPostDesc: "Read my latest article discussing emerging trends in web development, the transformative impact of AI, and future web technologies.",
+    trendingPostTitle: "Trending Post: The Rise of AI in Web Design",
+    trendingPostDesc: "Discover how AI is revolutionizing UX design, its various applications, and the future of AI-driven web development.",
     location: "Geographical Node: France",
-    languages: "Programming Dialects: Fluent in Python and JavaScript",
-    switchTo: "Initiate Communication, via the Chat Interface!",
-    biography: `Initiating from a vector of relentless inquisitiveness and steadfast ardor, my trajectory in the digital sphere ignited with the concoction of elementary Python scripts. This nascent spark has since evolved into an unswerving expedition in quest of technological innovation and computational excellence. Python, as the lingua franca of my digital odyssey, with its eloquent syntax and dynamic semantics, has been my primary vehicle for traversing the intricacies of software architecture and algorithmic design. Drawing sustenance from luminaries like Steve Wozniak, heralded for his pioneering strides in hands-on innovation, and Steve Jobs, celebrated for his visionary prowess in technological entrepreneurship, my voyage mirrors a symbiosis of technical prowess and romanticism.`,
-    currentlyOn: "Ongoing Endeavors",
-    activities: `I am passionately engaged in exploring emerging paradigms and unraveling algorithmic mysteries. My journey spans from web development, leveraging frameworks such as Flask, to diving into the realms of data science with libraries like NumPy, Pandas, and TensorFlow. Beyond these, I am eager to extend my endeavors into cloud computing, aiming to utilize platforms like Heroku to architect scalable and resilient web applications. In the domain of DevOps, I will employ tools such as Docker, Kubernetes, and Jenkins for continuous integration and deployment in the future, ensuring high availability and seamless delivery of applications. My interest in blockchain technology and decentralized applications (dApps) inspires me to explore Ethereum smart contracts and platforms like Solana, aiming to contribute to the evolving landscape of secure digital transactions. As an emerging member of the open-source community, I am committed to contributing to projects that foster innovation, sharing knowledge, and collaborating on solutions that push the boundaries of technology.`,
-
-    githubInsights: "🚀",
-    topLanguages: "Dominant Lexicons",
+    languages: "Programming Dialects: Proficient in Python, JavaScript, and a multitude of other programming languages to meet client needs and advance research initiatives.",
+    switchTo: "Start communicating with my virtual clone via the chat interface! (I assure you, my virtual clone is just as friendly as I am!)",
+    biography: `Driven by an insatiable curiosity and ardent passion, my journey in the digital sphere began with designing basic Python scripts. This initial spark evolved into an unwavering quest for technological research.`,
+    currentlyOn: "Current Ventures",
+    activities: `I am deeply involved in exploring emerging paradigms and deciphering algorithmic enigmas. My path encompasses web development, using frameworks such as Flask, three.js, PHP, Node.js, React, and Flutter with Dart; data science with libraries like NumPy, Pandas, and TensorFlow; cloud computing on platforms like Heroku for architecting scalable and resilient web applications; DevOps, employing tools like Jira, Trello for Agile Scrum, Docker, Kubernetes, and Jenkins for continuous integration and deployment, ensuring high availability and seamless application delivery; UX/UI design, crafting engaging interfaces using Figma and Canva. I also appreciate various operating systems, including Linux, Windows, and Apple.`,
+    githubInsights: "🚀 GitHub Insights",
+    topLanguages: "Top Languages",
     githubStats: "Statistical Analyses",
-    connect: "Establish Contact",
-    leisureContact: "Interests & Avocations",
+    connect: "Connect with Me",
+    leisureContact: "Interests & Hobbies",
     professionalContact: "Professional Liaison",
-    reachOut:
-      "Desiring to partake in discussions pertaining to advanced Pythonic constructs, algorithmic intricacies, or eager for collaborative ventures? Do not hesitate to initiate contact via electronic mail or through the conduits of social media platforms.",
-    year: `© ${new Date().getFullYear()} - Kevin, J MARVILLE Portfolo`,
+    reachOut: "Feel free to contact me via my social networks or by leaving a comment.",
+    year: `© ${new Date().getFullYear()} Portfolio of Kevin J. MARVILLE`,
   },
   fr: {
-  	welcome: "Bonjour✨",
+    welcome: "Bienvenue dans Mon Univers Numérique✨",
     aboutMe: "Profil de Développeur",
+    latestPostTitle: "Dernier Article: L'avenir du Développement Web",
+    latestPostDesc: "Ouvrez mon dernier article discutant des tendances émergentes en développement web, de l'impact transformateur de l'IA et des technologies web futures.",
+    trendingPostTitle: "Article Tendance: L'Ascension de l'IA dans le Design Web",
+    trendingPostDesc: "Découvrez comment l'IA révolutionne le design UX, ses diverses applications et l'avenir du développement web piloté par l'IA.",
     location: "Noeud Géographique : France",
-    languages:
-      "Dialectes de Programmation : Maîtrise du Python et du JavaScript",
-    switchTo: "Entamer la Communication, via l'Interface de Chat!",
-    biography: `Émanant d'un vecteur d'insatiable curiosité et d'ardente passion, ma trajectoire dans la sphère numérique a pris son envol avec la conception de scripts Python élémentaires. Cette étincelle naissante a depuis évolué en une expédition inébranlable en quête d'innovation technologique et d'excellence computationnelle. Python, comme la lingua franca de mon odyssée numérique, avec sa syntaxe éloquente et sa sémantique dynamique, a été mon véhicule principal pour traverser les intrications de l'architecture logicielle et de la conception algorithmique. S'inspirant de luminaires tels que Steve Wozniak, célèbre pour ses avancées pionnières dans l'innovation pratique, et Steve Jobs, célébré pour sa maîtrise visionnaire de l'entrepreneuriat technologique, mon voyage reflète une symbiose de compétence technique et de romantisme.`,
+    languages: "Dialectes de Programmation : Compétence en Python, JavaScript, et une myriade d'autres langages de programmation pour répondre aux besoins des clients et faire avancer les initiatives de recherche.",
+    switchTo: "Entamer la communication avec mon clone virtuel via l'interface de chat ! (Je vous assure, mon clone virtuel est aussi sympathique que moi !)",
+    biography: `Émanant d'un vecteur d'insatiable curiosité et d'ardente passion, ma trajectoire dans la sphère numérique a pris son envol avec la conception de scripts Python élémentaires. Cette étincelle initiale s'est transformée en une quête inébranlable de recherche technologique.`,
     currentlyOn: "Entreprises Actuelles",
-    activities: `Je suis passionnément engagé dans l'exploration de paradigmes émergents et dans le démêlage des mystères algorithmiques. Mon parcours s'étend du développement web, avec l'utilisation de frameworks tels que Flask, à l'approfondissement dans les domaines de la science des données grâce à des bibliothèques comme NumPy, Pandas et TensorFlow. Au-delà de ces domaines, je suis désireux d'étendre mes efforts vers le cloud computing, avec l'objectif d'utiliser des plateformes comme Heroku pour architecturer des applications web scalables et résilientes. Dans le domaine du DevOps, j'emploierai à l'avenir des outils tels que Docker, Kubernetes et Jenkins pour l'intégration continue et le déploiement continu, garantissant une haute disponibilité et une livraison sans faille des applications. Mon intérêt pour la technologie blockchain et les applications décentralisées (dApps) m'inspire à explorer les contrats intelligents Ethereum et des plateformes comme Solana, dans le but de contribuer au paysage en évolution des transactions numériques sécurisées. En tant que nouveau membre de la communauté open-source, je m'engage à contribuer à des projets qui favorisent l'innovation, partageant des connaissances et collaborant sur des solutions qui repoussent les limites de la technologie.`,
-    githubInsights: "🚀",
+    activities: `Je suis profondément impliqué dans l'exploration de paradigmes émergents et le déchiffrage des énigmes algorithmiques. Mon parcours englobe le développement web, utilisant des frameworks tels que Flask, three.js, PHP, Node.js, React, et Flutter avec Dart, pour me plaire à la science des données avec des bibliothèques comme NumPy, Pandas et TensorFlow; le cloud computing, en utilisant des plateformes comme Heroku pour architecturer des applications web évolutives et résilientes; le domaine du DevOps, j'utilise des outils comme Jira, Trello pour Agile Scrum, Docker, Kubernetes et Jenkins pour l'intégration et le déploiement continus, garantissant une haute disponibilité et une livraison transparente des applications; le design UX/UI, je crée des interfaces engageantes en utilisant Figma et Canva. J'apprécie également divers systèmes d'exploitation, y compris Linux, Windows et Apple.`,
+    githubInsights: "🚀 Insights GitHub",
     topLanguages: "Lexiques Dominants",
     githubStats: "Analyses Statistiques",
     connect: "Établir le Contact",
     leisureContact: "Intérêts & Loisirs",
     professionalContact: "Liaison Professionnelle",
-    reachOut:
-      "Désirant participer à des discussions portant sur des concepts Python avancés, des intrications algorithmiques ou enthousiaste pour des ventures collaboratives ? N'hésitez pas à entamer le contact via courrier électronique ou à travers les canaux des plateformes de médias sociaux.",
+    reachOut: "N'hésitez pas à me contacter via mes réseaux sociaux ou en y laissant un commentaire.",
     year: `© ${new Date().getFullYear()} Portfolio de Kevin, J MARVILLE`,
   },
 };
@@ -45,27 +51,16 @@ let currentLanguage = "en"; // Default language set to English
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === "en" ? "fr" : "en";
-  const a = document.getElementById("language-switch");
-  a.classList.toggle("active");
+  const languageSwitch = document.getElementById("language-switch");
+  languageSwitch.classList.toggle("active");
 
-  // const iconElement = button.querySelector(".language-icon");
-  // const textElement = button.querySelector(".language-text");
+  const iconElement = document.getElementById("language-icon");
+  const textElement = document.getElementById("language-text");
 
   iconElement.textContent = currentLanguage === "en" ? "💻" : "💡";
   textElement.textContent = techLanguageContent[currentLanguage].switchTo;
-  console.log(
-    `Language set to ${currentLanguage === "en" ? "English" : "French"}.`
-  );
-  updateContent();
-}
-
-// Assuming the existing techLanguageContent and currentLanguage variables are defined globally as shown
-
-// This function is designed to be more generic, avoiding direct manipulation within the toggle function
-function updateLanguage(lang) {
-  currentLanguage = lang; // Update the current language based on the passed argument
-  updatePageContent(); // Call the function to update the page content according to the new language
-  console.log(`Language set to ${lang}.`); // Log the language change for debugging
+  console.log(`Language set to ${currentLanguage === "en" ? "English" : "French"}.`);
+  updatePageContent();
 }
 
 function updatePageContent() {
