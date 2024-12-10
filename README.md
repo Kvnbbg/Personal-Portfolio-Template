@@ -2,9 +2,6 @@
 
 Welcome to my Personal Portfolio! This repository showcases my development journey, skills, and projects. Don't forget to leave a star ⭐️ and explore my full portfolio on this GitHub page for more insights into my work.
 
-![Screenshot 1](screenshot1.png)
-![Screenshot 2](screenshot2.png)
-![Screenshot 3](screenshot3.png)
 
 ## Key Features
 
