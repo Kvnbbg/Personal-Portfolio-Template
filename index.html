@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    button:focus {
+      outline: 3px solid #80bdff;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Portfolio Hub!</h1>
+  <p>Select a portfolio to view:</p>
+  <button aria-label="View Live"><a href="https://kvnbbg-creations.io/">Live</a></button>
+  <button id="portfolio1" aria-label="View Portfolio 1">Portfolio 1</button>
+  <button id="portfolio2" aria-label="View Portfolio 2">Portfolio 2</button>
+
+  <script>
+    // Define portfolio pages (use live paths)
+    const portfolio1Page = 'https://kvnbbg-creations.io/portfolio1.html';
+    const portfolio2Page = 'https://kvnbbg-creations.io/portfolio2.html';
+
+    // Add click event listeners to buttons
+    document.getElementById('portfolio1').addEventListener('click', function () {
+      window.location.href = portfolio1Page;
+    });
+
+    document.getElementById('portfolio2').addEventListener('click', function () {
+      window.location.href = portfolio2Page;
+    });
+  </script>
+</body>
+</html>
