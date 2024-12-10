@@ -35,6 +35,71 @@
 section h2 {
 	margin-top: 0;
 }
+      
+      /* General Link Styles */
+a {
+    text-decoration: none; /* Removes the underline */
+    color: #0078D7; /* Professional blue color */
+    font-weight: 500; /* Semi-bold for better readability */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover State */
+a:hover {
+    color: #0056A3; /* Darker blue for hover */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Adds subtle depth */
+}
+
+/* Focus State for Accessibility */
+a:focus {
+    outline: 2px dashed #0056A3; /* Focus ring for keyboard users */
+    outline-offset: 2px;
+}
+
+/* Active State */
+a:active {
+    color: #003F7D; /* Even darker blue for active state */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.4); /* Subtle glow on active */
+}
+
+      /* General List Styles */
+ul {
+    list-style: none; /* Removes default list bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+li {
+    font-size: 16px; /* Standard font size */
+    line-height: 1.6; /* Ensures text is comfortably spaced */
+    color: #333; /* Dark text color for readability */
+    padding: 8px 0; /* Vertical padding for spacing between items */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover State for List Items */
+li:hover {
+    color: #0056A3; /* Changes text color on hover */
+    background-color: #f0f0f0; /* Subtle background color change on hover */
+}
+
+/* Active State for List Items */
+li:active {
+    color: #003F7D; /* Darker color on click */
+    background-color: #e0e0e0; /* Slightly darker background on click */
+}
+
+/* Focus State for Accessibility */
+li:focus {
+    outline: 2px dashed #0056A3; /* Focus ring for accessibility */
+    outline-offset: 2px;
+}
+
+/* Optional: Add Custom Styling for Nested Lists */
+ul ul {
+    padding-left: 20px; /* Indentation for nested lists */
+}
+
 
 #contact-form {
 	display: flex;
@@ -483,8 +548,9 @@ section h2 {
   
   <!-- Badges -->
   <section id="contact">
-    <div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kevinmarville" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/kevinmarville?trk=profile-badge">Kevin M.</a></div>
-              
+    <!-- 
+<div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kevinmarville" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/kevinmarville?trk=profile-badge">Kevin M.</a></div>
+     -->         
    	<h2>Contact Me</h2>
 		<form id="contact-form">
 			<label for="name">Name:</label>
@@ -559,16 +625,16 @@ section h2 {
         requestAnimationFrame(updateProgress);
     </script>
             <div class="centered-text">
-                <span class="flag-fr">Site en Maintenance</span>
-                <span class="flag-en">Website Under Maintenance</span>
+                <span class="flag-fr">Développeur Web</span>
+                <span class="flag-en">Web developer</span>
             </div>
             </div>
 <!-- Chatbot -->
 <div class="chatbot">
     <div class="terminal-output" id="chat-output">
         <p>
-            <span class="flag-fr">Bienvenue dans le TERMINAL, comment puis-je vous aider ?</span>
-            <span class="flag-en">Welcome to the TERMINAL, how can I assist you?</span>
+            <span class="flag-fr">Bienvenue sur mon IA CHAT BOT, toujours en développement, comment puis-je vous aider ?</span>
+            <span class="flag-en">Welcome to my AI CHAT BOT, early in beta version, how can I assist you?</span>
         </p>
     </div>
     <div class="loading-animation" id="loading-animation" style="display:none;">
