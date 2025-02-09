@@ -5,242 +5,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Creations.io - Modern 2025 Chatbot</title>
-    <link rel="icon" href="picture.png" type="image/png" />
-
+    <title>Creations.io - Modern 2025 Interactive Chatbot & Portfolio by Kevin Marville</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Explore Creations.io, a modern interactive chatbot and portfolio showcasing Kevin Marville's innovative freelance projects for 2025. Discover cutting-edge web development, creative digital solutions, and a secret game trigger."
+    />
+    <meta
+      name="keywords"
+      content="Kevin Marville, Interactive Chatbot, Modern Portfolio, 2025 Web Design, Freelance Developer, Digital Solutions, Innovative Projects, Chatbot, Web Development, Digital Creation"
+    />
+    <meta name="author" content="Kevin Marville" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Creations.io - Modern 2025 Interactive Chatbot & Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Creations.io, a modern interactive chatbot and portfolio showcasing Kevin Marville's innovative freelance projects for 2025."
+    />
+    <meta property="og:image" content="https://yourdomain.com/path/to/og-image.jpg" />
+    <meta property="og:url" content="https://creations.io" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Creations.io - Modern 2025 Interactive Chatbot & Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Explore Creations.io, a modern interactive chatbot and portfolio showcasing Kevin Marville's innovative freelance projects for 2025."
+    />
+    <meta name="twitter:image" content="https://yourdomain.com/path/to/twitter-og-image.jpg" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Kevin Marville",
+        "url": "https://creations.io",
+        "sameAs": [
+          "https://github.com/kvnbbg",
+          "https://www.linkedin.com/in/kevinmarville",
+          "https://twitter.com/techandstream",
+          "https://kvnbbg.fr"
+        ],
+        "jobTitle": "Freelance Web Developer & Digital Creator",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Creations.io"
+        },
+        "image": "https://yourdomain.com/path/to/profile-image.jpg"
+      }
+    </script>
+    
     <!-- Google Fonts -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
-
-    <!-- Internal CSS -->
-    <style>
-      /* Global Variables */
-      :root {
-        --primary-color: #0056b3;
-        --secondary-color: #495057;
-        --background-color: #f0f0f0;
-        --text-color: #212121;
-        --accent-color: #ffc107;
-        --font-family-base: 'Inter', sans-serif;
-        --transition-speed: 0.3s;
-        --border-radius: 20px;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Reset and Base Styles */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: var(--font-family-base);
-        color: var(--text-color);
-        background: linear-gradient(135deg, #eeeeee, #dddddd);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      a { text-decoration: none; color: var(--primary-color); }
-      a:hover, a:focus { color: var(--accent-color); }
-
-      /* Header with Matrix Text Effect */
-      header {
-        background-color: var(--primary-color);
-        color: #fff;
-        padding: 1rem;
-        text-align: center;
-        position: relative;
-      }
-      .matrix-text {
-        position: relative;
-        display: inline-block;
-        color: #00ff00;
-        overflow: hidden;
-      }
-      .matrix-text::before {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: rgba(0, 255, 0, 0.2);
-        white-space: nowrap;
-        animation: matrixRain 5s linear infinite;
-      }
-      .matrix-text span {
-        display: inline-block;
-        animation: matrixRain 5s linear infinite, characterChange 1.5s infinite;
-      }
-      @keyframes matrixRain {
-        0% { transform: translateY(-100%); opacity: 0.2; }
-        50% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(100%); opacity: 0.2; }
-      }
-      @keyframes characterChange {
-        0%, 100% { content: attr(data-text); }
-        50% { content: "X"; }
-      }
-
-      /* Navigation */
-      nav {
-        background-color: var(--accent-color);
-      }
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        padding: 0.5rem;
-      }
-      nav a {
-        padding: 0.5rem 1rem;
-        border-radius: var(--border-radius);
-        transition: background-color var(--transition-speed);
-      }
-      nav a:hover, nav a:focus { background-color: var(--secondary-color); }
-
-      /* Main Container */
-      .container {
-        flex: 1;
-        padding: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      section { margin-bottom: 2rem; }
-
-      /* Chatbot Styles */
-      .chatbot {
-        background-color: #000;
-        color: #33ff33;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 1rem 0;
-        font-family: monospace;
-        box-shadow: var(--shadow);
-        /* Animated glowing border */
-        animation: glow 2s infinite alternate;
-      }
-      @keyframes glow {
-        from { box-shadow: 0 0 10px rgba(0, 255, 153, 0.3); }
-        to   { box-shadow: 0 0 20px rgba(0, 255, 153, 0.8); }
-      }
-      .terminal-output {
-        max-height: 200px;
-        overflow-y: auto;
-        border-bottom: 2px solid #33ff33;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
-      }
-      .loading-animation {
-        display: flex;
-        gap: 5px;
-      }
-      .loading-animation span {
-        width: 8px;
-        height: 8px;
-        background-color: #33ff33;
-        border-radius: 50%;
-        animation: blink 1.2s infinite both;
-      }
-      @keyframes blink {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 1; }
-      }
-      .input-container {
-        display: flex;
-        gap: 10px;
-      }
-      .input-container input {
-        flex: 1;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: var(--border-radius);
-      }
-      .input-container button {
-        padding: 10px 20px;
-        background-color: #007aff;
-        color: #fff;
-        border: none;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        transition: background-color 0.2s, transform 0.2s;
-      }
-      .input-container button:hover { background-color: #005bb5; transform: scale(1.05); }
-      .input-container button:active { transform: scale(0.95); }
-
-      /* Notice Modal Styles (Inline CSS) */
-      #notice-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-      }
-      #notice-modal .notice-content {
-        background: #fff;
-        color: #333;
-        padding: 2rem;
-        border-radius: var(--border-radius);
-        max-width: 90%;
-        text-align: center;
-        box-shadow: var(--shadow);
-        animation: popIn 0.5s ease-out;
-      }
-      #notice-modal button {
-        margin-top: 1rem;
-        padding: 0.75rem 1.5rem;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-      #notice-modal button:hover { background-color: #45a049; }
-      @keyframes popIn {
-        0% { transform: scale(0.9); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-      }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="active-en">
-    <!-- Notice Modal: Tells the Story of Your Chatbot -->
+    <!-- Notice Modal: Story & Call-to-Action -->
     <div id="notice-modal">
       <div class="notice-content">
         <h2>Welcome to My Modern Interactive Chatbot!</h2>
         <p>
-          This is my very first creation for 2025 as a freelance developer. I used to study at <strong>STUDI</strong>, but now I’m embracing the freelance life and creating innovative, interactive experiences.
+          This is my very first creation for 2025 as a freelance developer. Once a student at <strong>STUDI</strong>, I have now embraced the freelance life and am excited to share my innovative and interactive experiences.
         </p>
         <p>
-          My chatbot not only answers questions about me, my projects, GitHub, and my blog (<a href="https://kvnbbg.fr" target="_blank">kvnbbg.fr</a>), it also hides a secret magic function: type <strong>source game</strong> and watch it open a special game link!
+          My chatbot not only answers questions about my background, projects, GitHub, and my blog (<a href="https://kvnbbg.fr" target="_blank">kvnbbg.fr</a>), it also hides a secret feature. Simply type <strong>"source game"</strong> to unlock a special game link!
         </p>
-        <p>
-          Ready to explore? Click “Yes, I Understand” to continue.
-        </p>
+        <p>Are you ready to explore? Click “Yes, I Understand” to continue.</p>
         <button id="notice-yes-btn">Yes, I Understand</button>
       </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header with Matrix Text Effect -->
     <header>
       <h1>
         <span class="matrix-text" data-text="Creations.io">
           <span>Creations.io</span>
         </span>
       </h1>
-      <p>Your Modern 2025 Portfolio &amp; Chatbot</p>
+      <p>Your Modern 2025 Portfolio & Interactive Chatbot</p>
     </header>
 
     <!-- Navigation -->
@@ -249,6 +104,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#progress">Progress</a></li>
         <li><a href="#chatbot">Chat</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -260,7 +116,7 @@
       <section id="about" aria-labelledby="about-heading">
         <h2 id="about-heading">About Me</h2>
         <p>
-          I am Kevin Marville—a seasoned professional with years of experience in delivering high-quality digital solutions. My journey began at STUDI, and today I thrive as a freelance developer creating cutting‑edge interactive experiences.
+          I am Kevin Marville—a freelance web developer and digital creator passionate about innovative design and technology. My journey began at STUDI, and today I proudly create cutting‑edge interactive experiences.
         </p>
       </section>
 
@@ -270,7 +126,7 @@
         <ul>
           <li>Front End Development</li>
           <li>Back End Development</li>
-          <li>Digital &amp; Metaverse Creation</li>
+          <li>Digital & Metaverse Creation</li>
         </ul>
       </section>
 
@@ -279,14 +135,25 @@
         <h2 id="projects-heading">Projects</h2>
         <article>
           <h3>Dynamic Rain Simulator 2.0</h3>
-          <p>A simulation project inspired by nature and technology.</p>
+          <p>
+            A simulation project inspired by the beauty of nature and modern technology. Experience dynamic visuals and interactive elements that bring the project to life.
+          </p>
         </article>
         <article>
           <h3>App Store – Portfolio</h3>
           <p>
-            Explore my collection of innovative projects and digital creations.
+            Discover a curated collection of innovative projects and digital creations showcased in a sleek, modern interface.
           </p>
         </article>
+      </section>
+
+      <!-- Progress Section (Engine Loop Element) -->
+      <section id="progress" aria-labelledby="progress-heading">
+        <h2 id="progress-heading" class="pixel-effect">Site Under Construction</h2>
+        <div class="progress-container">
+          <progress id="progressBar" class="under-construction-image energy-effect" value="0" max="100" aria-label="Website under construction"></progress>
+        </div>
+        <p class="centered-text pixel-effect">Innovative Solutions in Motion</p>
       </section>
 
       <!-- Chatbot Section -->
@@ -296,15 +163,19 @@
           <div id="chat-output" class="terminal-output">
             <p>
               Welcome to my interactive chatbot! Ask me about my background, projects, GitHub, or my blog.
-              <br />
-              (Tip: Type <strong>source game</strong> to open the secret game link!)
+              <br /><em>(Tip: Type <strong>source game</strong> to open the secret game link!)</em>
             </p>
           </div>
           <div id="loading-animation" class="loading-animation" style="display: none;">
             <span></span><span></span><span></span>
           </div>
           <div class="input-container">
-            <input type="text" id="user-message" placeholder="Type your message here..." onkeydown="if(event.key==='Enter') sendMessage();" />
+            <input
+              type="text"
+              id="user-message"
+              placeholder="Type your message here..."
+              onkeydown="if(event.key==='Enter') sendMessage();"
+            />
             <button onclick="sendMessage()">Send</button>
           </div>
         </div>
@@ -316,57 +187,42 @@
         <form id="contact-form" aria-label="Contact Form">
           <label for="name">Name:</label>
           <input type="text" id="name" required />
-
           <label for="email">Email:</label>
           <input type="email" id="email" required />
-
           <label for="message">Message:</label>
           <textarea id="message" required></textarea>
-
           <button type="submit">Send</button>
         </form>
       </section>
     </main>
 
-    <!-- Bottom -->
-     <!-- FOOTER: Social Links & Copyright -->
-  <footer class="py-5 bg-dark">
-    <div class="container text-center">
-      <div class="social-links mb-3">
-        <a href="https://kvnbbg.fr" target="_blank" class="text-white mx-2">
-          <i class="fas fa-rss"></i> Blog
-        </a>
-        <a href="https://www.instagram.com/techandstream" target="_blank" class="text-white mx-2">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://www.threads.net/@techandstream" target="_blank" class="text-white mx-2">
-          <i class="fas fa-comment-dots"></i> Threads
-        </a>
-        <a href="https://x.com/techandstream" target="_blank" class="text-white mx-2">
-          <i class="fab fa-twitter"></i> X
-        </a>
-        <a href="https://www.youtube.com/techandstream" target="_blank" class="text-white mx-2">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
-        <a href="https://www.facebook.com/kvnbbg" target="_blank" class="text-white mx-2">
-          <i class="fab fa-facebook-f"></i> Facebook
-        </a>
+    <!-- Footer: Social Links & Copyright -->
+    <footer class="py-5 bg-dark">
+      <div class="container text-center">
+        <div class="social-links mb-3">
+          <a href="https://kvnbbg.fr" target="_blank"><i class="fas fa-rss"></i> Blog</a>
+          <a href="https://www.instagram.com/techandstream" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.threads.net/@techandstream" target="_blank"><i class="fas fa-comment-dots"></i> Threads</a>
+          <a href="https://x.com/techandstream" target="_blank"><i class="fab fa-twitter"></i> X</a>
+          <a href="https://www.youtube.com/techandstream" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://www.facebook.com/kvnbbg" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        </div>
+        <p class="m-0 text-white">&copy; 2025 Kevin Marville. All rights reserved.</p>
       </div>
-      <p class="m-0 text-white">&copy; 2025 Kevin Marville. All rights reserved.</p>
-    </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
       /********* Notice Modal Handling **********/
-      const noticeModal = document.getElementById("notice-modal");
-      const noticeYesBtn = document.getElementById("notice-yes-btn");
-      noticeYesBtn.addEventListener("click", () => {
-        // Animate notice fade out, then remove it
-        noticeModal.style.transition = "opacity 0.5s ease-out";
-        noticeModal.style.opacity = 0;
-        setTimeout(() => { noticeModal.style.display = "none"; }, 500);
-      });
+      (function() {
+        const noticeModal = document.getElementById("notice-modal");
+        const noticeYesBtn = document.getElementById("notice-yes-btn");
+        noticeYesBtn.addEventListener("click", () => {
+          noticeModal.style.transition = "opacity 0.5s ease-out";
+          noticeModal.style.opacity = 0;
+          setTimeout(() => { noticeModal.style.display = "none"; }, 500);
+        });
+      })();
 
       /********* Chatbot Interaction Logic **********/
       function sendMessage() {
@@ -374,8 +230,6 @@
         const message = inputField.value.trim();
         if (!message) return;
         const chatOutput = document.getElementById("chat-output");
-
-        // Clear input field
         inputField.value = "";
 
         // Create user message bubble
@@ -390,31 +244,29 @@
         chatOutput.appendChild(userBubble);
         chatOutput.scrollTop = chatOutput.scrollHeight;
 
-        // Check for secret trigger: if message equals "source game" (case-insensitive)
+        // Check for secret trigger: "source game"
         if (message.toLowerCase() === "source game") {
           setTimeout(() => {
             window.open("https://github.com/kvnbbg/au-garage", "_blank");
           }, 500);
-          // Also add a bot message acknowledging the trigger.
           addBotMessage("Secret trigger activated! Opening game link...");
           return;
         }
 
         // Basic responses for common queries
         if (message.toLowerCase().includes("about")) {
-          addBotMessage("I started my journey at STUDI and now work as a freelance developer creating innovative projects for 2025.");
+          addBotMessage("I began my journey at STUDI and now work as a freelance developer creating innovative projects for 2025.");
         } else if (message.toLowerCase().includes("project")) {
-          addBotMessage("Check out my projects on my portfolio and GitHub. You can also visit my blog at https://kvnbbg.fr for more insights!");
+          addBotMessage("Check out my projects on my portfolio and GitHub. Visit my blog at https://kvnbbg.fr for more insights!");
         } else if (message.toLowerCase().includes("github")) {
           addBotMessage("My GitHub profile: https://github.com/kvnbbg");
         } else if (message.toLowerCase().includes("blog")) {
           addBotMessage("Visit my blog here: https://kvnbbg.fr");
         } else {
-          // Simulate a delayed generic answer
           showLoadingAnimation();
           setTimeout(() => {
             hideLoadingAnimation();
-            addBotMessage("I'm still learning and improving. Ask me something else about my work, projects, or even type 'source game'!");
+            addBotMessage("I'm continuously learning and evolving. Ask me more about my work or type 'source game' for a surprise!");
           }, 2000);
         }
       }
@@ -439,6 +291,29 @@
       function hideLoadingAnimation() {
         document.getElementById("loading-animation").style.display = "none";
       }
+
+      /********* Engine Loop for Continuous Updates **********/
+      let progress = 0;
+      function updateProgress() {
+        if (progress < 20) {
+          progress += 0.2;
+        } else {
+          progress = 0;
+        }
+        const progressBar = document.getElementById("progressBar");
+        if (progressBar) {
+          progressBar.value = progress;
+          const colorFactor = Math.sin(progress * Math.PI / 20);
+          const energyColor = `rgb(${76 + colorFactor * 50}, ${175 + colorFactor * 80}, 50)`;
+          progressBar.style.backgroundColor = energyColor;
+          progressBar.style.setProperty('--glow-color', energyColor);
+        }
+      }
+      function engineLoop() {
+        updateProgress();
+        requestAnimationFrame(engineLoop);
+      }
+      engineLoop();
     </script>
   </body>
 </html>
