@@ -1,993 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="picture.png" type="image/png">
-    <title>Portfolio / Professional Landing Page</title>
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Creations.io - Modern 2025 Chatbot</title>
+    <link rel="icon" href="picture.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Internal CSS -->
     <style>
-/* Reset default margin and padding */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+      /* Global Variables */
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #495057;
+        --background-color: #f0f0f0;
+        --text-color: #212121;
+        --accent-color: #ffc107;
+        --font-family-base: 'Inter', sans-serif;
+        --transition-speed: 0.3s;
+        --border-radius: 20px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-/* Body and HTML Styles */
-html,
-body {
-    height: 100%;
-    font-family: 'Ubuntu', sans-serif; /* Improved font stack for better fallback */
-    background-color: #f4f4f9;        /* Soft light gray background */
-    color: #333;                       /* Darker text for readability */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+      /* Reset and Base Styles */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--font-family-base);
+        color: var(--text-color);
+        background: linear-gradient(135deg, #eeeeee, #dddddd);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      a { text-decoration: none; color: var(--primary-color); }
+      a:hover, a:focus { color: var(--accent-color); }
 
-/* Optional: Add styles for other elements to ensure they inherit the above rules */
-body {
-    line-height: 1.6; /* Improve readability */
-}
-
-/* Additional optimizations for responsiveness (optional) */
-@media (max-width: 768px) {
-    html, body {
-        flex-direction: column;  /* Ensure layout is still fluid on smaller screens */
-    }
-}
-
-
-        /* Header and Footer Styling */
-        header, footer {
-            background-color: #1f1f1f;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-      
-      /* General Styles */
-      section {
-	padding: 2rem;
-}
-
-section h2 {
-	margin-top: 0;
-}
-      
-      /* General Link Styles */
-a {
-    text-decoration: none; /* Removes the underline */
-    color: #0078D7; /* Professional blue color */
-    font-weight: 500; /* Semi-bold for better readability */
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effects */
-  	margin: 7px;
-}
-
-/* Hover State */
-a:hover {
-    color: #0056A3; /* Darker blue for hover */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Adds subtle depth */
-  	margin: 10px;
-}
-
-/* Focus State for Accessibility */
-a:focus {
-    outline: 2px dashed #0056A3; /* Focus ring for keyboard users */
-    outline-offset: 2px;
-}
-
-/* Active State */
-a:active {
-    color: #003F7D; /* Even darker blue for active state */
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.4); /* Subtle glow on active */
-}
-
-      /* General List Styles */
-ul {
-    list-style: none; /* Removes default list bullets */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-}
-
-li {
-    font-size: 16px; /* Standard font size */
-    line-height: 1.6; /* Ensures text is comfortably spaced */
-    color: #333; /* Dark text color for readability */
-    padding: 8px 0; /* Vertical padding for spacing between items */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
-}
-
-/* Hover State for List Items */
-li:hover {
-    color: #0056A3; /* Changes text color on hover */
-    background-color: #f0f0f0; /* Subtle background color change on hover */
-}
-
-/* Active State for List Items */
-li:active {
-    color: #003F7D; /* Darker color on click */
-    background-color: #e0e0e0; /* Slightly darker background on click */
-}
-
-/* Focus State for Accessibility */
-li:focus {
-    outline: 2px dashed #0056A3; /* Focus ring for accessibility */
-    outline-offset: 2px;
-}
-
-/* Optional: Add Custom Styling for Nested Lists */
-ul ul {
-    padding-left: 20px; /* Indentation for nested lists */
-}
-
-
-#contact-form {
-	display: flex;
-	flex-direction: column;
-}
-
-#contact-form label,
-#contact-form input,
-#contact-form textarea {
-	margin-bottom: 1rem;
-}
-
-#contact-form button {
-	align-self: flex-end;
-}
-
-        /* Toggle Translate */
-        .flag-fr, .flag-en {
-            display: none;
-        }
-        .active-fr .flag-fr {
-            display: inline;
-        }
-        .active-en .flag-en {
-            display: inline;
-        }
-        .toggle-button {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .toggle-button:hover {
-            background-color: #0056b3;
-        }
-		
-      /* Contact form */
-      .spinner {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid transparent;
-    border-top-color: #3498db;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-      
-        /* Container Styling */
-        .container {
-            text-align: center;
-            width: 80%;
-            max-width: 1000px;
-            margin: 0 auto;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-/* Chatbot Terminal Styling */
-.chatbot {
-    width: 100%;
-    max-width: 800px;
-    background-color: #000;
-    color: #33ff33;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto 40px;
-    font-family: monospace;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.chatbot .terminal-output {
-    height: 200px;
-    overflow-y: auto;
-    border-bottom: 2px solid #33ff33;
-    padding: 10px;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    transition: border-color 0.3s ease;
-}
-
-.chatbot .terminal-output:hover {
-    border-color: #00ff99;
-  color: white;
-}
-
-/* Custom scrollbar for better aesthetics */
-.chatbot .terminal-output::-webkit-scrollbar {
-    width: 8px;
-}
-
-.chatbot .terminal-output::-webkit-scrollbar-thumb {
-    background-color: #33ff33;
-    border-radius: 8px;
-}
-
-.chatbot .loading-animation {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px 0;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.loading-animation:hover {
-    color: #00ff99;
-}
-
-/* Loading Animation */
-.loading-animation span {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #33ff33;
-    border-radius: 50%;
-    margin-right: 5px;
-    animation: blink 1.2s infinite both;
-    transition: background-color 0.3s ease;
-}
-
-.loading-animation:hover span {
-    background-color: #00ff99;
-}
-
-.loading-animation span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.loading-animation span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-/* Glowing effect on hover */
-.chatbot:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 153, 0.8);
-}
-
-                /* Container for progress */
-        .progress-container {
-            width: 100%;
-            max-width: 400px;
-            margin: 50px auto;
-            text-align: center;
-        }
-
-        /* Keep the class name consistent */
-        .under-construction-image {
-            width: 100%;
-            height: 30px;
-            border-radius: 10px;
-            appearance: none;
-            background-color: #ddd;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Energy effect and transition */
-        progress[value]::-webkit-progress-value {
-            background-color: #4caf50;
-            transition: width 0.5s ease-out;
-        }
-
-        progress[value]::-moz-progress-bar {
-            background-color: #4caf50;
-            transition: width 0.5s ease-out;
-        }
-
-        /* Glowing effect using math functions */
-        .energy-effect {
-            animation: energyPulse 2s infinite;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
-        }
-
-        @keyframes energyPulse {
-            0% {
-                box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(76, 255, 3, 0.8);
-            }
-            100% {
-                box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
-            }
-        }
-
-        /* Progress label */
-        .progress-label {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        /* Text Styling */
-        .centered-text {
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        /* Button Styling */
-        .action-button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
-
-        .action-button:hover {
-            background-color: #45a049;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .centered-text {
-                font-size: 2rem;
-            }
-
-            .action-button {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-        }
-
-        /* Accessibility Enhancements */
-        .action-button:focus {
-            outline: 2px dashed #ffeb3b;
-            outline-offset: 4px;
-        }
-
-        /* Improved Responsiveness for Larger Screens */
-        @media screen and (min-width: 1200px) {
-            .container {
-                max-width: 1200px;
-            }
-            .under-construction-image {
-                max-width: 1200px;
-            }
-        }
-    </style>
-</head>
-<body class="active-en">
-<!-- Header -->
-<style>
-    @keyframes matrixRain {
-        0% {
-            transform: translateY(-100%);
-            opacity: 0.2;
-        }
-        50% {
-            opacity: 1;
-            transform: translateY(0%);
-        }
-        100% {
-            transform: translateY(100%);
-            opacity: 0.2;
-        }
-    }
-
-    @keyframes characterChange {
-        0%, 100% {
-            content: attr(data-text);
-        }
-        10% {
-            content: "A";
-        }
-        20% {
-            content: "B";
-        }
-        30% {
-            content: "3";
-        }
-        40% {
-            content: "7";
-        }
-        50% {
-            content: "X";
-        }
-        60% {
-            content: "2";
-        }
-        70% {
-            content: "P";
-        }
-        80% {
-            content: "9";
-        }
-        90% {
-            content: "L";
-        }
-    }
-
-    /* Matrix effect applied to text */
-    .matrix-text {
+      /* Header with Matrix Text Effect */
+      header {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
         position: relative;
+      }
+      .matrix-text {
+        position: relative;
+        display: inline-block;
         color: #00ff00;
         overflow: hidden;
-    }
-
-    /* Layer of constantly falling characters (background) */
-    .matrix-text::before {
+      }
+      .matrix-text::before {
         content: attr(data-text);
         position: absolute;
         top: 0;
         left: 0;
         color: rgba(0, 255, 0, 0.2);
         white-space: nowrap;
-        animation: matrixRain 5s infinite linear;
-    }
-
-    /* Layer of changing characters (foreground) */
-    .matrix-text span {
+        animation: matrixRain 5s linear infinite;
+      }
+      .matrix-text span {
         display: inline-block;
-        position: relative;
-        color: #00ff00;
-        animation: matrixRain 5s infinite linear, characterChange 1.5s infinite;
-    }
+        animation: matrixRain 5s linear infinite, characterChange 1.5s infinite;
+      }
+      @keyframes matrixRain {
+        0% { transform: translateY(-100%); opacity: 0.2; }
+        50% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(100%); opacity: 0.2; }
+      }
+      @keyframes characterChange {
+        0%, 100% { content: attr(data-text); }
+        50% { content: "X"; }
+      }
 
-    /* Delays for individual characters */
-    .matrix-text span:nth-child(1) {
-        animation-delay: 0s;
-    }
-    .matrix-text span:nth-child(2) {
-        animation-delay: 0.1s;
-    }
-    .matrix-text span:nth-child(3) {
-        animation-delay: 0.2s;
-    }
-    .matrix-text span:nth-child(4) {
-        animation-delay: 0.3s;
-    }
-    .matrix-text span:nth-child(5) {
-        animation-delay: 0.4s;
-    }
-    .matrix-text span:nth-child(6) {
-        animation-delay: 0.5s;
-    }
-    .matrix-text span:nth-child(7) {
-        animation-delay: 0.6s;
-    }
-    .matrix-text span:nth-child(8) {
-        animation-delay: 0.7s;
-    }
-    .matrix-text span:nth-child(9) {
-        animation-delay: 0.8s;
-    }
-    .matrix-text span:nth-child(10) {
-        animation-delay: 0.9s;
-    }
+      /* Navigation */
+      nav {
+        background-color: var(--accent-color);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.5rem;
+      }
+      nav a {
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: background-color var(--transition-speed);
+      }
+      nav a:hover, nav a:focus { background-color: var(--secondary-color); }
 
-    /* Ensure readability and smooth transitions */
-    .matrix-text:hover {
-        color: #00ff99;
-    }
+      /* Main Container */
+      .container {
+        flex: 1;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      section { margin-bottom: 2rem; }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .matrix-text {
-            font-size: 1.5rem;
-        }
-    }
-</style>
+      /* Chatbot Styles */
+      .chatbot {
+        background-color: #000;
+        color: #33ff33;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: monospace;
+        box-shadow: var(--shadow);
+        /* Animated glowing border */
+        animation: glow 2s infinite alternate;
+      }
+      @keyframes glow {
+        from { box-shadow: 0 0 10px rgba(0, 255, 153, 0.3); }
+        to   { box-shadow: 0 0 20px rgba(0, 255, 153, 0.8); }
+      }
+      .terminal-output {
+        max-height: 200px;
+        overflow-y: auto;
+        border-bottom: 2px solid #33ff33;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .loading-animation {
+        display: flex;
+        gap: 5px;
+      }
+      .loading-animation span {
+        width: 8px;
+        height: 8px;
+        background-color: #33ff33;
+        border-radius: 50%;
+        animation: blink 1.2s infinite both;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+      }
+      .input-container {
+        display: flex;
+        gap: 10px;
+      }
+      .input-container input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+      }
+      .input-container button {
+        padding: 10px 20px;
+        background-color: #007aff;
+        color: #fff;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s;
+      }
+      .input-container button:hover { background-color: #005bb5; transform: scale(1.05); }
+      .input-container button:active { transform: scale(0.95); }
 
-<script>
-    document.querySelectorAll('.matrix-text span').forEach((element) => {
-        const originalText = element.textContent;
-        element.setAttribute('data-text', originalText);
-    });
-</script>
-  
-  	<header>
-         <h1 style="font-family: monospace; color: #00ff00; overflow: hidden; position: relative;">
-        <span class="matrix-text" style="display: inline-block;">
-            <span class="flag-fr">Welcome</span>
-            <span class="flag-en">to My Portfolio</span>
-        </span>
-    </h1>
-		<nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #f8f9fa; font-family: Arial, sans-serif;" aria-label="Main Navigation">
-    <!-- Toggle Language Button -->
-          <!--
-    <button id="language-toggle" aria-label="Toggle Language" style="border: 2px solid #ccc; background-color: transparent; font-size: 16px; padding: 5px 10px; cursor: pointer; border-radius: 5px;">
-        🇫🇷 Français / 🇬🇧 English
-    </button>
--->
-    <!-- Links List -->
-    <ul style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center;">
-      	<li><a href="#about">About</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#contact">Contact</a></li>
-        <li style="margin-left: 20px;">
-            <a href="https://linkedin.com/in/kevinmarville" target="_blank" aria-label="Look at my links" style="text-decoration: none; font-size: 16px; display: inline-flex; align-items: center; color: #007bff; border: 2px solid transparent; padding: 5px 10px; border-radius: 5px; transition: all 0.3s ease;">
-                <span class="flag-fr" style="display: block; margin-right: 5px;">Voir Plus</span>
-                <span class="flag-en" style="display: none; margin-left: 5px;">See More</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-	</header>
-	<section id="about">
-		<h2>About Me</h2>
-		<p>I am a professional with many years of experience in my field, <strong>dedicated</strong> to providing high-quality services to my clients.
-
-<strong>My focus</strong> is on understanding their unique needs and delivering solutions that align with their goals. I work hard to help them succeed, ensuring every project is handled with <strong>care and precision</strong>.
-
-I leverage a variety of technical tools and platforms to enhance my work, including <strong>project management tools</strong> like Trello, Jira, and Asana for efficient planning and execution. For development and technical implementation, I rely on <strong>languages</strong> such as Python, JavaScript, and PHP, along with frameworks like React and Laravel. I also utilize <strong>design software</strong> like Adobe XD, Figma, and Canva for creating visually appealing and functional solutions.
-
-I believe in the importance of <strong>effective communication</strong>, reliability, and building lasting relationships. These values help me build trust and ensure clarity at every stage of a project.
-
-By combining my expertise with a results-driven approach, I strive to deliver <strong>solutions that make a real difference</strong>.
-
-<strong>Client success</strong> is at the heart of everything I do. Through my commitment and hard work, I aim to create value, foster meaningful partnerships, and drive positive results for every client I work with.</p>
-                <a href="https://kvnbbg.fr" target="_blank" aria-label="Look my about me" style="text-decoration: none; font-size: 16px; display: inline-flex; align-items: center; color: #007bff; border: 2px solid transparent; padding: 5px 10px; border-radius: 5px; transition: all 0.3s ease;">
-                <span class="flag-fr" style="display: block; margin-right: 5px;">Ma Biography Complète Ici</span>
-                <span class="flag-en" style="display: none; margin-left: 5px;">Full Bio Here</span>
-            </a>
-      <br>
-		<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1922357079&color=%232a78b9&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/kvnbbg" title="Kvnbbg" target="_blank" style="color: #cccccc; text-decoration: none;">Kvnbbg</a> · <a href="https://soundcloud.com/kvnbbg/sets/galaxys-melody" title="Galaxy&#x27;s Melody (FULL ALBUM + 1 BONUS)" target="_blank" style="color: #cccccc; text-decoration: none;">Galaxy&#x27;s Melody (FULL ALBUM + 1 BONUS)</a></div>
- <p>I started as a musician before moving into media creation, inspired by the endless possibilities of the internet of tomorrow.</p>
-  </section>
-	<section id="services">
-		<h2>Services</h2>
-		<ul>
-			<li>Front End</li>
-			<li>Back End</li>
-			<li>Metaverse / Digital Creation</li>
-		</ul>
- 	</section>
-
-
-  
-  <!-- Badges -->
-  <section id="contact">
-    <!-- 
-<div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kevinmarville" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/kevinmarville?trk=profile-badge">Kevin M.</a></div>
-     -->         
-   	<h2>Contact Me</h2>
-		<form id="contact-form">
-			<label for="name">Name:</label>
-			<input type="text" id="name" required>
-			<label for="email">Email:</label>
-			<input type="email" id="email" required>
-			<label for="message">Message:</label>
-			<textarea id="message" required></textarea>
-			<button type="submit">Send</button>
-		</form>
-    <a href="https://app.daily.dev/kevinmarville"><img src="https://api.daily.dev/devcards/v2/Ci75X9sjgBAuP70WotWgd.png?type=wide&r=ljx" width="652" alt="Kevin Marville's Dev Card"/></a>
-  </section>
-
-<script>
-
-    // Add hover effect to the link
-    const link = document.querySelector('a');
-    link.addEventListener('mouseover', function() {
-        link.style.backgroundColor = '#007bff';
-        link.style.color = '#fff';
-        link.style.border = '2px solid #007bff';
-    });
-
-    link.addEventListener('mouseout', function() {
-        link.style.backgroundColor = 'transparent';
-        link.style.color = '#007bff';
-        link.style.border = '2px solid transparent';
-    });
-</script>
-
-
-
-
-    <!-- Main Container -->
-    <main class="container">
-
-        <!-- Website Image and Call-to-Action -->
-        <div>
-   <div class="progress-container">
-        <div class="progress-label"></div>
-        <!-- Dynamic progress bar with animation -->
-        <progress id="progressBar" class="under-construction-image energy-effect" value="0" max="100" aria-label="Website under construction"></progress>
-    </div>
-
-    <script>
-        // Set initial value
-        let progress = 0;
-        const progressBar = document.getElementById('progressBar');
-
-        function updateProgress() {
-            // Increment progress dynamically
-            if (progress < 20) {
-                progress += 0.2; // Increment speed
-            } else {
-                progress = 0; // Reset for looping effect
-            }
-            progressBar.value = progress;
-            
-            // Apply math-driven color changes for a more energy-like effect
-            const colorFactor = Math.sin(progress * Math.PI / 20);
-            const energyColor = `rgb(${76 + colorFactor * 50}, ${175 + colorFactor * 80}, 50)`;
-
-            // Update bar's glow effect dynamically
-            progressBar.style.setProperty('--glow-color', energyColor);
-            progressBar.style.backgroundColor = energyColor;
-
-            // Update every 50ms for smooth animation
-            requestAnimationFrame(updateProgress);
-        }
-
-        // Start the dynamic progress
-        requestAnimationFrame(updateProgress);
-    </script>
-            <div class="centered-text">
-                <span class="flag-fr">Développeur Web</span>
-                <span class="flag-en">Web developer</span>
-            </div>
-            </div>
-<!-- Chatbot -->
-<div class="chatbot">
-    <div class="terminal-output" id="chat-output">
+      /* Notice Modal Styles (Inline CSS) */
+      #notice-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+      }
+      #notice-modal .notice-content {
+        background: #fff;
+        color: #333;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        max-width: 90%;
+        text-align: center;
+        box-shadow: var(--shadow);
+        animation: popIn 0.5s ease-out;
+      }
+      #notice-modal button {
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #notice-modal button:hover { background-color: #45a049; }
+      @keyframes popIn {
+        0% { transform: scale(0.9); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+    </style>
+  </head>
+  <body class="active-en">
+    <!-- Notice Modal: Tells the Story of Your Chatbot -->
+    <div id="notice-modal">
+      <div class="notice-content">
+        <h2>Welcome to My Modern Interactive Chatbot!</h2>
         <p>
-            <span class="flag-fr">Bienvenue sur mon IA CHAT BOT, toujours en développement, comment puis-je vous aider ?</span>
-            <span class="flag-en">Welcome to my AI CHAT BOT, early in beta version, how can I assist you?</span>
+          This is my very first creation for 2025 as a freelance developer. I used to study at <strong>STUDI</strong>, but now I’m embracing the freelance life and creating innovative, interactive experiences.
         </p>
+        <p>
+          My chatbot not only answers questions about me, my projects, GitHub, and my blog (<a href="https://kvnbbg.fr" target="_blank">kvnbbg.fr</a>), it also hides a secret magic function: type <strong>source game</strong> and watch it open a special game link!
+        </p>
+        <p>
+          Ready to explore? Click “Yes, I Understand” to continue.
+        </p>
+        <button id="notice-yes-btn">Yes, I Understand</button>
+      </div>
     </div>
-    <div class="loading-animation" id="loading-animation" style="display:none;">
-        <span></span><span></span><span></span>
-    </div>
 
-    <!-- Matrix Effect -->
-    <div class="matrix-effect" id="matrix-effect" style="display:none;">
-        <canvas id="matrix-canvas"></canvas>
-    </div>
+    <!-- Header -->
+    <header>
+      <h1>
+        <span class="matrix-text" data-text="Creations.io">
+          <span>Creations.io</span>
+        </span>
+      </h1>
+      <p>Your Modern 2025 Portfolio &amp; Chatbot</p>
+    </header>
 
-    <!-- Input field and button for user interaction -->
-    <div class="user-input">
-        <input type="text" id="user-message" placeholder="Type your message here..." onkeydown="checkEnterKey(event)" />
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <!-- Navigation -->
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#chatbot">Chat</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
-<script>
-    // Initialize the matrix effect variables
-    let matrixEffectTimeout;
-    let typingTimeout;
-    const matrixEffectDuration = 5000; // 5 seconds
-    const matrixCanvas = document.getElementById('matrix-canvas');
-    const matrixEffectDiv = document.getElementById('matrix-effect');
-    const chatOutputDiv = document.getElementById('chat-output');
-    const ctx = matrixCanvas.getContext('2d');
-    let matrixColumns;
-    let drops;
+    <!-- Main Content -->
+    <main class="container">
+      <!-- About Section -->
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p>
+          I am Kevin Marville—a seasoned professional with years of experience in delivering high-quality digital solutions. My journey began at STUDI, and today I thrive as a freelance developer creating cutting‑edge interactive experiences.
+        </p>
+      </section>
 
-    function initMatrixEffect() {
-        // Setting canvas dimensions to match the chat-output width
-        matrixCanvas.width = chatOutputDiv.clientWidth;
-        matrixCanvas.height = chatOutputDiv.clientHeight;
+      <!-- Services Section -->
+      <section id="services" aria-labelledby="services-heading">
+        <h2 id="services-heading">Services</h2>
+        <ul>
+          <li>Front End Development</li>
+          <li>Back End Development</li>
+          <li>Digital &amp; Metaverse Creation</li>
+        </ul>
+      </section>
 
-        const fontSize = 14;
-        matrixColumns = matrixCanvas.width / fontSize;
-        drops = Array(Math.floor(matrixColumns)).fill(1);
-    }
+      <!-- Projects Section -->
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <article>
+          <h3>Dynamic Rain Simulator 2.0</h3>
+          <p>A simulation project inspired by nature and technology.</p>
+        </article>
+        <article>
+          <h3>App Store – Portfolio</h3>
+          <p>
+            Explore my collection of innovative projects and digital creations.
+          </p>
+        </article>
+      </section>
 
-    function drawMatrix() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-        ctx.fillStyle = '#00FF00'; // Matrix green color
-        ctx.font = '14px monospace';
+      <!-- Chatbot Section -->
+      <section id="chatbot" aria-labelledby="chatbot-heading">
+        <h2 id="chatbot-heading">Interactive Chatbot</h2>
+        <div class="chatbot" role="region" aria-live="polite">
+          <div id="chat-output" class="terminal-output">
+            <p>
+              Welcome to my interactive chatbot! Ask me about my background, projects, GitHub, or my blog.
+              <br />
+              (Tip: Type <strong>source game</strong> to open the secret game link!)
+            </p>
+          </div>
+          <div id="loading-animation" class="loading-animation" style="display: none;">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="input-container">
+            <input type="text" id="user-message" placeholder="Type your message here..." onkeydown="if(event.key==='Enter') sendMessage();" />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </section>
 
-        drops.forEach((y, x) => {
-            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-            ctx.fillText(text, x * 14, y * 14);
+      <!-- Contact Section -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Me</h2>
+        <form id="contact-form" aria-label="Contact Form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
 
-            // Random reset drop for a realistic matrix effect
-            if (y * 14 > matrixCanvas.height && Math.random() > 0.975) {
-                drops[x] = 0;
-            }
-            drops[x]++;
-        });
-    }
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
 
-    function startMatrixEffect() {
-        matrixEffectDiv.style.display = 'block';
-        chatOutputDiv.style.display = 'none'; // Hide normal chat output
-        initMatrixEffect();
-        matrixEffectTimeout = setInterval(drawMatrix, 50);
-    }
+          <label for="message">Message:</label>
+          <textarea id="message" required></textarea>
 
-    function stopMatrixEffect() {
-        matrixEffectDiv.style.display = 'none';
-        chatOutputDiv.style.display = 'block'; // Show chat output again
-        clearInterval(matrixEffectTimeout);
-    }
-
-    function resetTypingTimer() {
-        clearTimeout(typingTimeout);
-        stopMatrixEffect();
-        typingTimeout = setTimeout(startMatrixEffect, matrixEffectDuration);
-    }
-
-    document.getElementById('user-message').addEventListener('input', resetTypingTimer);
-
-    // Start the matrix effect if no typing occurs after 5 seconds
-    typingTimeout = setTimeout(startMatrixEffect, matrixEffectDuration);
-</script>
-
-<script>
-  // Contact Form
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const submitButton = form.querySelector('button[type="submit"]');
-    const spinner = document.createElement('span');
-    const successMessage = document.createElement('p');
-
-    // Add spinner styles
-    spinner.classList.add('spinner');
-    spinner.style.marginLeft = '8px';
-    spinner.innerHTML = '⏳'; // Use an emoji or custom styles for better UX
-    submitButton.appendChild(spinner);
-
-    // Disable submit button during the fake animation
-    submitButton.disabled = true;
-
-    // Fake AJAX request delay
-    setTimeout(() => {
-        // Remove spinner
-        submitButton.removeChild(spinner);
-        submitButton.disabled = false;
-
-        // Show success message
-        successMessage.textContent = 'Form submitted successfully!';
-        successMessage.style.color = 'green';
-        form.appendChild(successMessage);
-
-        // Clear the success message after 3 seconds
-        setTimeout(() => {
-            form.removeChild(successMessage);
-        }, 3000);
-
-        // Optional: Clear form fields
-        form.reset();
-    }, 2000); // Simulate a 2-second delay
-});
-
-  
-    // Load Universal Sentence Encoder for semantic understanding
-    let useModel;
-    let embeddingCache = {}; // Cache to store embeddings
-    async function loadUSEModel() {
-        useModel = await use.load(); // Load the Universal Sentence Encoder model
-    }
-    loadUSEModel();  // Load the model on script load
-
-    // Global variables
-    let currentLanguage = 'en'; // Default to English
-    let contextMemory = []; // Store conversation history for contextual responses
-
-    // Enhanced language detection with multi-language support
-    function detectLanguage(input) {
-        const frenchChars = /[éèàùçâêîôûëïüœ]/i;
-        const spanishChars = /[áéíóúñü]/i;
-        const germanChars = /[äöüß]/i;
-        
-        if (frenchChars.test(input)) {
-            currentLanguage = 'fr';
-        } else if (spanishChars.test(input)) {
-            currentLanguage = 'es';
-        } else if (germanChars.test(input)) {
-            currentLanguage = 'de';
-        } else {
-            currentLanguage = 'en';
-        }
-    }
-
-    // Predefined knowledge base with multilingual support (English, French, Spanish, German)
-    const knowledgeBase = [
-        { 
-            id: 1, 
-            keywords: { en: ["computer", "history", "first", "invention"], fr: ["ordinateur", "histoire", "premier", "invention"], es: ["ordenador", "historia", "primero", "invención"], de: ["computer", "geschichte", "erste", "erfindung"] }, 
-            fact: { en: "The first mechanical computer was created by Charles Babbage in 1822.", fr: "Le premier ordinateur mécanique a été créé par Charles Babbage en 1822.", es: "El primer ordenador mecánico fue creado por Charles Babbage en 1822.", de: "Der erste mechanische Computer wurde 1822 von Charles Babbage erfunden." }
-        },
-        { 
-            id: 2, 
-            keywords: { en: ["software", "history", "first", "program"], fr: ["logiciel", "histoire", "premier", "programme"], es: ["software", "historia", "primero", "programa"], de: ["software", "geschichte", "erste", "programm"] }, 
-            fact: { en: "The first high-level programming language was Fortran, developed in the 1950s.", fr: "Le premier langage de programmation de haut niveau était Fortran, développé dans les années 1950.", es: "El primer lenguaje de programación de alto nivel fue Fortran, desarrollado en los años 50.", de: "Die erste Programmiersprache war Fortran, entwickelt in den 1950er Jahren." }
-        }
-        // Add more entries with multilingual facts and keywords...
-    ];
-
-    // Tokenization function to extract meaningful words
-    function tokenize(text) {
-        return text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(/\s+/);
-    }
-
-    // Using Universal Sentence Encoder to calculate similarity between embeddings
-    async function calculateUSESimilarity(userInput, knowledgeEntry) {
-        const inputKey = `${currentLanguage}:${userInput}`;
-        
-        // Use cache if embedding is already computed
-        let inputEmbedding;
-        if (embeddingCache[inputKey]) {
-            inputEmbedding = embeddingCache[inputKey];
-        } else {
-            inputEmbedding = await useModel.embed(userInput);
-            embeddingCache[inputKey] = inputEmbedding;
-        }
-
-        const knowledgeEmbedding = await useModel.embed(knowledgeEntry.keywords[currentLanguage].join(" "));
-        const similarityScore = cosineSimilarity(inputEmbedding, knowledgeEmbedding);
-        return similarityScore;
-    }
-
-    // Function to calculate cosine similarity between two embeddings
-    function cosineSimilarity(vec1, vec2) {
-        const dotProduct = tf.dot(vec1, vec2).dataSync()[0];
-        const magnitudeA = tf.norm(vec1).dataSync()[0];
-        const magnitudeB = tf.norm(vec2).dataSync()[0];
-
-        if (!magnitudeA || !magnitudeB) return 0;
-        return dotProduct / (magnitudeA * magnitudeB);
-    }
-
-    // Contextual memory for better conversation handling
-    function updateContextMemory(userMessage) {
-        contextMemory.push({ message: userMessage, language: currentLanguage });
-        if (contextMemory.length > 5) {
-            contextMemory.shift(); // Limit memory size to avoid overflow
-        }
-    }
-
-    // Find best fact with Universal Sentence Encoder and context handling
-    async function findBestFact(userInput) {
-        let bestMatch = null;
-        let highestScore = 0;
-
-        // Apply language detection
-        detectLanguage(userInput);
-        
-        // Update context memory with new user input
-        updateContextMemory(userInput);
-
-        for (let entry of knowledgeBase) {
-            const similarityScore = await calculateUSESimilarity(userInput, entry);
-            if (similarityScore > highestScore) {
-                highestScore = similarityScore;
-                bestMatch = entry;
-            }
-        }
-
-        return bestMatch ? bestMatch.fact[currentLanguage] : (currentLanguage === 'en' ? "I'm not sure, can you ask something else?" : (currentLanguage === 'fr' ? "Je ne suis pas sûr, pouvez-vous poser une autre question ?" : (currentLanguage === 'es' ? "No estoy seguro, ¿puedes preguntar otra cosa?" : "Ich bin mir nicht sicher, können Sie etwas anderes fragen?")));
-    }
-
-    // Simulate chatbot response with context and language detection
-    async function chatbotResponse(userMessage) {
-        const chatOutput = document.getElementById("chat-output");
-        const loadingAnimation = document.getElementById("loading-animation");
-
-        // Show loading animation after slight delay for realism
-        setTimeout(() => {
-            loadingAnimation.style.display = 'block';
-        }, 300);
-
-        // Simulate a delayed response for a better user experience
-        setTimeout(async () => {
-            loadingAnimation.style.display = 'none';
-            
-            const response = await findBestFact(userMessage); // Get response based on input
-
-            // Display the response
-            const newMessage = document.createElement('p');
-            newMessage.textContent = response;
-            chatOutput.appendChild(newMessage);
-
-            // Smooth scroll to the latest message
-            chatOutput.scroll({ top: chatOutput.scrollHeight, behavior: 'smooth' });
-        }, 2000);
-    }
-
-    // Capture input and send to chatbot
-    function sendMessage() {
-        const userInput = document.getElementById("user-message").value.trim();
-
-        if (userInput === "") {
-            const chatOutput = document.getElementById("chat-output");
-            const warningMessage = document.createElement('p');
-            warningMessage.style.color = 'red';
-            warningMessage.textContent = currentLanguage === 'en' ? "Please enter a message before sending!" : (currentLanguage === 'fr' ? "Veuillez entrer un message avant d'envoyer!" : (currentLanguage === 'es' ? "¡Por favor ingresa un mensaje antes de enviarlo!" : "Bitte geben Sie eine Nachricht ein, bevor Sie sie senden!"));
-            chatOutput.appendChild(warningMessage);
-            chatOutput.scroll({ top: chatOutput.scrollHeight, behavior: 'smooth' });
-            return;
-        }
-
-        chatbotResponse(userInput);
-
-        // Clear input field after sending
-        document.getElementById("user-message").value = "";
-    }
-
-    // Function to trigger send on pressing the "Enter" key
-    function checkEnterKey(event) {
-        if (event.key === 'Enter') {
-            sendMessage();
-        }
-    }
-</script>
-      
-
+          <button type="submit">Send</button>
+        </form>
+      </section>
     </main>
+
     <!-- Footer -->
     <footer>
-        &copy; 2025 Kevin Marville. All rights reserved.
+      <p>&copy; 2025 Kevin Marville. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // JavaScript for Language Toggle
-        const toggleButton = document.getElementById('language-toggle');
-        const body = document.body;
+      /********* Notice Modal Handling **********/
+      const noticeModal = document.getElementById("notice-modal");
+      const noticeYesBtn = document.getElementById("notice-yes-btn");
+      noticeYesBtn.addEventListener("click", () => {
+        // Animate notice fade out, then remove it
+        noticeModal.style.transition = "opacity 0.5s ease-out";
+        noticeModal.style.opacity = 0;
+        setTimeout(() => { noticeModal.style.display = "none"; }, 500);
+      });
 
-        toggleButton.addEventListener('click', function() {
-            if (body.classList.contains('active-en')) {
-                body.classList.remove('active-en');
-                body.classList.add('active-fr');
-            } else {
-                body.classList.remove('active-fr');
-                body.classList.add('active-en');
-            }
-        });
+      /********* Chatbot Interaction Logic **********/
+      function sendMessage() {
+        const inputField = document.getElementById("user-message");
+        const message = inputField.value.trim();
+        if (!message) return;
+        const chatOutput = document.getElementById("chat-output");
 
+        // Clear input field
+        inputField.value = "";
 
+        // Create user message bubble
+        const userBubble = document.createElement("p");
+        userBubble.style.textAlign = "right";
+        userBubble.style.backgroundColor = "#007aff";
+        userBubble.style.color = "#fff";
+        userBubble.style.padding = "10px 15px";
+        userBubble.style.margin = "10px 0";
+        userBubble.style.borderRadius = "20px 20px 20px 0";
+        userBubble.textContent = message;
+        chatOutput.appendChild(userBubble);
+        chatOutput.scrollTop = chatOutput.scrollHeight;
 
+        // Check for secret trigger: if message equals "source game" (case-insensitive)
+        if (message.toLowerCase() === "source game") {
+          setTimeout(() => {
+            window.open("https://github.com/kvnbbg/au-garage", "_blank");
+          }, 500);
+          // Also add a bot message acknowledging the trigger.
+          addBotMessage("Secret trigger activated! Opening game link...");
+          return;
+        }
+
+        // Basic responses for common queries
+        if (message.toLowerCase().includes("about")) {
+          addBotMessage("I started my journey at STUDI and now work as a freelance developer creating innovative projects for 2025.");
+        } else if (message.toLowerCase().includes("project")) {
+          addBotMessage("Check out my projects on my portfolio and GitHub. You can also visit my blog at https://kvnbbg.fr for more insights!");
+        } else if (message.toLowerCase().includes("github")) {
+          addBotMessage("My GitHub profile: https://github.com/kvnbbg");
+        } else if (message.toLowerCase().includes("blog")) {
+          addBotMessage("Visit my blog here: https://kvnbbg.fr");
+        } else {
+          // Simulate a delayed generic answer
+          showLoadingAnimation();
+          setTimeout(() => {
+            hideLoadingAnimation();
+            addBotMessage("I'm still learning and improving. Ask me something else about my work, projects, or even type 'source game'!");
+          }, 2000);
+        }
+      }
+
+      function addBotMessage(text) {
+        const chatOutput = document.getElementById("chat-output");
+        const botBubble = document.createElement("p");
+        botBubble.style.textAlign = "left";
+        botBubble.style.backgroundColor = "#e5e5ea";
+        botBubble.style.color = "#000";
+        botBubble.style.padding = "10px 15px";
+        botBubble.style.margin = "10px 0";
+        botBubble.style.borderRadius = "20px 20px 0 20px";
+        botBubble.textContent = text;
+        chatOutput.appendChild(botBubble);
+        chatOutput.scrollTop = chatOutput.scrollHeight;
+      }
+
+      function showLoadingAnimation() {
+        document.getElementById("loading-animation").style.display = "flex";
+      }
+      function hideLoadingAnimation() {
+        document.getElementById("loading-animation").style.display = "none";
+      }
     </script>
-</body>
+  </body>
 </html>
