@@ -66,7 +66,7 @@ This portfolio features an advanced asset-checking mechanism that ensures your s
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use this template as a foundation for your own portfolio, and customize it to showcase your personal brand and career achievements.
+This project is licensed under the [MPL License](LICENSE). 
 
 ## Acknowledgments
 
