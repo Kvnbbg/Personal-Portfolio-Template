@@ -8,7 +8,7 @@
   --background-color: #f0f0f0;
   --text-color: #212121;
   --accent-color: #ffc107;
-  /* A playful “kawaii” accent */
+  /* Kawaii accent */
   --kawaii-accent: #ff99cc;
   
   /* Typography */
@@ -42,7 +42,7 @@ body {
 }
 
 /* ==========================================================================
-   Links (with animated underline)
+   Links (Animated Underline)
    ========================================================================== */
 a {
   position: relative;
@@ -78,7 +78,6 @@ header {
   padding: 1.5rem;
   text-align: center;
   position: relative;
-  /* Use a rounded, friendly font for a kawaii touch */
   font-family: var(--font-family-kawaii);
 }
 .matrix-text {
@@ -299,7 +298,6 @@ footer p {
 /* ==========================================================================
    Pixel Game–Inspired Text Effect
    ========================================================================== */
-/* Apply this class to any element where you want a retro, pixelated animation effect */
 .pixel-effect {
   font-family: 'Press Start 2P', cursive; /* Ensure you load this font via Google Fonts */
   font-size: 2rem;
