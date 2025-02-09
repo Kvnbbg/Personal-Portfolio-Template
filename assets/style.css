@@ -1,0 +1,335 @@
+/* ==========================================================================
+   Global Variables
+   ========================================================================== */
+:root {
+  /* Colors */
+  --primary-color: #0056b3;
+  --secondary-color: #495057;
+  --background-color: #f0f0f0;
+  --text-color: #212121;
+  --accent-color: #ffc107;
+  /* Kawaii accent */
+  --kawaii-accent: #ff99cc;
+  
+  /* Typography */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-kawaii: 'M PLUS Rounded 1c', sans-serif;
+  
+  /* Layout */
+  --transition-speed: 0.3s;
+  --border-radius: 20px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family-base);
+  color: var(--text-color);
+  background: linear-gradient(135deg, #eeeeee, #dddddd);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Links (Animated Underline)
+   ========================================================================== */
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-speed) ease;
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--kawaii-accent);
+  left: 0;
+  bottom: -3px;
+  transition: width var(--transition-speed) ease;
+}
+a:hover::after,
+a:focus::after {
+  width: 100%;
+}
+a:hover,
+a:focus {
+  color: var(--accent-color);
+}
+
+/* ==========================================================================
+   Header & Matrix Text Effect
+   ========================================================================== */
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  font-family: var(--font-family-kawaii);
+}
+.matrix-text {
+  position: relative;
+  display: inline-block;
+  color: #00ff00;
+  overflow: hidden;
+}
+.matrix-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 255, 0, 0.2);
+  white-space: nowrap;
+  animation: matrixRain 5s linear infinite;
+}
+.matrix-text span {
+  display: inline-block;
+  animation: matrixRain 5s linear infinite, characterChange 1.5s infinite;
+}
+@keyframes matrixRain {
+  0% { transform: translateY(-100%); opacity: 0.2; }
+  50% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0.2; }
+}
+@keyframes characterChange {
+  0%, 100% { content: attr(data-text); }
+  50% { content: "X"; }
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+nav {
+  background-color: var(--accent-color);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+nav a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed);
+}
+nav a:hover,
+nav a:focus {
+  background-color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   Main Container & Sections
+   ========================================================================== */
+.container {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+section {
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Chatbot Interface
+   ========================================================================== */
+.chatbot {
+  background-color: #000;
+  color: #33ff33;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: monospace;
+  box-shadow: var(--shadow);
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(0, 255, 153, 0.3); }
+  to { box-shadow: 0 0 20px rgba(0, 255, 153, 0.8); }
+}
+.terminal-output {
+  max-height: 200px;
+  overflow-y: auto;
+  border-bottom: 2px solid #33ff33;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.loading-animation {
+  display: flex;
+  gap: 5px;
+}
+.loading-animation span {
+  width: 8px;
+  height: 8px;
+  background-color: #33ff33;
+  border-radius: 50%;
+  animation: blink 1.2s infinite both;
+}
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.input-container {
+  display: flex;
+  gap: 10px;
+}
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+}
+.input-container button {
+  padding: 10px 20px;
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.input-container button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+.input-container button:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   Notice Modal (Story & Call-to-Action)
+   ========================================================================== */
+#notice-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#notice-modal .notice-content {
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  max-width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: popIn 0.5s ease-out;
+}
+#notice-modal button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+#notice-modal button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   Footer & Bottom Section
+   ========================================================================== */
+footer {
+  background: linear-gradient(135deg, #333, #444);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+footer .social-links a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+footer .social-links a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--kawaii-accent);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+footer .social-links a:hover::before {
+  width: 100%;
+}
+footer .social-links a:hover {
+  transform: scale(1.1);
+  color: var(--accent-color);
+}
+footer p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Pixel Game–Inspired Text Effect
+   ========================================================================== */
+.pixel-effect {
+  font-family: 'Press Start 2P', cursive; /* Ensure you load this font via Google Fonts */
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--kawaii-accent);
+  position: relative;
+  animation: pixelGlitch 3s infinite;
+}
+@keyframes pixelGlitch {
+  0% { transform: translate(0); filter: blur(0); }
+  10% { transform: translate(-2px, 2px); filter: blur(1px); }
+  20% { transform: translate(2px, -2px); filter: blur(0); }
+  30% { transform: translate(-1px, 1px) scale(1.02); }
+  40% { transform: translate(1px, -1px) scale(0.98); }
+  50% { transform: translate(0); filter: blur(0); }
+  60% { transform: translate(1px, 2px) scale(1.01); filter: blur(1px); }
+  70% { transform: translate(-1px, -2px) scale(0.99); }
+  80% { transform: translate(2px, 1px) scale(1.03); filter: blur(0); }
+  90% { transform: translate(-2px, -1px) scale(0.97); }
+  100% { transform: translate(0); }
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+  nav ul { flex-direction: column; }
+  .container { padding: 1rem; }
+  .input-container button { font-size: 0.9rem; padding: 8px 16px; }
+  footer { padding: 1rem; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1200px; }
+}
