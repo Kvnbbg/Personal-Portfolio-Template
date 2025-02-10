@@ -1,8 +1,8 @@
-# Personal Portfolio Template
+# Personal Portfolio
 
 ![Logo](./assets/logo.png)
 
-Welcome to my Personal Portfolio Template! This repository showcases my development journey, skills, and projects in a modern, interactive, and fully responsive website. Designed with cutting-edge web technologies, this portfolio is built not only to impress visitors but also to ensure a robust and reliable experience across all devices and platforms.
+Welcome to my Personal Portfolio! This repository showcases my development journey, skills, and projects in a modern, interactive, and fully responsive website. Designed with cutting-edge web technologies, this portfolio is built not only to impress visitors but also to ensure a robust and reliable experience across all devices and platforms.
 
 ## Key Features
 
